@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{ulem}
+\usepackage{url}
+
+\usepackage{wrapfig}
+\usepackage{subfig}
+
+\textwidth 6in
+\textheight 9in
+
+\graphicspath{{images\}}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+%\title{Flying \xout{On} Empty}
+\title{Graphical Exploration of the Deep-Water Horizon Oil Spill}
+\author{Lendie Follett, Ulrike Genschel, Heike Hofmann}
+\date{\today}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\tableofcontents
+\begin{abstract}
+\end{abstract}
+\section{Introduction}
+April 20th, 2010 marked the beginning of the largest and worst oil spill in the history of off-shore drilling.  Following an explosion in the Deep-water Horizon drilling rig and failure of all emergency systems, crude oil began to gush into the ocean.  After an estimated 4.9 million barrels of oil spilled into the sea, the leak was finally stopped on July 15th of 2010 when the well head was capped.  The completion of the relief well took untill September 19, 2010.  The immediate impact of the oil spill on people and wildlife alike was overwhelming and can still be felt.  The oil destroyed many habitats for birds, turtles, and other marine wildlife.  Waters had to be closed for fishing, affecting the livelihood of the people that depended on the fishing industry.  Longterm effects are certain.  It is of course impossible to do an analysis that can reflect the breadth and complexity of the effects of the oil spill.  This analysis will focus on the impact of the spill on wildlife, measured salnity, and the pollution through chemicals found in oil, in particular Polycyclic Aromatic Hydrocarbons (PAHs). 
+\section{Animals}
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=5in]{animal_deaths.png} 
+   \caption{Affected area: the graphic shows a satellite map of some of the area directly affected by the oil spill. The dots on top show locations of dead animal sightings. }
+   \label{deaths}
+\end{figure}
+Figure \ref{deaths} shows a satellite map, overlaid by a dotplot indicating locations of animal sightings. Red dots correspond to birds, green dots to sea turtles, and blue dots to dolphins and whales.  Birds appeared to be most affected as a total of 5,552 dead birds were found and recorded during the data collection period.  A total of 546 sea turtles were found dead.  All of the four identified sea turtle species are considered to be highly endangered.  95 dolphins and 3 whales were found and recorded, all of which were dead. The highest concentration of dead animals was found along the shore of Louisiana, close to the oil rig.  
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=5in]{death_rates.png} 
+   \caption{Death rates of birds, dolphins and whales, and sea turtles. }
+   \label{death rates}
+\end{figure}
+
+Birds, sea turtles, and dolphins and whales had unique death patterns during the data collection period as Figure \ref{death rates}  illustrates. In this figure, the to-date death toll was divided by the total death toll for each class of animal. The birds had a relatively low death rate from May to July and then the rate began to increase. Sea turtles and dolphins and whales, on the other hand, had the highest death rates from May to July and from there it began to flatten out. This pattern can also be seen in Figure \ref{daily-death-counts}. For sea turtles, dolphins and whales, the highest dead counts per day occured mainly in the earlier weeks and then decreased over time.  The majority of dead bird findings occured later in time and their death counts per day egan to climb rapidly around July. From July to September, the birds experienced a wide range of death counts per day and then began do decrease at the end of September.   
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=5in]{turtles.png} 
+   \caption{Four species of sea turtles found in the Gulf of Mexico.  Blue dots indicate turtles found living and red dots indicate those found dead.}
+   \label{turtles}
+\end{figure}
+
+Four species of sea turtles were found and identified during the data collection period, all of which are considered endangered.  These species are: Lepidochelys Kempii (Kemp's ridley), Eretmochelys Imbricata (), Chelonia Mydas (), and Caretta Caretta (). Figure \ref{turtles} shows when and where these turtles were found and whether they were living or dead. Most dead turtles, of all species, were found along the shoreline. This is most evident among Chelonia Mydas and Lepidochelys Kempii.  Very few turtles were fuond after September. The species with the greatest number of casualties found is Lepidochelys Kempii, often called Kemp's ridley, a critically endangered species which lives in the Gulf of Mexico. 
+
+Although there is no doubt the oil spill caused a tremendous amount of damage, we have no information on the actual cause of death of these animals.  We also do not have past data to compare these findings with and so we can only reasonably assume that this quantity of dead turtles, dolphins and whales, and birds is unusual.  
+\section{Chemicals}
+
+Polycyclic Aromatic Hydrocarbons, or PAHs, are semi-volatile organic substances which come from oil and the burning of oil.  Many of these substances are considered carcinogenic, mutagenic, and teratogenic and all are considered harmful to the health of living organisms.  New information on each PAH substance was found from the EPA website and put into the data set for this analysis.  
+
+Each substance has a unique acute and chronic potency divisor which is used to find the acute and chronic potency ratio, respectively.  The potency divisors, which are used in the calculations, can be thought of as the amount of the substance that can be considered dangerous by itself. For substances measured in water, the process was simple.  The measured oncentration of each substance for each unique location was multiplied by the Alkylation Multiplier.  This number is given for each substance and was added to the chemicals data set.  Multiplying by the Alkylation Multiplier gives the Alkyl Adjusted Concentration (ug/L).  From there, each of these values are divided by the acute potency divisor and the chronic potency divisor to find the acute potency ratio and chronic potency ratio, respectfully.  For substances measured in sediment, the amount of Organic Carbon for that area must also be used to find the acute and chronic potency ratios. Organic Carbon, like any other substance, was measured at each location.  These values of Organic Carbon at each unique location were put into a separate data set.  Then, the Organic Carbon data set and the PAH sediment data set could be horizontally merged by unique combinations of Latitude and Longitude.  This is done so that each measured concentration of a PAH substance has an accurate corresponding Organic Carbon measurement.  By dividing the original PAH concentrations by the Organic Carbon, we find the Organic Carbon Normalized Concentrations.  From here, the process is the same as it was for PAH substances measured in water.  We multiply by the Alkylation Multiplier and then divide by the acute and chronic potency divisors to obtain the acute and chronic potency ratios, respectfully.   For surface water and sediment samples alike, these ratios are addative and each substances' contribution must be summed up for each unique location in order to determine the complete effect. 
+
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=5in]{acute-chron-map.png} 
+   \caption{Map showing PAH measurements. Yellow dots represent those considered at a chronic level, red dots represent those considred at an acute level.  Light blue dots indicate all samples.  Most dangerous area seems to be around the outermost shore of Louisiana as there are many points which had PAH levels at or above chronic or acute benchmarks.}
+   \label{pah-map }
+\end{figure}
+
+
+Figure \ref{pah-map} shows areas which meet or exceed the chronic and acute benchmarks.  The yellow dots represent areas which meet or exceed the chronic benchmark and the red dots represent areas which meet or exceed the acute benchmark.  The light blue dots indicate all areas which were tested.  For this graphic, average values of each substance for each unique location were used.  This way, there is exactly one measurement of each subsance at each location.  There were several areas which had dangerous levels of these PAH substances.  Particularly along the outer coast of Louisiana, many of the observed PAH values exceeded the benchmarks.  This is the area which may have recieved the most direct contact with the oil.  
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=5in]{acute-timelines.png} 
+   \caption{Timeline of logarithm of acute potency ratios.  Points are colored by whether they are considered a carcinogenic substance. There is a period of time between June and July in which the acute value is heightened.}
+   \label{pah-timeline}
+\end{figure}
+
+
+Figure\ref {pah-timeline} shows the log of the acute potency ratios for measurements taken from May 2010 to August 2010. The log was taken so that we could more easily see the variation, as many of the samples are at or near 0. The top graphic shows these values for sediment samples and the bottom graphic shows tehse values for surface water samples.  Some measurements of PAH substances exceeded the acute potency ratio alone, meaning that, even if there were no other PAH substances in the area, that one substance was enough to be acutely dangerous.  These three acutely dangerous measurements are labeled on the timeline as C1-Chrysenes, C2-Chrysenes, and Chrysene.  The Chrysene family is considered a carcinogenic substance.  There seems to be a period of time between June and July in which the measurements of these PAH substance had higher values than during the rest of the time.    
+
+\section{Salinity}
+Boats, floats, and gliders recorded salinity, temperature, and depth measurements at various locations in the Gulf of Mexico. The floats tended to stay in the deeper water while the boats and the gliders were free to go all around the gulf.  You can see the patterns of these three measuring methods in Figure \ref {boats-floats-gliders}. Each measuring device would take measurements at the surface and then take measurements at various depths at each location.  
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=5in]{boats-floats-gliders.png} 
+   \caption{Paths of Boats, Floats, and Gliders. }
+   \label{Boats, Floats and Gliders}
+\end{figure}
+Salinity in the gulf only rarely falls below a threshhold of 34 mg/l. in \ref {Boats, Floats, and Gliders} you can see when and where these unusual values occured.  In both the left and right graphic, the points are color coordinated by time. The right graphic shows only points where salinity levels are below 34 mg/l. The highest concentration of these points is found near the rig during June and July.  
+
+Depth and salinity form a close relationship as you can see in Figure \ref {depth-salinity}.  Very strange deviations from this relationship were observed by the two boat measuring devices. The surface water measurement was far below normal observations and from there salinity dropped rapidly with depth.  Also, these two observation points only reached a depth of about 200 feet below sea level
+\end{document}  
