@@ -5,7 +5,7 @@ setwd("C:\\Users\\Paul\\Dropbox\\Data Expo 2011\\writeup")
 #load most affected bird family data
 affected<- read.csv("data/affected.csv")
 # load animal data
-animal <- read.csv("data/animal.csv")
+animal <- read.csv("data/animals.csv")
 
 
 animal$Date<- as.character(animal$Date)
