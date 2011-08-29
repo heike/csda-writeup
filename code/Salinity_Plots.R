@@ -1,0 +1,46 @@
+
+#SALINITY PLOTS
+# Lendie's path
+#setwd("C:\\Users\\Owner\\Dropbox\\Data Expo 2011\\writeup")
+
+# libraries
+library(ggplot2)
+library(gridExtra)
+
+
+# load data
+salinity <- read.csv("data/Salinity.csv")
+salinity$Date_Time <- as.Date(as.character(salinity$Date_Time), "%Y-%m-%d")
+
+# location and tag for oil rig
+rig <- data.frame(Longitude = -88.365997, Latitude = 28.736628)
+plot_rig_w <- geom_text(aes(x=Longitude, y=Latitude, label = "x BP Oil Rig"), colour = "white", size = 3, data=rig)
+plot_rig_b <- geom_text(aes(x=Longitude, y=Latitude, label = "x BP Oil Rig"), size = 3, data=rig, hjust=-1)
+
+######################## plots ############################
+
+#SALINITY LEVELS OVER TIME RELATED TO LOW SALINITIES ON MAP
+# discretize time into intervals
+
+ggplot(salinity, aes(x = Date_Time, y = Salinity, colour = as.integer(as.Date(Date_Time)))) + geom_point() + scale_colour_gradient(low="orange", high="brown") + opts(title = "Salinity Levels Over Time", legend.position = "none") + labs(x = "Date")
+
+plot6 <- ggplot() + geom_point(aes(x = Longitude, y = Latitude, colour = as.integer(as.Date(Date_Time))), subset(salinity, Salinity <=34)) + animal.map + scale_colour_gradient(low="orange", high="brown")+ plot_rig_b  + opts(title = "Low Salinity Levels (Salinity < 34) Near Rig", legend.position = "none") 
+grid.arrange(plot5, plot6, ncol = 2)
+ggsave("images/alinity-time-map.png")
+
+#PLOT OF BOATS, FLOATS, AND GLIDERS PATHS ON MAP
+ggplot() +
+ geom_tile(aes(lon, lat, fill=fill), data = sat_map) +
+   scale_fill_identity(legend = FALSE) +
+  scale_x_continuous('Longitude') + 
+  scale_y_continuous('Latitude') +  
+  coord_equal() + theme_nothing() + 
+   xlim(c(-96.25, -81.5)) + ylim(c(20,31)) + geom_point(aes(x = Longitude, y = Latitude, colour = Type), data = salinity)+ labs(x = "Longitude", y = "Latitude")+ opts(legend.position = "right", legend.direction = "vertical")+ plot_rig
+ggsave("images/boats-floats-gliders.png")
+
+#DEPTH X SALINITY GROUP = INTERACTION(LONG, LAT) FACTTED BY TYPE (takes realllllly long time to load!!!)
+bfg.3 <- ggplot() + geom_line(aes(x = Depth, y = Salinity, group = interaction(Longitude, Latitude), colour = Type), data = subset(bfg, Salinity != -99)) 
+bfg.3 + opts(title = "Boats, Floats, and Gliders")
+ggsave("images/deapth-salinity.png")
+
+
