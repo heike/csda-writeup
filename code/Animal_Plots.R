@@ -5,11 +5,10 @@ setwd("C:\\Users\\Paul\\Dropbox\\Data Expo 2011\\writeup")
 #load most affected bird family data
 affected<- read.csv("data/affected.csv")
 # load animal data
-animal <- read.csv("data/animals.csv")
+animal <- read.csv("data/animal.csv")
+animal$Date <- as.Date(as.character(animal$Date), "%Y-%m-%d")
 
 
-animal$Date<- as.character(animal$Date)
-animal$Date <- as.Date(animal$Date, "%Y-%m-%d")
 #----------------------------------------------------------------------------
 # load libraries and additional code 
 # google maps and satellite images as background
@@ -36,7 +35,7 @@ states.animal <- getbox(states, xlim=c(-97, max(animal$Longitude+2)), ylim=range
 # state map of the area
 animal.map <- geom_polygon(aes(x = long, y = lat, group = group), colour = "white", fill = "grey70", data = states.animal)
 
-#add cross for rig location and "Rig"
+# add location and tag for oil rig
 rig <- data.frame(Longitude = -88.365997, Latitude = 28.736628)
 plot_rig <- geom_text(aes(x=Longitude, y=Latitude, label = "x BP Oil Rig"), colour = "white", size = 3, data=rig)
 
@@ -69,10 +68,11 @@ ggsave("images/bird-families.png")
 ggplot(subset(turtles, Species != "Unknown"), aes(x = factor(Species, order = T, c("Lepidochelys kempii", "Chelonia mydas", "Caretta caretta", "Eretmochelys imbricata")), fill=Alive)) + geom_bar() + theme_grey() + opts(title = "Turtles")+ opts(title = "Turtle Dead/Alive Ratio by Species") + labs(y = "Count", x = "Species") + coord_flip()
 ggsave("images/turtle-species-condition.png")
 #---------------------------------------------------------------------------------------------------------
+# load turtle data
+turtles <- read.csv("data/turtles.csv")
 library(gridExtra)
 
-turtles$obsDate<- as.character(turtles$obsDate)
-turtles$obsDate<- as.Date(turtles$obsDate, "%Y-%m-%d")
+turtles$obsDate<- as.Date(as.character(turtles$obsDate), "%Y-%m-%d")
 
 turtles$Quarter[(turtles$week.number >= 18) & (turtles$week.number <= 25)] <- "04-26-2010 to 06-20-2010"
 turtles$Quarter[(turtles$week.number >= 26) & (turtles$week.number <=31)] <- "06-21-2010 to 08-01-2010"
@@ -80,15 +80,17 @@ turtles$Quarter[(turtles$week.number >= 32) & (turtles$week.number <= 38)] <- "0
 turtles$Quarter[turtles$week.number > 38] <- "09-20-2010 to 10-18-210"
 
 # MAP, FACETTED BY QUARTER AND SPECIES OF TURTLE, SHOWING DEAD/ALIVE LOCATIONS
-# remove space for x axis?
 
-caretta <- ggplot(subset(turtles, Species == "Caretta caretta"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4) + opts(axis.title.x=theme_blank(), legend.position = "none", panel.margin=0.1, axis.text.x=theme_blank(), axis.text.y=theme_blank(), axis.ticks=theme_blank(), plot.margin=unit(c(0,0,0,0),"lines")) + labs(y = "Caretta Caretta") 
-chelonia <- ggplot(subset(turtles, Species == "Chelonia mydas"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4) + opts(axis.title.x=theme_blank(), legend.position = "none", panel.margin=0.1, axis.text.x=theme_blank(), axis.text.y=theme_blank(), axis.ticks=theme_blank(), plot.margin=unit(c(0,0,0,0),"lines")) +labs(y = "Chelonia Mydas") 
-eretmochelys <- ggplot(subset(turtles, Species == "Eretmochelys imbricata"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4, drop = FALSE) + opts(axis.title.x=theme_blank(), legend.position = "none", panel.margin=0.1, axis.text.x=theme_blank(), axis.text.y=theme_blank(), axis.ticks=theme_blank(), plot.margin=unit(c(0,0,0,0),"lines")) + labs(y = "Eretmochelys Imbricata")
-lepid <- ggplot(subset(turtles, Species == "Lepidochelys kempii"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4) + opts(axis.title.x=theme_blank(), legend.position = "none", panel.margin=0.1, axis.text.x=theme_blank(), axis.text.y=theme_blank(), axis.ticks=theme_blank(), plot.margin=unit(c(0,0,0,0),"lines")) + labs(y = "Lepidochelys Kempii") 
+turtle_opts <- opts(axis.title.x=theme_blank(), legend.position = "none", panel.margin=0.1, axis.text.x=theme_blank(), axis.text.y=theme_blank(), axis.ticks=theme_blank(), plot.margin=unit(c(0,0,0,0),"lines"))
 
-png("images/turtles.png")
-grid.arrange(caretta, chelonia, eretmochelys, lepid, ncol = 1)
+caretta <- ggplot(subset(turtles, Species == "Caretta caretta"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4) + labs(y = "Caretta Caretta") + scale_colour_brewer(palette="Set1") + turtle_opts
+chelonia <- ggplot(subset(turtles, Species == "Chelonia mydas"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4) + turtle_opts +labs(y = "Chelonia Mydas") + scale_colour_brewer(palette="Set1")
+eretmochelys <- ggplot(subset(turtles, Species == "Eretmochelys imbricata"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4, drop = FALSE) + turtle_opts + labs(y = "Eretmochelys Imbricata")+ scale_colour_brewer(palette="Set1")
+lepid <- ggplot(subset(turtles, Species == "Lepidochelys kempii"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4) + turtle_opts + labs(y = "Lepidochelys Kempii") + scale_colour_brewer(palette="Set1")
+
+
+png("images/turtles.png", width=960, height=720) # in pixel
+grid.arrange(caretta, chelonia, eretmochelys, lepid, ncol = 1) 
 dev.off()
 
 #---------------------------------------------------------------------------------------------------------
