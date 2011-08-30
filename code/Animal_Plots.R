@@ -1,11 +1,11 @@
 # Lendie's path
-setwd("C:\\Users\\Paul\\Dropbox\\Data Expo 2011\\writeup")
+setwd("C:\\Users\\Owner\\Documents\\csda-writeup")
 
 # load data
 #load most affected bird family data
 affected<- read.csv("data/affected.csv")
 # load animal data
-animal <- read.csv("data/animal.csv")
+animal <- read.csv("data/animals.csv")
 animal$Date <- as.Date(as.character(animal$Date), "%Y-%m-%d")
 
 
@@ -55,14 +55,14 @@ ggsave("images/animal_deaths.png")
 
 #---------------------------------------------------------------------------------------------------------
 #BARCHART OF DEAD ANIMALS BY CLASS
-ggplot(aes(x = class, fill = class), data = dead) + geom_bar() + hide_colour + labs(x = "Class", y = "Count") + opts(title = "Dead Animals", legend.position = "none")
+ggplot(aes(x = class, fill = class), data = dead) + geom_bar() + labs(x = "Class", y = "Count") + opts(title = "Dead Animals", legend.position = "none")
 ggsave("images/deaths-by-class.png")
 
 #---------------------------------------------------------------------------------------------------------
 # MOST AFFECTED BIRD FAMILIES BAR CHART
 ggplot() + geom_bar(aes(x = factor(Common, order = T, c("Gulls, Terns, Skimmers, Skuas", "Pelicans", "Boobies, Gannets", "Herons, Bitterns, Eggrets", "Rails, Gallinules, Coots"))),  data = affected)  + labs(x = "family", y = "# dead birds") + coord_flip() + theme_grey() + opts(title = "Most Affected Bird Families", legend.position = "none")
 ggsave("images/bird-families.png")
-
+ggplot() + geom_bar(aes(x = factor(Family, order = T, c("Laridae", "Pelecanidae", "Sulidae", "Ardeidae", "Rallidae"))),  data = affected)  + labs(x = "Family", y = "# dead birds") + theme_grey()
 #---------------------------------------------------------------------------------------------------------
 # BARCHART OF TURTLE SPECIES COLORED BY CONDITION
 ggplot(subset(turtles, Species != "Unknown"), aes(x = factor(Species, order = T, c("Lepidochelys kempii", "Chelonia mydas", "Caretta caretta", "Eretmochelys imbricata")), fill=Alive)) + geom_bar() + theme_grey() + opts(title = "Turtles")+ opts(title = "Turtle Dead/Alive Ratio by Species") + labs(y = "Count", x = "Species") + coord_flip()
@@ -123,6 +123,6 @@ dead.week <- ddply(animal, .(Date, class), summarize,
     total = length(Species) - sum(Live))
 animal.1 <-geom_point(aes(x=Date, y=total, colour=class), data = dead.week) 
 animal.2 <-geom_smooth(aes(x=Date, y=total, colour=class), data=dead.week) 
-ggplot()+ animal.1 + animal.2 + facet_wrap(~class, ncol=3, scales="free") + labs(x="Date", y="Count") + opts(title="Animal Deaths", legend.position = "none")
+ggplot()+ animal.1  + facet_wrap(~class, ncol=3, scales="free") + labs(x="Date", y="Count") + opts(title="Animal Deaths", legend.position = "none")
 ggsave("images/daily-death-counts.png")
 
