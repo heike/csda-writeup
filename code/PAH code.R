@@ -1,7 +1,7 @@
 #PAH code
 #choose lrf_WATER_benchmarks in data folder
-setwd("C:\\Users\\Owner\\Dropbox\\Data Expo 2011\\writeup")
-surf.water <- read.csv("../data/lrf_WATER_benchmarks.csv")
+setwd("C:\\Users\\Owner\\Documents\\csda-writeup")
+surf.water <- read.csv("data/lrf_WATER_benchmarks.csv")
 #format data
 surf.water$DATE<- as.character(surf.water$DATE)
 surf.water$DATE <- as.Date(surf.water$DATE, "%m/%d/%Y")
@@ -14,10 +14,10 @@ water.bench <- ddply(water.bench1, .(LONGITUDE, LATITUDE), summarize,
 	Chronic.Benchmark.Value = sum(avg.Chronic.Potency.Ratio))
 
 #choose lrf_SEDIMENT_benchmarks in data folder
-sediment <- read.csv("../data/lrf_SEDIMENT_benchmarks.csv")
+sediment <- read.csv("data/lrf_SEDIMENT_benchmarks.csv")
 
 #choose OC in the data folder
-OC <- read.csv("../data/OC.csv")
+OC <- read.csv("data/OC.csv")
 #format data
 
 OC <- ddply(OC, .(LONGITUDE, LATITUDE), transform,
@@ -78,8 +78,19 @@ opts(title = "Polycyclic Aromatic Hydrocarbons: Chronic and Acute Levels") + lab
 ggsave("images/chron-acute-map.png")
 
 
+#timeline
+##needs some adjustments - lost previous code :(
+sediment.bench3$Log_Acute.Potency.Ratio<-log((sediment.bench3$Acute.Potency.Ratio+1))
+surf.water$Log_Acute.Potency.Ratio<-log((surf.water$Acute.Potency.Ratio+1))
 
+sediment.time <- ggplot() + geom_vline(yintercept=log(2), colour="grey50") + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(sediment.bench3, RESULT!=0)) + 
+scale_colour_discrete() +labs(y="Log of Acute Potency Ratio", x="Date") + ylim(0,0.6) + opts(title="Sediment Acute Potency Ratios") 
 
+water.time <- ggplot() + geom_vline(yintercept=log(2), colour="grey50") + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(surf.water, RESULT!=0)) + 
+scale_colour_discrete() +labs(y="Log of Acute Potency Ratio", x="Date") + ylim(0,0.6) + opts(title="Surface Water Acute Potency Ratios") 
+
+grid.arrange(sediment.time, water.time, ncol = 1)
+ggsave("images/acute-timeline.png")
 
 # need to still fix height and width
 sediment.bench4 <-  na.omit(unique(sediment.bench3[,c("SUBSTANCE", "ratios")]))
