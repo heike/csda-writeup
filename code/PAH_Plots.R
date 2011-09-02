@@ -95,7 +95,8 @@ ggsave("images/acute-timeline2.png")
 
 ggplot() + geom_hline(aes(yintercept=log(2)), colour="grey50") + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(sediment.bench3, RESULT!=0)) +
 geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(surf.water, RESULT!=0)) + 
-scale_colour_discrete() +labs(y="Log of Acute Potency Ratio", x="Date")  + opts(title="Acute Potency Ratios for Surface Water and Sediment") 
+scale_colour_discrete() + geom_text(aes(x = DATE, y = Log_Acute.Potency.Ratio, label = SUBSTANCE, colour = Danger.Level, hjust = -.1), data = subset(surf.water, Log_Acute.Potency.Ratio >= log(2))) +
+labs(y="Log of Acute Potency Ratio", x="Date")  + opts(title="Acute Potency Ratios for Surface Water and Sediment") 
 
 ggsave("images/acute-timeline3.png")
 
