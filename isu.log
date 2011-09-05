@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.8.25)  2 SEP 2011 14:00
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.8.25)  5 SEP 2011 13:41
 entering extended mode
 **C:/Users/Owner/Documents/csda-writeup/isu.tex
 (C:/Users/Owner/Documents/csda-writeup/isu.tex
@@ -277,46 +277,46 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 File: images/animal_deaths.png Graphic file (type png)
 
 <use images/animal_deaths.png>
-Package pdftex.def Info: images/animal_deaths.png used on input line 50.
+Package pdftex.def Info: images/animal_deaths.png used on input line 52.
 (pdftex.def)             Requested size: 325.215pt x 296.98396pt.
  [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2 <C:/Users/Owner/Docume
-nts/csda-writeup/images/animal_deaths.png (PNG copy)>] <images/death-rates.png,
- id=14, 474.8139pt x 379.1766pt>
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] <images/death-rates.png, 
+id=11, 554.07pt x 309.3156pt>
 File: images/death-rates.png Graphic file (type png)
 
 <use images/death-rates.png>
-Package pdftex.def Info: images/death-rates.png used on input line 58.
-(pdftex.def)             Requested size: 361.34999pt x 288.56485pt.
- <images/turtles.png, id=15, 963.6pt x 722.7pt>
+Package pdftex.def Info: images/death-rates.png used on input line 60.
+(pdftex.def)             Requested size: 361.34999pt x 201.72768pt.
+ <images/turtles.png, id=12, 963.6pt x 722.7pt>
 File: images/turtles.png Graphic file (type png)
 
 <use images/turtles.png>
-Package pdftex.def Info: images/turtles.png used on input line 67.
+Package pdftex.def Info: images/turtles.png used on input line 69.
 (pdftex.def)             Requested size: 433.62pt x 325.21199pt.
- [3 <C:/Users/Owner/Documents/csda-writeup/images/death-rates.png>] [4 <C:/User
-s/Owner/Documents/csda-writeup/images/turtles.png>]
-[5] <images/chron-acute-map.png, id=28, 835.4412pt x 409.2891pt>
+ [2 <C:/Users/Owner/Documents/csda-writeup/images/animal_deaths.png (PNG copy)>
+] [3 <C:/Users/Owner/Documents/csda-writeup/images/death-rates.png> <C:/Users/O
+wner/Documents/csda-writeup/images/turtles.png>]
+[4] <images/chron-acute-map.png, id=25, 835.4412pt x 409.2891pt>
 File: images/chron-acute-map.png Graphic file (type png)
 
 <use images/chron-acute-map.png>
 Package pdftex.def Info: images/chron-acute-map.png used on input line 85.
 (pdftex.def)             Requested size: 361.34999pt x 177.02759pt.
 
-<images/acute-timeline3.png, id=29, 802.4379pt x 231.7458pt>
+<images/acute-timeline3.png, id=26, 802.4379pt x 231.7458pt>
 File: images/acute-timeline3.png Graphic file (type png)
 
 <use images/acute-timeline3.png>
 Package pdftex.def Info: images/acute-timeline3.png used on input line 95.
 (pdftex.def)             Requested size: 361.34999pt x 104.36243pt.
+ [5 <C:/Users/Owner/Documents/csda-writeup/images/chron-acute-map.png (PNG copy
+)> <C:/Users/Owner/Documents/csda-writeup/images/acute-timeline3.png>]
 
+LaTeX Warning: Reference `Boats, Floats, and Gliders' on page 6 undefined on in
+put line 104.
 
-LaTeX Warning: Reference `boats-floats-gliders' on page 6 undefined on input li
-ne 104.
-
-[6 <C:/Users/Owner/Documents/csda-writeup/images/chron-acute-map.png (PNG copy)
->] <images/boats-floats-gliders.png, id=33, 866.2764pt x 257.2812pt>
+<images/boats-floats-gliders.png, id=31, 866.2764pt x 257.2812pt>
 File: images/boats-floats-gliders.png Graphic file (type png)
 
 <use images/boats-floats-gliders.png>
@@ -324,44 +324,43 @@ Package pdftex.def Info: images/boats-floats-gliders.png used on input line 108
 .
 (pdftex.def)             Requested size: 361.34999pt x 107.31932pt.
 
-<images/salinity-time.png, id=34, 416.2752pt x 415.3116pt>
+<images/salinity-time.png, id=32, 416.2752pt x 415.3116pt>
 File: images/salinity-time.png Graphic file (type png)
 
 <use images/salinity-time.png>
-Package pdftex.def Info: images/salinity-time.png used on input line 118.
-(pdftex.def)             Requested size: 209.58255pt x 209.10014pt.
+Package pdftex.def Info: images/salinity-time.png used on input line 115.
+(pdftex.def)             Requested size: 202.35622pt x 201.88849pt.
 
-<images/salinity-map.png, id=35, 416.2752pt x 415.3116pt>
+<images/salinity-map.png, id=33, 416.2752pt x 415.3116pt>
 File: images/salinity-map.png Graphic file (type png)
 
 <use images/salinity-map.png>
-Package pdftex.def Info: images/salinity-map.png used on input line 119.
-(pdftex.def)             Requested size: 216.81pt x 216.31181pt.
- [7 <C:/Users/Owner/Documents/csda-writeup/images/acute-timeline3.png> <C:/User
-s/Owner/Documents/csda-writeup/images/boats-floats-gliders.png (PNG copy)>] [8 
-<C:/Users/Owner/Documents/csda-writeup/images/salinity-time.png> <C:/Users/Owne
-r/Documents/csda-writeup/images/salinity-map.png>] (C:\Users\Owner\Documents\cs
-da-writeup\isu.aux)
+Package pdftex.def Info: images/salinity-map.png used on input line 116.
+(pdftex.def)             Requested size: 202.35622pt x 201.88849pt.
+ [6 <C:/Users/Owner/Documents/csda-writeup/images/boats-floats-gliders.png (PNG
+ copy)>] [7 <C:/Users/Owner/Documents/csda-writeup/images/salinity-time.png> <C
+:/Users/Owner/Documents/csda-writeup/images/salinity-map.png>] (C:\Users\Owner\
+Documents\csda-writeup\isu.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
  3662 strings out of 494045
- 55907 string characters out of 3145969
+ 55913 string characters out of 3145969
  124997 words of memory out of 3000000
  6902 multiletter control sequences out of 15000+200000
  10518 words of font info for 40 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 44i,6n,42p,1701b,265s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,6n,42p,1701b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on isu.pdf (8 pages, 2154522 bytes).
+Output written on isu.pdf (7 pages, 2155879 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
+ 60 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
