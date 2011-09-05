@@ -36,10 +36,12 @@ April 20th, 2010 marked the beginning of the largest and worst oil spill in the 
 Data on dead and alive animal sightings came from several sources: US Fish and Wildlife (Southeast Region) provided the Cumulative Avian Observations (USFWS).
 Data on Turtle \& Marine Mammal Observations were reported by NOAA (National Oceanic and Atmospheric Administration) and its offices NMS (National Marine Sanctuary) and OPR (Office of Protected Resources). 
 
-Each of the files contains records of live and dead animal sightings, geographic location, exact species identification, if known, the date of the sighting, and, for the bird counts, a status variable regarding the oiling condition of the bird (*** what status levels are there? ***). 
+Each of the files contains records of live and dead animal sightings, geographic location, exact species identification, if known, the date of the sighting, and, for the bird counts, a status variable regarding the oiling condition of the bird (Visibly Oiled, Not Visibly Oiled, Unknown). 
 
 
-The EPA (US Environmental  Protection Agency) provided water chemistry data focused on petrochemical products, sampled near the coastline in the months since the oil spill. 
+The EPA (US Environmental  Protection Agency) provided water and sediment chemistry data focused on petrochemical products, sampled near the coastline in the months since the oil spill. This file contained records of many chemicals and their geographic location, substance name, amount of substance, measuring unit, and date of measurement. 
+
+Salinity data info*******
 
 
 XXX Structure of this paper:
@@ -56,7 +58,7 @@ Figure \ref{deaths} shows a satellite map, overlaid by a dotplot indicating loca
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=5in]{death-rates.png} 
-   \caption{Death rates of birds, dolphins and whales, and sea turtles. }
+   \caption{Death rates of birds, dolphins, whales, and sea turtles from May to October 2010. }
    \label{death rates}
 \end{figure}
 
@@ -65,14 +67,12 @@ Birds, sea turtles, and dolphins and whales had unique death patterns during the
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=6in]{turtles.png} 
-   \caption{Four species of sea turtles found in the Gulf of Mexico.  Blue dots indicate turtles found living and red dots indicate those found dead.}
+   \caption{Four species of endangered or critically endangered sea turtles found in the Gulf of Mexico from April 26th to October 18th 2010.  Blue dots indicate turtles found living and red dots indicate those found dead.}
    \label{turtles}
 \end{figure}
 
-Four species of sea turtles were found and identied during the data collection period, all of which are considered endangered. These species are: Lepidochelys Kempii (Kemp's ridley), Eretmochelys Imbricata (Hawksbill Sea Turtle), Chelonia Mydas (Green Sea Turtle),
-and Caretta Caretta (Loggerhead Sea Turtle). Figure 4 shows when and where these turtles were found and whether they were living or dead. Most dead turtles, of all species, were found along the shoreline. This is most evident among Chelonia Mydas and Lepidochelys Kempii.Most turtles that were found alive were found or the coastline. There were two main areas on the coasts of Louisiana and Florida in which the bulk of live sea turtles were found. Very few turtles were found after September. The species with the greatest number of casualties found was Lepidochelys Kempii, often called Kemp's ridley, a critically endangered species which lives in the Gulf of Mexico.
+Four species of sea turtles were found and identied during the data collection period, all of which are considered either endangered or critically endangered. These species are: Lepidochelys Kempii (Kemp's ridley), Eretmochelys Imbricata (Hawksbill Sea Turtle), Chelonia Mydas (Green Sea Turtle), and Caretta Caretta (Loggerhead Sea Turtle). Figure 4 shows when and where these turtles were found and whether they were living or dead. Most dead turtles, of all species, were found along the shoreline. This is most evident among Chelonia Mydas and Lepidochelys Kempii. Most turtles that were found alive were found off the coast. There were two main areas on the coasts of Louisiana and Florida in which the bulk of live sea turtles were found. Very few turtles were found after September. The species with the greatest number of casualties found was Lepidochelys Kempii, often called Kemp's ridley, a critically endangered species which lives in the Gulf of Mexico.
 
-Although there is no doubt the oil spill caused a tremendous amount of damage, we have no information on the actual cause of death of these animals.  We also do not have past data to compare these findings with and so we can only reasonably assume that this quantity of dead turtles, dolphins and whales, and birds is unusual.  
 \section{Chemicals}
 
 Many chemicals were sampled in the Gulf of Mexico during the months following the oil spill. This analysis focuses on Polycyclic Aromatic Hydrocarbons because of their direct relationship with oil and because of their toxicity to wildlife. Polycyclic Aromatic Hydro- carbons, or PAHs, are semi-volatile organic substances which come from oil and the burning of oil. Many of these substances are considered carcinogenic, mutagenic, and teratogenic and all are considered harmful to the health of living organisms. New information on each PAH substance was found from the EPA website and put into the data set for this analysis. In order to do a proper analysis on the existence of these chemicals after the spill and how they may have effected life in the Gulf of Mexico it was necessary to put the measurements into an interpretable form. Measurements of the PAHs at unique locations will be looked at in terms of their acute and chronic potency. An area is considered at a chronic level when the amount of harmful substances is thought to bring harmful effects over a long period of time. An area is considered at an acute level when the amount of harmful substances rapidly induces a negative effect in an organism.
@@ -93,7 +93,7 @@ Figure \ref{pah-map} shows areas which meet or exceed the chronic and acute benc
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=5in]{acute-timeline3.png} 
-   \caption{Timeline of logarithm of acute potency ratios.  Points are colored by whether they are considered a carcinogenic substance. There is a period of time between June and July in which the acute value is heightened.}
+   \caption{Timeline of logarithm of acute potency ratios.  Points are colored by the substance's effect on health. There is a period of time between June and July in which the acute value is heightened.  Points which alone exceed the acute benchmark are labeled with the name of the substance.}
    \label{pah-timeline}
 \end{figure}
 
@@ -101,7 +101,7 @@ Figure \ref{pah-map} shows areas which meet or exceed the chronic and acute benc
 Figure \ref {pah-timeline} shows the log of the acute potency ratios not equal to 0 for measurements taken from May 2010 to August 2010. The log was taken so that we could more easily see the variation, as many of the samples near 0. Some measurements of PAH substances exceeded the acute potency ratio alone, meaning that, even if there were no other PAH substances in the area, that one substance was enough to be acutely dangerous. These three acutely dangerous measurements are labeled on the timeline as C1-Chrysenes, C2-Chrysenes, and Chrysene. The Chrysene family is considered a carcinogenic substance. There seems to be a period of time between June and July in which the measurements of these PAH substance had higher values than during the rest of the time.
 
 \section{Salinity}
-Boats, floats, and gliders recorded salinity, temperature, and depth measurements at various locations in the Gulf of Mexico. The floats tended to stay in the deeper water while the boats and the gliders were free to go all around the gulf.  You can see the patterns of these three measuring methods in Figure \ref {boats-floats-gliders}. Each measuring device would take measurements at the surface and then take measurements at various depths at each location.  
+Boats, floats, and gliders recorded salinity, temperature, and depth measurements at various locations in the Gulf of Mexico. The floats tended to stay in the deeper water while the boats and the gliders were free to go all around the gulf.  You can see the patterns of these three measuring methods in Figure \ref {Boats, Floats, and Gliders}. Each measuring device would take measurements at the surface and then take measurements at various depths at each location.  
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
@@ -109,20 +109,19 @@ Boats, floats, and gliders recorded salinity, temperature, and depth measurement
    \caption{Paths of Boats, Floats, and Gliders. }
    \label{Boats, Floats and Gliders}
 \end{figure}
-In Figure 8 you can see all salinity measurements over the data collection period. The vast majority of these measurements stayed within set boundaries. Other points varied from the rest and seemed to be unusually low. In figure 8 you can see when and where these unusual values occurred. In both the left and right graphic, the points are color coordinated by time. The right graphic shows only points where salinity levels are below 34 mg/l. The highest concentration of these points is found near the rig during June and July.
-
-Depth and salinity form a close relationship as you can see in Figure ??. Very strange deviations from this relationship were observed by the two boat measuring devices. The surface water measurement was far below normal observations and from there salinity dropped rapidly with depth. Also, these two observation points only reached a depth of about 200 feet below sea level which is unusually shallow compared to the other measurments taken around it.
-
+In Figure 8 you can see all salinity measurements over the data collection period. The vast majority of these measurements stayed within set boundaries. Other points varied from the rest and seemed to be unusually low. In Figure 8 you can see when and where these unusual values occurred. In both the left and right graphic, the points are color coordinated by time. The right graphic shows only points where salinity levels are below 34 mg/l. The highest concentration of these points is found near the rig during June and July.
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
-   \includegraphics[width=2.9in]{salinity-time.png} 
-   \includegraphics[width=3in]{salinity-map.png} 
+   \includegraphics[width=2.8in]{salinity-time.png} 
+   \includegraphics[width=2.8in]{salinity-map.png} 
    \caption{Salinity measurements: over time (left) and by location (right)> Salinity measurements only rarely fall below 34 mg/l. In the months after the start of the oil spill salinity frequently drops below 34 mg/l. For later weeks this happens in particular in locations close to the oil rig.}
    \label{salinity-timeline}
 \end{figure}
-
+Depth and salinity form a close relationship as you can see in Figure ??. Very strange deviations from this relationship were observed by the two boat measuring devices. The surface water measurement was far below normal observations and from there salinity dropped rapidly with depth. Also, these two observation points only reached a depth of about 200 feet below sea level which is unusually shallow compared to the other measurments taken around it.
 
 \section{Conclusions}
 What we could not do because the data was not available to us: comparable baseline data. 
+
+Although there is no doubt the oil spill caused a tremendous amount of damage, the lack data makes it difficult to make conclusions. We have no information on the actual cause of death of the birds, sea turtles, dolphins, and whales.  We also do not have past data to compare these findings with and so we can only reasonably assume that this quantity of dead turtles, dolphins and whales, and birds is unusual. It is also hard to make definite inferences based on the PAH measurements.  While we know PAH substances were found at harmful levels along the coast, we do not have baseline data to compare these post-spill levels with. As with the animal deaths, we can only reasonably assume that the high levels of PAHs are unusual for the area. Past data was available for salinity, however, the area in which these pre-spill salinity values were measured is quite different from the area in which the post-spill salinity values were measured.  Salinity measurements taken along the coastline will be quite different and therefore not compareable to those taken in the middle of the Gulf of Mexico. 
 
 \end{document}  
