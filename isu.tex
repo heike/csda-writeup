@@ -1,4 +1,5 @@
 \documentclass[11pt]{article}
+\bibliographystyle{plainnat}
 \usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
 \geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
 %\geometry{landscape}                % Activate for for rotated page geometry
@@ -8,6 +9,7 @@
 \usepackage{epstopdf}
 \usepackage{ulem}
 \usepackage{url}
+\usepackage{natbib}
 
 \usepackage{wrapfig}
 \usepackage{subfig}
@@ -44,8 +46,9 @@ The EPA (US Environmental  Protection Agency) provided water and sediment chemis
 Salinity data info*******
 
 \subsection{Tools used}
-*** need citations
-ggplot2, RGooglemaps
+*** what else did we make use of?
+
+{\tt R} \citep{R2011}, {\tt ggplot2} \citep{ggplot2}, {\tt RgoogleMaps} \citep{RgoogleMaps}, link between {\tt ggplot2} and {\tt RgoogleMaps} provided by \citet{kahle2010} as part of his entry in the ggplot2 competition.
 
 \subsection{Structure of this paper}
 
@@ -78,7 +81,7 @@ Birds, sea turtles, and dolphins and whales had unique death patterns during the
    \label{turtles}
 \end{figure}
 
-Four species of sea turtles were found and identied during the data collection period, all of which are considered either endangered or critically endangered. These species are: Lepidochelys Kempii (Kemp's ridley), Eretmochelys Imbricata (Hawksbill Sea Turtle), Chelonia Mydas (Green Sea Turtle), and Caretta Caretta (Loggerhead Sea Turtle). Figure 4 shows when and where these turtles were found and whether they were living or dead. Most dead turtles, of all species, were found along the shoreline. This is most evident among Chelonia Mydas and Lepidochelys Kempii. Most turtles that were found alive were found off the coast. There were two main areas on the coasts of Louisiana and Florida in which the bulk of live sea turtles were found. Very few turtles were found after September. The species with the greatest number of casualties found was Lepidochelys Kempii, often called Kemp's ridley, a critically endangered species which lives in the Gulf of Mexico.
+Four species of sea turtles were found and identified during the data collection period, all of which are considered either endangered or critically endangered. These species are: Lepidochelys Kempii (Kemp's ridley), Eretmochelys Imbricata (Hawksbill Sea Turtle), Chelonia Mydas (Green Sea Turtle), and Caretta Caretta (Loggerhead Sea Turtle). Figure 4 shows when and where these turtles were found and whether they were living or dead. Most dead turtles, of all species, were found along the shoreline. This is most evident among Chelonia Mydas and Lepidochelys Kempii. Most turtles that were found alive were found off the coast. There were two main areas on the coasts of Louisiana and Florida in which the bulk of live sea turtles were found. Very few turtles were found after September. The species with the greatest number of casualties found was Lepidochelys Kempii, often called Kemp's ridley, a critically endangered species which lives in the Gulf of Mexico.
 
 \section{Chemicals}
 
@@ -124,7 +127,7 @@ In Figure \ref {salinity-timeline} you can see all salinity measurements over th
    \caption{Salinity measurements: over time (left) and by location (right)> Salinity measurements only rarely fall below 34 mg/l. In the months after the start of the oil spill salinity frequently drops below 34 mg/l. For later weeks this happens in particular in locations close to the oil rig.}
    \label{salinity-timeline}
 \end{figure}
-Depth and salinity form a close relationship as you can see in Figure \ref {Depth-Salinity}. Normally, salinity levels would stay between 38 and 34 mg/l. This trend was violated for many measurements taken near the surface but then resumed normal measurments at greater depths. There were also two measurements taken by a boat which do not follow the normal relationship. The surface water measurement was far below normal observations and from there salinity dropped rapidly with depth. These two observation points only reached a depth of about 200 feet below sea level which is unusually shallow compared to the other measurments taken around it.
+Depth and salinity form a close relationship as you can see in Figure \ref {Depth-Salinity}. Normally, salinity levels would stay between 38 and 34 mg/l. This trend was violated for many measurements taken near the surface but then resumed normal measurements at greater depths. There were also two measurements taken by a boat which do not follow the normal relationship. The surface water measurement was far below normal observations and from there salinity dropped rapidly with depth. These two observation points only reached a depth of about 200 feet below sea level which is unusually shallow compared to the other measurements taken around it.
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
@@ -136,6 +139,7 @@ Depth and salinity form a close relationship as you can see in Figure \ref {Dept
 \section{Conclusions}
 What we could not do because the data was not available to us: comparable baseline data. 
 
-Although there is no doubt the oil spill caused a tremendous amount of damage, the lack data makes it difficult to make conclusions. We have no information on the actual cause of death of the birds, sea turtles, dolphins, and whales.  We also do not have past data to compare these findings with and so we can only reasonably assume that this quantity of dead turtles, dolphins and whales, and birds is unusual. It is also hard to make definite inferences based on the PAH measurements.  While we know PAH substances were found at harmful levels along the coast, we do not have baseline data to compare these post-spill levels with. As with the animal deaths, we can only reasonably assume that the high levels of PAHs are unusual for the area. Past data was available for salinity, however, the area in which these pre-spill salinity values were measured is quite different from the area in which the post-spill salinity values were measured.  Salinity measurements taken along the coastline will be quite different and therefore not compareable to those taken in the middle of the Gulf of Mexico. 
+Although there is no doubt the oil spill caused a tremendous amount of damage, the lack data makes it difficult to make conclusions. We have no information on the actual cause of death of the birds, sea turtles, dolphins, and whales.  We also do not have past data to compare these findings with and so we can only reasonably assume that this quantity of dead turtles, dolphins and whales, and birds is unusual. It is also hard to make definite inferences based on the PAH measurements.  While we know PAH substances were found at harmful levels along the coast, we do not have baseline data to compare these post-spill levels with. As with the animal deaths, we can only reasonably assume that the high levels of PAHs are unusual for the area. Past data was available for salinity, however, the area in which these pre-spill salinity values were measured is quite different from the area in which the post-spill salinity values were measured.  Salinity measurements taken along the coastline will be quite different and therefore not comparable to those taken in the middle of the Gulf of Mexico. 
 
+\bibliography{references}
 \end{document}  
