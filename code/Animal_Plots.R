@@ -83,10 +83,10 @@ turtles$Quarter[turtles$week.number > 38] <- "09-20-2010 to 10-18-210"
 
 turtle_opts <- opts(axis.title.x=theme_blank(), legend.position = "none", panel.margin=0.1, axis.text.x=theme_blank(), axis.text.y=theme_blank(), axis.ticks=theme_blank(), plot.margin=unit(c(0,0,0,0),"lines"))
 
-caretta <- ggplot(subset(turtles, Species == "Caretta caretta"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4) + labs(y = "Caretta Caretta") + scale_colour_brewer(palette="Set1") + turtle_opts
-chelonia <- ggplot(subset(turtles, Species == "Chelonia mydas"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4) + turtle_opts +labs(y = "Chelonia Mydas") + scale_colour_brewer(palette="Set1")
-eretmochelys <- ggplot(subset(turtles, Species == "Eretmochelys imbricata"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4, drop = FALSE) + turtle_opts + labs(y = "Eretmochelys Imbricata")+ scale_colour_brewer(palette="Set1")
-lepid <- ggplot(subset(turtles, Species == "Lepidochelys kempii"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4) + turtle_opts + labs(y = "Lepidochelys Kempii") + scale_colour_brewer(palette="Set1")
+caretta <- ggplot(subset(turtles, Species == "Caretta caretta"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4) + labs(y = "Loggerhead Sea Turtle") + scale_colour_brewer(palette="Set1") + turtle_opts
+chelonia <- ggplot(subset(turtles, Species == "Chelonia mydas"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4) + turtle_opts +labs(y = "Green Sea Turtle") + scale_colour_brewer(palette="Set1")
+eretmochelys <- ggplot(subset(turtles, Species == "Eretmochelys imbricata"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4, drop = FALSE) + turtle_opts + labs(y = "Hawksbill Sea Turtle")+ scale_colour_brewer(palette="Set1")
+lepid <- ggplot(subset(turtles, Species == "Lepidochelys kempii"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + geom_point() + facet_wrap(~Quarter, ncol = 4) + turtle_opts + labs(y = "Kemp's Ridley") + scale_colour_brewer(palette="Set1")
 
 
 png("images/turtles.png", width=960, height=720) # in pixel
@@ -114,7 +114,7 @@ animal_max <- ddply(animal_sums, .(class), summarize,
 
 alineperc <- geom_line(aes(x= Date, y =perc_dead, colour = class, group=class), size=3, data = animal_sums)
 #PERCENT DEAD OF EACH CLASS OF ANIMAL
-ggplot() + alineperc + opts(title="Animal Death Rates by Class") + labs(x="Date", y="Percent") 
+ggplot() + alineperc + opts(title="Animal Death Rates by Class") + labs(x="Date", y="Percent") + geom_vline(xintercept=as.numeric(as.Date(c("2010-09-19", "2010-07-15"))), colour = "grey70", size = 1)
 ggsave("images/death-rates.png")
 
 #---------------------------------------------------------------------------------------------------------
@@ -123,6 +123,7 @@ dead.week <- ddply(animal, .(Date, class), summarize,
     total = length(Species) - sum(Live))
 animal.1 <-geom_point(aes(x=Date, y=total, colour=class), data = dead.week) 
 animal.2 <-geom_smooth(aes(x=Date, y=total, colour=class), data=dead.week) 
-ggplot()+ animal.1  + facet_wrap(~class, ncol=3, scales="free") + labs(x="Date", y="Count") + opts(title="Animal Deaths", legend.position = "none")
+ggplot()+ animal.1  + labs(x="Date", y="Count") + facet_wrap(~class, ncol=3, scales="free") + opts(title="Animal Deaths", legend.position = "none")
+
 ggsave("images/daily-death-counts.png")
 
