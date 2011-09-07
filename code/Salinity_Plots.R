@@ -55,8 +55,7 @@ ggplot() +
 ggsave("images/boats-floats-gliders.png")
 
 #DEPTH X SALINITY GROUP = INTERACTION(LONG, LAT) FACTTED BY TYPE (takes realllllly long time to load!!!)
-bfg.3 <- ggplot() + geom_line(aes(x = Depth, y = Salinity, group = interaction(Longitude, Latitude), colour = Type), data = subset(bfg, Salinity != -99)) 
-bfg.3 + opts(title = "Boats, Floats, and Gliders")
+bfg.3 <- ggplot() + geom_line(aes(x = Depth, y = Salinity, group = interaction(Longitude, Latitude), colour = Type), data = subset(salinity, Salinity != -99)) + cbbColourPalette + opts(title = "Boats, Floats, and Gliders")
 ggsave("images/deapth-salinity.png")
 
 
