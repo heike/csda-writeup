@@ -1,8 +1,57 @@
-\begin{thebibliography}{0}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{7}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Misc
+\bibitem[{Agency(2010)}]{pah}
+\bibinfo{author}{Agency, U.E.P.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{"polycyclic aromatic hydrocarbons (pah) on gulf
+  coastline -- epa response to bp spill in the gulf of mexico}.
+\newblock \bibinfo{howpublished}{"\url{http://www.epa.gov/bpspill/pahs.html}}.
+\newblock \bibinfo{note}{Last accessed Sep 8 2011}.
+%Type = Misc
+\bibitem[{Dave~Mount(2010)}]{pah-benchmark}
+\bibinfo{author}{Dave~Mount, ORD~Duluth, E.P.A.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{Explanation of pah benchmark calculations using epa
+  pah esb approach}.
+\newblock
+  \bibinfo{howpublished}{"\url{http://www.epa.gov/bpspill/water/explanation-of-pah-benchmark-calculations-20100622.pdf}}.
+\newblock \bibinfo{note}{Last accessed Sep 8 2011}.
+%Type = Misc
+\bibitem[{Kahle(2010)}]{kahle2010}
+\bibinfo{author}{Kahle, D.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{Crime in {D}owntown {H}ouston, {T}exas - combining
+  ggplot2 and {G}oogle {M}aps}.
+\newblock
+  \bibinfo{howpublished}{"\url{https:://github.com/hadley/ggplot2/wiki/Crime-in-Downtown-Houston,-Texas-:-Combining-ggplot2-and-Google-Maps}}.
+%Type = Manual
+\bibitem[{Loecher(2011)}]{RgoogleMaps}
+\bibinfo{author}{Loecher, M.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{RgoogleMaps: Overlays on Google map tiles in R}.
+\newblock \bibinfo{note}{R package version 1.1.9.15}.
+%Type = Misc
+\bibitem[{Office~of Protected~Resources(2011)}]{turtles}
+\bibinfo{author}{Office~of Protected~Resources, N.F.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Sea turtles}.
+\newblock
+  \bibinfo{howpublished}{"\url{http://www.nmfs.noaa.gov/pr/species/turtles/#species}}.
+\newblock \bibinfo{note}{Last accessed Sep 8 2011}.
+%Type = Manual
+\bibitem[{{R Development Core Team}(2011)}]{R2011}
+\bibinfo{author}{{R Development Core Team}}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{R: A Language and Environment for Statistical
+  Computing}.
+\newblock \bibinfo{organization}{R Foundation for Statistical Computing}.
+  \bibinfo{address}{Vienna, Austria}.
+\newblock \bibinfo{note}{{ISBN} 3-900051-07-0}.
+%Type = Book
+\bibitem[{Wickham(2009)}]{ggplot2}
+\bibinfo{author}{Wickham, H.}, \bibinfo{year}{2009}.
+\newblock \bibinfo{title}{ggplot2: elegant graphics for data analysis}.
+\newblock \bibinfo{publisher}{Springer New York}.
 
 \end{thebibliography}
