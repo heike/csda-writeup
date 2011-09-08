@@ -21,7 +21,7 @@ source("code/ggooglemaps.R")
 source("code/map-bounding.r")
 
 # get satellite image for the affected area
-map_center <- c(lon=-88.875, lat=25.50)
+map_center <- c(lon=-89, lat=25.50)
 sat_map <-ggooglemap(center = map_center, zoom = 6, maptype='hybrid', n_pix=640)
 
 # get state outlines for the affected area
