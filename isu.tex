@@ -1,5 +1,5 @@
-\documentclass[preprint,12pt]{elsarticle}
-\bibliographystyle{model1-num-names}
+\documentclass[authoryear,12pt]{elsarticle}
+\bibliographystyle{model2-names}
 \usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
 \geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
 %\geometry{landscape}                % Activate for for rotated page geometry
@@ -52,10 +52,11 @@ Salinity data info*******
 
 \subsection{Structure of this paper}
 
-\section{Animals}
-*** The map needs to be extended a bit and also include the Google TM
+\section{Animal Sightings}
+*** The map needs to be extended a bit and also include the Google TM, let's also change the colour scheme
 *** Let's add to the figure of the cumulative rates also a chart with the number of deaths by animal - and add vertical lines at important dates - such as July 15th and Sep 19 - because we see quite a drop-off/change for the bird deaths after these dates.
 
+*** The map for the sea turtles could be extended a bit and we could add state names (in white on the background)
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
@@ -100,11 +101,13 @@ Birds, sea turtles, and dolphins and whales had unique death patterns during the
    \label{turtles}
 \end{figure}
 
-Four species of sea turtles were found and identified during the data collection period, all of which are considered either threatened or endangered. These species are: Kemp's ridley, Hawksbill Sea Turtle, Green Sea Turtle, and Loggerhead Sea Turtle. Figure \ref{turtles} shows when and where these turtles were found and whether they were living or dead. Most dead turtles, of all species, were found along the shoreline. This is most evident among Chelonia Mydas and Lepidochelys Kempii. Most turtles that were found alive were found off the coast. There were two main areas on the coasts of Louisiana and Florida in which the bulk of live sea turtles were found. Very few turtles were found after September. The species with the greatest number of casualties found was Lepidochelys Kempii, often called Kemp's ridley, an endangered species which lives in the Gulf of Mexico.
+Four species of sea turtles were found and identified during the data collection period, all of which are considered either threatened or endangered \citet{turtles}. These species are: Kemp's ridley, Hawksbill Sea Turtle, Green Sea Turtle, and Loggerhead Sea Turtle. Figure \ref{turtles} shows when and where these turtles were found and whether they were living or dead. Most dead turtles, of all species, were found along the shoreline. This is most evident among Chelonia Mydas and Lepidochelys Kempii. Most turtles that were found alive were found off the coast. There were two main areas on the coasts of Louisiana and Florida in which the bulk of live sea turtles were found. Very few turtles were found after September. The species with the greatest number of casualties found was Lepidochelys Kempii, often called Kemp's ridley, an endangered species which lives in the Gulf of Mexico.
 
+*** All of the sea turtles migrate to the South during the winter months and only stay in the Northern Gulf area during Spring and Summer. *** is that right?
 \section{Chemicals}
+*** add a legend for boats, floats and gliders to the satellite map 
 
-Many chemicals were sampled in the Gulf of Mexico during the months following the oil spill. This analysis focuses on Polycyclic Aromatic Hydrocarbons because of their direct relationship with oil and because of their toxicity to wildlife. Polycyclic Aromatic Hydro- carbons, or PAHs, are semi-volatile organic substances which come from oil and the burning of oil. Many of these substances are considered carcinogenic, mutagenic, and teratogenic and all are considered harmful to the health of living organisms. New information on each PAH substance was found from the EPA website and put into the data set for this analysis. In order to do a proper analysis on the existence of these chemicals after the spill and how they may have effected life in the Gulf of Mexico it was necessary to put the measurements into an interpretable form. Measurements of the PAHs at unique locations will be looked at in terms of their acute and chronic potency. An area is considered at a chronic level when the amount of harmful substances is thought to bring harmful effects over a long period of time. An area is considered at an acute level when the amount of harmful substances rapidly induces a negative effect in an organism.
+Various chemicals were sampled in the Gulf of Mexico during the months following the oil spill. This analysis focuses on Polycyclic Aromatic Hydrocarbons firstly because of their direct relationship with oil and secondly because of their toxicity to wildlife. Polycyclic Aromatic Hydro- carbons, or PAHs, are semi-volatile organic substances which come from oil and the burning of oil. Many of these substances are considered carcinogenic, mutagenic, and teratogenic and all are considered harmful to the health of living organisms. New information on each PAH substance was found from the EPA website  \citep{pah} and put into the data set for this analysis. In order to do a proper analysis on the existence of these chemicals after the spill and how they may have effected life in the Gulf of Mexico it was necessary to put the measurements into an interpretable form. We followed the approach by \citet{pah-benchmark}: measurements of the PAHs at unique locations will be looked at in terms of their acute and chronic potency. An area is considered at a chronic level when the amount of harmful substances is thought to bring harmful effects over a long period of time. An area is considered at an acute level when the amount of harmful substances rapidly induces a negative effect in an organism.
 
 Each PAH substance has a unique acute and chronic potency divisor which is used to find the acute and chronic potency ratio, respectively. The potency divisors, which are used in the calculations, can be thought of as the amount of the substance that can be considered dangerous by itself. So, each measured amount of a substance is divided by the chronic and acute potency divisors so that, at each location, we have a ratio of the danger. In other words, areas in which the sum of the chronic or acute ratios is greater or equal to 1 are considered at a chronic or acute level, respectively. For substances measured in water, the process was simple. The measured concentration of each substance for each unique location was multiplied by the Alkylation Multiplier. This number is given for
 each substance and was added to the chemicals data set. Multiplying by the Alkylation Multiplier gives the Alkyl Adjusted Concentration (ug/L). From there, each of these values are divided by the acute potency divisor and the chronic potency divisor to find the acute potency ratio and chronic potency ratio, respectfully. For substances measured in sediment, the amount of organic carbon for that area must also be used to find the acute and chronic potency ratios. Taking the organic carbon into consideration is important for sediment samples because, when it is present in the sediment, the PAHs bind to it, thus making the PAHs less toxic. Organic carbon, like any other substance, was measured at each location. These concentrations of organic carbon at each unique location were put into a separate data set. Then, the organic carbon data set and the PAH sediment data set could be horizontally merged by unique combinations of Latitude and Longitude. This is done so that each measured concentration of a PAH substance has an accurate corresponding organic carbon measurement. By dividing the original PAH concentrations by the organic carbon, we find the organic carbon normalized concentrations (ug/kg OC). From here, the process is the same as it was for PAH substances measured in water. We multiply by the Alkylation Multiplier and then divide by the acute and chronic potency divisors to obtain the acute and chronic potency ratios, respectfully. For surface water and sediment samples alike, these ratios are additive and each substances' contribution must be summed up for each unique location in order to determine the complete effect.
@@ -164,16 +167,7 @@ Polycyclic Aromatic Hydrocarbons were found at chronic and acute levels along th
 
 
 \bibliography{references}
-"Green Turtle (Chelonia Mydas) - Office of Protected Resources - NOAA Fisheries." NOAA :: National Marine Fisheries Service. National Oceanic and Atmospheric Administration, 15 Aug. 2011. Web. 07 Sept. 2011. <http://www.nmfs.noaa.gov/pr/species/turtles/green.htm>.
 
-"Hawksbill Turtle (Eretmochelys Imbricata) - Office of Protected Resources - NOAA Fisheries." NOAA :: National Marine Fisheries Service. National Oceanic and Atmospheric Administration, 15 Aug. 2011. Web. 07 Sept. 2011. <http://www.nmfs.noaa.gov/pr/species/turtles/hawksbill.htm>.
 
-"Kemp's Ridley Turtle (Lepidochelys Kempii) - Office of Protected Resources - NOAA Fisheries." NOAA :: National Marine Fisheries Service. National Oceanic and Atmospheric Administration, 15 Aug. 2011. Web. 07 Sept. 2011. <http://www.nmfs.noaa.gov/pr/species/turtles/kempsridley.htm>.
-
-"Loggerhead Turtle (Caretta Caretta) - Office of Protected Resources - NOAA Fisheries." NOAA :: National Marine Fisheries Service. National Oceanic and Atmospheric Administration, 15 Aug. 2011. Web. 07 Sept. 2011. <http://www.nmfs.noaa.gov/pr/species/turtles/loggerhead.htm>.
-
-Mount, Dave. Explanation of PAH Benchmark Calculations Using EPA PAH ESB Approach Originally Developed by Dave Mount, ORD Duluth. Environmental Protection Agency, 23 June 2010. PDF.
-
-"Polycyclic Aromatic Hydrocarbons (PAH) on Gulf Coastline | EPA Response to BP Spill in the Gulf of Mexico | US EPA." US Environmental Protection Agency. Environmental Protection Agency, 10 Jan. 2011. Web. 07 Sept. 2011. <http://www.epa.gov/bpspill/pahs.html>.
 
 \end{document}  
