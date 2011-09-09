@@ -33,29 +33,30 @@ plot_rig_b <- geom_text(aes(x=Longitude, y=Latitude, label = "x"), size = 3.5, d
 plot_rig_b2 <- geom_text(aes(x=Longitude, y=Latitude, label = "BP Oil Rig"), hjust = -.3, size = 3.5, data=rig)
 
 ######################## plots ############################
-
+color_scale_3 <- scale_colour_manual(values = c("#FF9900", "#CCFF00", "#FF3300"))
+color_scale_2 <- scale_color_manual(values = c("#CCFF00", "#FF9900"))
 #SALINITY LEVELS OVER TIME RELATED TO LOW SALINITIES ON MAP
 # discretize time into intervals
 
-ggplot(salinity, aes(x = Date_Time, y = Salinity, colour = as.integer(as.Date(Date_Time)))) + geom_point() + scale_colour_gradient(low="orange", high="brown") + opts(title = "Salinity Levels Over Time", legend.position = "none") + labs(x = "Date")
+ggplot(salinity, aes(x = Date_Time, y = Salinity, colour = as.integer(as.Date(Date_Time)))) + geom_point() + scale_colour_gradient(low="#CCFF00", high="#FF3300") + opts(title = "Salinity Levels Over Time", legend.position = "none") + labs(x = "Date")
 ggsave("images/salinity-time.png")
 
-ggplot() + geom_point(aes(x = Longitude, y = Latitude, colour = as.integer(as.Date(Date_Time))), subset(salinity, Salinity <=34)) + animal.map + scale_colour_gradient(low="orange", high="brown")+ plot_rig_b + plot_rig_b2 + opts(title = "Low Salinity Levels (Salinity < 34) Near Rig", legend.position = "none") 
+ggplot() + geom_point(aes(x = Longitude, y = Latitude, colour = as.integer(as.Date(Date_Time))), subset(salinity, Salinity <=34)) + animal.map + scale_colour_gradient(low="#CCFF00", high="#FF3300")+ plot_rig_b + plot_rig_b2 + opts(title = "Low Salinity Levels (Salinity < 34) Near Rig", legend.position = "none") 
 ggsave("images/salinity-map.png")
 
 #PLOT OF BOATS, FLOATS, AND GLIDERS PATHS ON MAP
-cbbColourPalette <- scale_colour_manual(values = c("#FFCC00", "#FF3300", "#990066"))
+color_scale_3 <- scale_colour_manual(values = c("#FF9900", "#CCFF00", "#FF3300"))
 ggplot() +
  geom_tile(aes(lon, lat, fill=fill), data = sat_map) +
    scale_fill_identity(legend = FALSE) +
   scale_x_continuous('Longitude') + 
   scale_y_continuous('Latitude') +  
   coord_equal() + theme_nothing() + 
-   xlim(c(-96.25, -81.5)) + ylim(c(20,31)) + geom_point(aes(x = Longitude, y = Latitude, colour = Type), data = salinity)+ cbbColourPalette+ labs(x = "Longitude", y = "Latitude")+ plot_rig_w 
+   xlim(c(-96.25, -81.5)) + ylim(c(20,31)) + geom_point(aes(x = Longitude, y = Latitude, colour = Type), data = salinity)+ color_scale_3 + labs(x = "Longitude", y = "Latitude")+ plot_rig_w + opts(legend.position = "bottom", legend.direction = "horizontal")
 ggsave("images/boats-floats-gliders.png")
 
 #DEPTH X SALINITY GROUP = INTERACTION(LONG, LAT) FACTTED BY TYPE (takes realllllly long time to load!!!)
-bfg.3 <- ggplot() + geom_line(aes(x = Depth, y = Salinity, group = interaction(Longitude, Latitude), colour = Type), data = subset(salinity, Salinity != -99)) + cbbColourPalette + opts(title = "Boats, Floats, and Gliders")
+bfg.3 <- ggplot() + geom_line(aes(x = Depth, y = Salinity, group = interaction(Longitude, Latitude), colour = Type), data = subset(salinity, Salinity != -99)) + color_scale_3 + opts(title = "Boats, Floats, and Gliders")
 ggsave("images/deapth-salinity.png")
 
 
