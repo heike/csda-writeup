@@ -44,7 +44,7 @@ ggplot() + geom_point(aes(x = Longitude, y = Latitude, colour = as.integer(as.Da
 ggsave("images/salinity-map.png")
 
 #PLOT OF BOATS, FLOATS, AND GLIDERS PATHS ON MAP
-cbbColourPalette <- scale_colour_manual(values=c("#FFFFFF", "#FFFF00", "#FF0000"))
+cbbColourPalette <- scale_colour_manual(values = c("#FFCC00", "#FF3300", "#990066"))
 ggplot() +
  geom_tile(aes(lon, lat, fill=fill), data = sat_map) +
    scale_fill_identity(legend = FALSE) +
