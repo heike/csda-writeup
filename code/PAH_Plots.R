@@ -62,6 +62,8 @@ water.danger + opts(title = "Chronic and Acute Potency Ratios")
 
 ggsave("images/chron-acute-ratios.png")
 #------------------------------------------------------------------------------------------------------
+color_scale_3 <- scale_colour_manual(values = c("#FF9900", "#CCFF00", "#FF3300"))
+color_scale_2 <-  scale_colour_manual(values = c("#FF3300", "#CCFF00"))
 
 total <- rbind(water.bench, sediment.bench) 
 ggplot() +
@@ -96,7 +98,7 @@ ggsave("images/acute-timeline2.png")
 ggplot() + geom_hline(aes(yintercept=log(2)), colour="grey50") + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(sediment.bench3, RESULT!=0)) +
 geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(surf.water, RESULT!=0)) + 
 scale_colour_discrete() + geom_text(aes(x = DATE, y = Log_Acute.Potency.Ratio, label = SUBSTANCE, colour = Danger.Level, hjust = -.1), data = subset(surf.water, Log_Acute.Potency.Ratio >= log(2))) +
-labs(y="Log of Acute Potency Ratio", x="Date")  + opts(title="Acute Potency Ratios for Surface Water and Sediment") 
+labs(y="Log of Acute Potency Ratio", x="Date")  + opts(title="Acute Potency Ratios for Surface Water and Sediment") + color_scale_2
 
 ggsave("images/acute-timeline3.png")
 
