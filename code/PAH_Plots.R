@@ -74,9 +74,10 @@ ggplot() +
   coord_equal() + theme_nothing() + 
   plot_rig +xlim(c(-96.25, -81.5)) + ylim(c(22,31)) +
 geom_point(aes(x = LONGITUDE, y = LATITUDE), colour = "light blue", data = total) + 
-geom_point(aes(x = LONGITUDE, y = LATITUDE), size = 3, colour = "yellow", data = subset(total, Chronic.Benchmark.Value >= 1)) +
-geom_point(aes(x = LONGITUDE, y = LATITUDE), colour = "red", data = subset(total, Acute.Benchmark.Value >= 1)) + 
+geom_point(aes(x = LONGITUDE, y = LATITUDE), size = 3, colour = "#CCFF00", data = subset(total, Chronic.Benchmark.Value >= 1)) +
+geom_point(aes(x = LONGITUDE, y = LATITUDE), colour = "#FF3300", data = subset(total, Acute.Benchmark.Value >= 1)) + 
 opts(title = "Polycyclic Aromatic Hydrocarbons: Chronic and Acute Levels") + labs(x = "Longitude", y = "Latitude") 
+
 ggsave("images/chron-acute-map.png")
 
 
