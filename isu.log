@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.8.25)  9 SEP 2011 15:27
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.8.25)  11 SEP 2011 13:50
 entering extended mode
 **C:/Users/Owner/Documents/csda-writeup/isu.tex
 (C:/Users/Owner/Documents/csda-writeup/isu.tex
@@ -362,57 +362,57 @@ Package pdftex.def Info: images/turtles.png used on input line 100.
 er/Documents/csda-writeup/images/daily-death-counts.png>] [4 <C:/Users/Owner/Do
 cuments/csda-writeup/images/turtles.png>]
 
-Package natbib Warning: Citation `(' on page 5 undefined on input line 111.
+Package natbib Warning: Citation `(' on page 5 undefined on input line 110.
 
-[5] <images/chron-acute-map.png, id=30, 835.4412pt x 409.2891pt>
+[5] <images/chron-acute-map.png, id=37, 509.5035pt x 414.5889pt>
 File: images/chron-acute-map.png Graphic file (type png)
 
 <use images/chron-acute-map.png>
-Package pdftex.def Info: images/chron-acute-map.png used on input line 117.
-(pdftex.def)             Requested size: 361.34999pt x 177.02759pt.
-
-<images/acute-timeline3.png, id=31, 785.0931pt x 252.945pt>
+Package pdftex.def Info: images/chron-acute-map.png used on input line 132.
+(pdftex.def)             Requested size: 361.34999pt x 294.0312pt.
+ [6 <C:/Users/Owner/Documents/csda-writeup/images/chron-acute-map.png (PNG copy
+)>]
+<images/acute-timeline3.png, id=41, 785.0931pt x 252.945pt>
 File: images/acute-timeline3.png Graphic file (type png)
 
 <use images/acute-timeline3.png>
-Package pdftex.def Info: images/acute-timeline3.png used on input line 127.
+Package pdftex.def Info: images/acute-timeline3.png used on input line 142.
 (pdftex.def)             Requested size: 361.34999pt x 116.42558pt.
- [6 <C:/Users/Owner/Documents/csda-writeup/images/chron-acute-map.png (PNG copy
-)>]
-<images/boats-floats-gliders.png, id=35, 509.5035pt x 414.5889pt>
+
+<images/boats-floats-gliders.png, id=42, 509.5035pt x 414.5889pt>
 File: images/boats-floats-gliders.png Graphic file (type png)
 
 <use images/boats-floats-gliders.png>
-Package pdftex.def Info: images/boats-floats-gliders.png used on input line 140
+Package pdftex.def Info: images/boats-floats-gliders.png used on input line 155
 .
 (pdftex.def)             Requested size: 361.34999pt x 294.0312pt.
 
-<images/salinity-time.png, id=36, 509.5035pt x 414.5889pt>
+<images/salinity-time.png, id=43, 509.5035pt x 414.5889pt>
 File: images/salinity-time.png Graphic file (type png)
 
 <use images/salinity-time.png>
-Package pdftex.def Info: images/salinity-time.png used on input line 147.
+Package pdftex.def Info: images/salinity-time.png used on input line 162.
 (pdftex.def)             Requested size: 202.35622pt x 164.65596pt.
 
-<images/salinity-map.png, id=37, 509.5035pt x 414.5889pt>
+<images/salinity-map.png, id=44, 509.5035pt x 414.5889pt>
 File: images/salinity-map.png Graphic file (type png)
 
 <use images/salinity-map.png>
-Package pdftex.def Info: images/salinity-map.png used on input line 148.
+Package pdftex.def Info: images/salinity-map.png used on input line 163.
 (pdftex.def)             Requested size: 202.35622pt x 164.65596pt.
-
-<images/deapth-salinity.png, id=38, 785.0931pt x 252.945pt>
-File: images/deapth-salinity.png Graphic file (type png)
-
-<use images/deapth-salinity.png>
-Package pdftex.def Info: images/deapth-salinity.png used on input line 156.
-(pdftex.def)             Requested size: 361.34999pt x 116.42558pt.
  [7 <C:/Users/Owner/Documents/csda-writeup/images/acute-timeline3.png>] [8 <C:/
 Users/Owner/Documents/csda-writeup/images/boats-floats-gliders.png (PNG copy)> 
 <C:/Users/Owner/Documents/csda-writeup/images/salinity-time.png> <C:/Users/Owne
-r/Documents/csda-writeup/images/salinity-map.png>] (C:\Users\Owner\Documents\cs
-da-writeup\isu.bbl [9 <C:/Users/Owner/Documents/csda-writeup/images/deapth-sali
-nity.png (PNG copy)>]
+r/Documents/csda-writeup/images/salinity-map.png>] <images/deapth-salinity.png,
+ id=55, 785.0931pt x 252.945pt>
+File: images/deapth-salinity.png Graphic file (type png)
+
+<use images/deapth-salinity.png>
+Package pdftex.def Info: images/deapth-salinity.png used on input line 172.
+(pdftex.def)             Requested size: 361.34999pt x 116.42558pt.
+ [9 <C:/Users/Owner/Documents/csda-writeup/images/deapth-salinity.png (PNG copy
+)>]
+(C:\Users\Owner\Documents\csda-writeup\isu.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 26--32
 []\OT1/cmr/m/n/12 Kahle, D., 2010.  Crime in Down-town Hous-ton, Texas - com-
  []
@@ -437,21 +437,28 @@ Package natbib Warning: There were undefined citations.
 Here is how much of TeX's memory you used:
  4304 strings out of 494045
  63473 string characters out of 3145969
- 138537 words of memory out of 3000000
+ 135537 words of memory out of 3000000
  7515 multiletter control sequences out of 15000+200000
  10549 words of font info for 40 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 44i,7n,42p,2622b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,7n,42p,1643b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/M
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on isu.pdf (10 pages, 2764309 bytes).
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmtt12.pfb>
+Output written on isu.pdf (10 pages, 2794172 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
+ 103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
