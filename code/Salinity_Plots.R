@@ -38,10 +38,10 @@ color_scale_2 <- scale_color_manual(values = c("#CCFF00", "#FF9900"))
 #SALINITY LEVELS OVER TIME RELATED TO LOW SALINITIES ON MAP
 # discretize time into intervals
 
-ggplot(salinity, aes(x = Date_Time, y = Salinity, colour = as.integer(as.Date(Date_Time)))) + geom_point() + scale_colour_gradient(low="#CCFF00", high="#FF3300") + opts(title = "Salinity Levels Over Time", legend.position = "none") + labs(x = "Date")
+ggplot(salinity, aes(x = Date_Time, y = Salinity, colour = as.integer(as.Date(Date_Time)))) + theme_grey() + geom_point() + scale_colour_gradient(low="#CCFF00", high="#FF3300") + opts(title = "Salinity Levels Over Time", legend.position = "none") + labs(x = "Date")
 ggsave("images/salinity-time.png")
 
-ggplot() + geom_point(aes(x = Longitude, y = Latitude, colour = as.integer(as.Date(Date_Time))), subset(salinity, Salinity <=34)) + animal.map + scale_colour_gradient(low="#CCFF00", high="#FF3300")+ plot_rig_b + plot_rig_b2 + opts(title = "Low Salinity Levels (Salinity < 34) Near Rig", legend.position = "none") 
+ggplot() + geom_point(aes(x = Longitude, y = Latitude, colour = as.integer(as.Date(Date_Time))), subset(salinity, Salinity <=34)) + theme_grey() + animal.map + scale_colour_gradient(low="#CCFF00", high="#FF3300")+ plot_rig_b + plot_rig_b2 + opts(title = "Low Salinity Levels (Salinity < 34) Near Rig", legend.position = "none") 
 ggsave("images/salinity-map.png")
 
 #PLOT OF BOATS, FLOATS, AND GLIDERS PATHS ON MAP
