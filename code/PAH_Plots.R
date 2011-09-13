@@ -86,20 +86,10 @@ ggsave("images/chron-acute-map.png")
 sediment.bench3$Log_Acute.Potency.Ratio<-log((sediment.bench3$Acute.Potency.Ratio+1))
 surf.water$Log_Acute.Potency.Ratio<-log((surf.water$Acute.Potency.Ratio+1))
 
-ggplot() + geom_vline(yintercept=log(2), colour="grey50") + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(sediment.bench3, RESULT!=0)) + 
-scale_colour_discrete() +labs(y="Log of Acute Potency Ratio", x="Date") + ylim(0,0.6) + opts(title="Sediment Acute Potency Ratios") 
-
-ggsave("images/acute-timeline.png")
-
-ggplot() + geom_hline(aes(yintercept=log(2)), colour="black") + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(surf.water, RESULT!=0)) + 
-scale_colour_discrete() +labs(y="Log of Acute Potency Ratio", x="Date") + opts(title="Surface Water Acute Potency Ratios") 
-
-ggsave("images/acute-timeline2.png") 
-
 ggplot() + geom_hline(aes(yintercept=log(2)), colour="grey50") + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(sediment.bench3, RESULT!=0)) +
 geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(surf.water, RESULT!=0)) + 
 scale_colour_discrete() + geom_text(aes(x = DATE, y = Log_Acute.Potency.Ratio, label = SUBSTANCE, colour = Danger.Level, hjust = -.1), data = subset(surf.water, Log_Acute.Potency.Ratio >= log(2))) +
-labs(y="Log of Acute Potency Ratio", x="Date")  + opts(title="Acute Potency Ratios for Surface Water and Sediment") + color_scale_2
+labs(y="Log of Acute Potency Ratio", x="Date") + theme_grey() + opts(title="Acute Potency Ratios for Surface Water and Sediment") + color_scale_2
 
 ggsave("images/acute-timeline3.png")
 
