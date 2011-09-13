@@ -55,31 +55,32 @@ Salinity data info*******
 \begin{center}
 \begin{tabular}{| l | p{11cm} | }
 \hline
-\multicolumn{2}{|c|}{Animals Data Set} \\ \hline
+\multicolumn{2}{|c|}{{\bf Animals Data Set}} \\ \hline
 Class & type of animal found: Birds, Sea Turtles, or Whales and Dolphins \\ \hline
 Species & species of animal \\ \hline
 Latitude & latitude in degrees  \\ \hline
 Longitude & longitude in degrees\\ \hline
 Alive & condition of animal: Alive or Dead. \\ \hline
 Observation Date & date of observation 'mm-dd-yyyy'. \\ \hline
-\multicolumn{2}{|c|}{Salinity Data Set} \\ \hline
-Date & Specifies the date in which the measurement was taken. \\ \hline
-Latitude & The latitude at which the measurement was taken. \\ \hline
-Longitude & The longitude at which the measurement was taken. \\ \hline
-Depth & The depth at which the measurement was taken. \\ \hline
-Salinity & The measured amount of salinity. (mg/l) \\ \hline
-Type & The type of measuring device used to take the measurement; Boat, Float or Glider \\ \hline
-\multicolumn{2}{|c|}{Polycyclic Aromatic Hydrocarbons Data Set} \\ \hline
-Substance & Specifies the date in which the measurement was taken. \\ \hline
-Date & Specifies the date in which the measurement was taken.\\ \hline
-Latitude & The latitude at which the measurement was taken. \\ \hline
-Longitude & The longitude at which the measurement was taken. \\ \hline
-Result & The measured amount of the PAH substance. \\ \hline
-Unit & The unit in which the PAH substance was taken; ug/L for water, ug/k for sediment. \\ \hline
-Alkylation Multiplier* & A number given for each PAH substance to be used in calculations. \\ \hline
-Acute Potency Divisor* & A number given for each PAH substance to be used in calculations. \\ \hline
-Chronic Potency Divisor* & A number given for each PAH substance to be used in calculations. \\ \hline
-Danger Level* & The health effects caused by the PAH substance; Carcinogen or other health effects. \\ \hline
+\multicolumn{2}{|c|}{{\bf Salinity Data Set}} \\ \hline
+Date & date of observation. \\ \hline
+Latitude & latitude in degrees \\ \hline
+Longitude & longitude in degrees. \\ \hline
+Depth & depth at which the measurement was taken in feet \\ \hline
+Salinity &  measured amount of salinity. (mg/l) \\ \hline
+Type &  type of measuring device used to take the measurement; Boat, Float or Glider \\ \hline
+\multicolumn{2}{|c|}{{\bf Polycyclic Aromatic Hydrocarbons Data Set}} \\ \hline
+Substance & PAH substance measured \\ \hline
+Date & date of observation.\\ \hline
+Latitude & latitude in degrees. \\ \hline
+Longitude & longitude in degrees. \\ \hline
+Result &  measured amount of the PAH substance. \\ \hline
+Unit &  unit in which the PAH substance was taken; ug/L for water, ug/k for sediment. \\ \hline
+Alkylation Multiplier* & given for each PAH substance to be used in calculations. \\ \hline
+Acute Potency Divisor* &  given for each PAH substance to be used in calculations. \\ \hline
+Chronic Potency Divisor* &  given for each PAH substance to be used in calculations. \\ \hline
+Danger Level* &  health effects caused by the PAH substance; Carcinogen or other health effects. \\ \hline
+\multicolumn{2}{|c|}{*these variables were taken from another source and put into the existing data set} \\ \hline
 \end{tabular}
 \end{center}
 
@@ -127,32 +128,25 @@ Birds, sea turtles, and dolphins and whales had unique death patterns during the
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=6in]{turtles.png} 
-   \caption{Four species of endangered or critically endangered sea turtles found in the Gulf of Mexico from April 26th to October 18th 2010.  Yellow dots indicate turtles found living and red dots indicate those found dead.}
+   \caption{Four species of endangered or critically endangered sea turtles found in the Gulf of Mexico from April 26th to October 18th 2010.  Yellow dots indicate turtles found living and orange dots indicate those found dead.}
    \label{turtles}
 \end{figure}
 
-Four species of sea turtles were found and identified during the data collection period, all of which are considered to be either threatened or endangered \citet{turtles}. These species are: Kemp's ridley, Hawksbill Sea Turtle, Green Sea Turtle, and Loggerhead Sea Turtle. Figure \ref{turtles} shows when and where these turtles were found and whether they were living or dead. Most dead turtles, of all species, were found along the shoreline. Most turtles that were found alive were found off the coast. There were two main areas on the coasts of Louisiana and Florida in which the bulk of live sea turtles were found.  This is most evident among the Green Sea Turtle and Kemp's ridley.Very few turtles were found after September. The species with the greatest number of casualties found was Kemp's ridley, an endangered species which lives primarily in the Gulf of Mexico.  It is more common for Kemp's ridley sea turtles to be present in the northern part of the Gulf of Mexico during June, July, and August. *cite noaa turtle website* Female Kemp's ridleys, like other sea turtles, nest between May and July and lay their eggs on various beaches of the Gulf of Mexico. The data does not specify the gender of the dead sea turtles. 
+Four species of sea turtles were found and identified during the data collection period, all of which are considered to be either threatened or endangered. These species are: Kemp's ridley, Hawksbill Sea Turtle, Green Sea Turtle, and Loggerhead Sea Turtle. Figure \ref{turtles} shows when and where these turtles were found and whether they were living or dead. Most dead turtles, of all species, were found along the shoreline. Most turtles that were found alive were found off the coast. There were two main areas on the coasts of Louisiana and Florida in which the bulk of live sea turtles were found.  This is most evident among the Green Sea Turtle and Kemp's ridley.Very few turtles were found after September. The species with the greatest number of casualties found was Kemp's ridley, an endangered species which lives primarily in the Gulf of Mexico.  It is more common for Kemp's ridley sea turtles to be present in the northern part of the Gulf of Mexico during June, July, and August. Female Kemp's ridleys, like other sea turtles, nest between May and July and lay their eggs on various beaches of the Gulf of Mexico  \citet{turtles}. From this information, we can understand that there were more turtles in the area during the months after the oil spill occured, and thus more sea turtles to be found.  After August, however, it would be natural for these turtles to begin to leave the area and head south.
 
 \section{Chemicals}
 
 
-Various chemicals were sampled in the Gulf of Mexico during the months following the oil spill. This analysis focuses on Polycyclic Aromatic Hydrocarbons firstly because of their direct relationship with oil and secondly because of their toxicity to wildlife. Polycyclic Aromatic Hydrocarbons, or PAHs, are semi-volatile organic substances which come mainly from oil and the burning of oil. However, they can also come exhaust and from the burning of gas, coal, garbage and other organic substances (***need to cite the epa's PAH website).   Many of these substances are considered carcinogenic, mutagenic, and teratogenic and all are considered harmful to the health of living organisms. New information on each PAH substance was found from the EPA website  \citep{pah} and put into the data set for this analysis. In order to do a proper analysis on the existence of these chemicals after the spill and how they may have effected life in the Gulf of Mexico it was necessary to put the measurements into an interpretable form. We followed the approach by \citet{pah-benchmark}: measurements of the PAHs at unique locations will be looked at in terms of their acute and chronic potency. An area is considered at a chronic level when the amount of harmful substances is thought to bring harmful effects over a long period of time. An area is considered at an acute level when the amount of harmful substances rapidly induces a negative effect in an organism. The following describes the process in which we could analyze these PAHs in terms of their acute and chronic levels. 
+Various chemicals were sampled in the Gulf of Mexico during the months following the oil spill. This analysis focuses on Polycyclic Aromatic Hydrocarbons firstly because of their direct relationship with oil and secondly because of their toxicity to wildlife. Polycyclic Aromatic Hydrocarbons, or PAHs, are semi-volatile organic substances which come mainly from oil and the burning of oil. However, they can also come exhaust and from the burning of gas, coal, garbage and other organic substances \citep{pah}.   Many of these substances are considered carcinogenic, mutagenic, and teratogenic and all are considered harmful to the health of living organisms. New information on each PAH substance was found from the EPA website  \citep{pah} and put into the data set for this analysis. In order to do a proper analysis on the existence of these chemicals after the spill and how they may have effected life in the Gulf of Mexico it was necessary to put the measurements into an interpretable form. We followed the approach by \citet{pah-benchmark}: measurements of the PAHs at unique locations will be looked at in terms of their acute and chronic potency. An area is considered at a chronic level when the amount of harmful substances is thought to bring harmful effects over a long period of time. An area is considered at an acute level when the amount of harmful substances rapidly induces a negative effect in an organism. The following describes the process in which we could analyze these PAHs in terms of their acute and chronic levels. 
 
 Each PAH substance has a unique acute and chronic potency divisor which is used to find the acute and chronic potency ratio, respectively. The potency divisors, which are used in the calculations, can be thought of as the amount of the substance that can be considered dangerous by itself. So, each measured amount of a substance is divided by the chronic and acute potency divisors so that, at each location, we have a ratio of the danger. For surface water and sediment samples alike, these ratios are additive and each substances' contribution must be summed up for each unique location in order to determine the complete effect. The following formulas show how we attained the chronic and acute benchmark values for water and sediment. After all of this was done, several areas along the beaches of the Gulf of Mexico were found to be at a chronic or acute level. 
-*need to figure out how to get spaces in between the words in the formulas...
 
-\begin{center}\textbf{Water} \end{center}
-
-$Chronic Benchmark Value = \sum \frac{Alkylation Multiplier \times Measured Amount of Substance (ug/L)}{Chronic Potency Divisor}$
-
-$Acute Benchmark Value =  \sum \frac{Alkylation Multiplier \times Measured Amount of Substance (ug/L)}{Acute Potency Divisor}$
-
-
-\begin{center} \textbf{Sediment} \end{center}
-
-$Chronic Bencmark Value =  \sum \frac{(\frac{Measured Amount of Substance (ug/kg)}{Organic Carbon}) \times Alkylation Multiplier}{Chronic Potency Divisor}$
-
-$Acute Benchmark Value = \sum \frac{(\frac{Measured Amount of Substance (ug/kg)}{Organic Carbon}) \times Alkylation Multiplier}{Acute Potency Divisor}$
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=6in]{formulas.png} 
+   \caption{Formulas to calculate acute and chronic benchmark values for each unique location.}
+   \label{formulas}
+\end{figure}
 
 For substances measured in sediment, the amount of organic carbon for that area must  be used to find the acute and chronic potency ratios. Taking the organic carbon into consideration is important for sediment samples because, when it is present in the sediment, the PAHs bind to it, thus making the PAHs less toxic. Organic carbon, like any other substance, was measured at each location. These concentrations of organic carbon at each unique location were put into a separate data set. Then, the organic carbon data set and the PAH sediment data set could be horizontally merged by unique combinations of Latitude and Longitude. This is done so that each measured concentration of a PAH substance has an accurate corresponding organic carbon measurement. 
 
@@ -195,21 +189,22 @@ In Figure \ref {salinity-timeline} you can see all salinity measurements over th
    \label{salinity-timeline}
 \end{figure}
 
-Depth and salinity form a close relationship as you can see in Figure \ref {Depth-Salinity}. Normally, salinity levels would stay between 38 and 34 mg/l. This trend was violated for many measurements taken near the surface but then resumed normal measurements at greater depths. There were also two measurements taken by a boat which do not follow the normal relationship. The surface water measurement was far below normal observations and from there salinity dropped rapidly with depth. 
-
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
-   \includegraphics[width=5in]{deapth-salinity.png} 
+   \includegraphics[width=4in]{salinity-depth.jpeg} 
    \caption{Relationship between depth and salinity grouped by each unique latitude and longitude combination. Depth and salinity almost always maintain a fixed relationship, as seen in most of the observations. However, some areas, mainly those at the surface of the water, experienced unusually low values of salinity. Two areas, which were measured by a boat, had a depth-salinity relationship very unlike the rest.}
    \label{Depth-Salinity}
 \end{figure}
+Depth and salinity form a close relationship as you can see in Figure \ref {Depth-Salinity}. Normally, salinity levels would stay between 38 and 34 mg/l. This trend was violated for many measurements taken near the surface but then resumed normal measurements at greater depths. There were also two measurements taken by a boat which do not follow the normal relationship. The surface water measurement was far below normal observations and from there salinity dropped rapidly with depth. 
+
+
 
 \section{Conclusions}
 What we could not do because the data was not available to us: comparable baseline data. 
 
 Although there is no doubt the oil spill caused a tremendous amount of damage, the lack data makes it difficult to make conclusions. We have no information on the actual cause of death of the birds, sea turtles, dolphins, and whales.  We also do not have past data to compare these findings with and so we can only reasonably assume that this quantity of dead birds, sea turtles, dolphins, and whales is unusual. It is also hard to make definite inferences based on the PAH measurements.  While we know PAH substances were found at harmful levels along the coast, we do not have baseline data to compare these post-spill levels with. As with the animal deaths, we can only reasonably assume that the high levels of PAHs are unusual for the area. Past data was available for salinity, however, the area in which these pre-spill salinity values were measured is quite different from the area in which the post-spill salinity values were measured.  Salinity measurements taken along the coastline will be quite different and therefore not comparable to those taken in the middle of the Gulf of Mexico. Better baseline data would have facilitated making conclusions about the effects of the Deep-Water Horizon oil spill on chemicals in the gulf, these chemicals' effects on wildlife, and salinity levels.
 
- What we do know, however, is that the environmental conditions were highly-unfavorable during the months after the oil spill. Polycyclic Aromatic Hydrocarbons were found at chronic and acute levels along the shoreline of the Gulf of Mexico. These levels are high enough to cause cancer and disrupt reproduction, development, and the immune system of organisms. Effects of these PAHs are likely to be felt long after the spill. Animals which did survive the initial spill and its aftermath such as birds, sea turtles, dolphins, and whales are all at risk of having health problems for the rest of their lives. For this reason, the numbers in Figure 1, which only cover a 5 month period after the spill, do not entirely represent the number of animals that will have ultimately died as a result of the oil spill. The Deep-Water Horizon oil spill was a disaster which affected the environment, wildlife, and society upon impact, and will continue to do so for years to come.
+ What we do know, however, is that the environmental conditions were highly-unfavorable during the months after the oil spill. Polycyclic Aromatic Hydrocarbons were found at chronic and acute levels along the shoreline of the Gulf of Mexico. These levels are high enough to cause cancer and disrupt reproduction, development, and the immune system of organisms. Effects of these PAHs are likely to be felt long after the spill. Animals which did survive the initial spill and its aftermath such as birds, sea turtles, dolphins, and whales are all at risk of having health problems for the rest of their lives. For this reason, the numbers in Figure 1, which only cover a 5 month period after the spill, do not entirely represent the number of animals that will have ultimately died as a result of the oil spill. The Deep-Water Horizon oil spill was a disaster which affected the environment, wildlife, and society upon impact, and will continue to do so indefinitely.
 
 
 \bibliography{references}
