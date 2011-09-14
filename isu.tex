@@ -35,10 +35,6 @@
 April 20th, 2010 marked the beginning of the largest and worst oil spill in the history of off-shore drilling.  Following an explosion in the Deep-Water Horizon drilling rig and failure of all emergency systems, crude oil began to gush into the ocean.  After an estimated 4.9 million barrels of oil spilled into the sea, the leak was finally stopped on July 15th of 2010 when the well head was capped.  The completion of the relief well took until September 19, 2010.  The immediate impact of the oil spill on people and wildlife alike was overwhelming and can still be felt.  The oil destroyed many habitats for birds, turtles, and other marine wildlife.  Waters had to be closed for fishing, affecting the livelihood of the people that depended on the fishing industry. Longterm effects are certain. It is of course impossible to do an analysis that can reflect the breadth and complexity of the effects of the oil spill.  However, based on the data provided by government sources we want to demonstrate the impact of the spill on wildlife, measured salinity - which has a major influence in determining oceanic flow, and environmental pollution through chemicals found in oil, in particular Polycyclic Aromatic Hydrocarbons (PAHs). 
 
 \subsection{Data and Sources}
-Data on dead and alive animal sightings came from several sources: US Fish and Wildlife (Southeast Region) provided the Cumulative Avian Observations (USFWS).
-Data on Turtle \& Marine Mammal Observations were reported by NOAA (National Oceanic and Atmospheric Administration) and its offices NMS (National Marine Sanctuary) and OPR (Office of Protected Resources). 
-
-Each of the files contains records of live and dead animal sightings, geographic location, exact species identification, if known, the date of the sighting, and, for the bird counts, a status variable regarding the oiling condition of the bird (Visibly Oiled, Not Visibly Oiled, Unknown). 
 
 
 The EPA (US Environmental  Protection Agency) provided water and sediment chemistry data focused on petrochemical products, sampled near the coastline in the months since the oil spill. This file contained records of many chemicals and their geographic location, substance name, amount of substance, measuring unit, and date of measurement. 
@@ -55,13 +51,6 @@ Salinity data info*******
 \begin{center}
 \begin{tabular}{| l | p{11cm} | }
 \hline
-\multicolumn{2}{|c|}{{\bf Animals Data Set}} \\ \hline
-Class & type of animal found: Birds, Sea Turtles, or Whales and Dolphins \\ \hline
-Species & species of animal \\ \hline
-Latitude & latitude in degrees  \\ \hline
-Longitude & longitude in degrees\\ \hline
-Alive & condition of animal: Alive or Dead. \\ \hline
-Observation Date & date of observation 'mm-dd-yyyy'. \\ \hline
 \multicolumn{2}{|c|}{{\bf Salinity Data Set}} \\ \hline
 Date & date of observation. \\ \hline
 Latitude & latitude in degrees \\ \hline
@@ -88,6 +77,19 @@ Danger Level* &  health effects caused by the PAH substance; Carcinogen or other
 ***  include the Google TM
 *** The map for the sea turtles could be extended a bit and we could add state names (in white on the background)
 
+\begin{table}
+\begin{tabular}{lp{11cm}}
+Variable & Description \hline
+Class & type of animal found: Birds, Sea Turtles, or Whales and Dolphins \\
+Species & species of animal \\
+Latitude & latitude in degrees  \\
+Longitude & longitude in degrees\\
+Alive & condition of animal: Alive or Dead. \\
+Observation Date & date of observation 'mm-dd-yyyy'. \\
+\end{tabular}
+\label{table.animal}
+\caption{Animal Sightings between April XX, 2010 and October XX, 2010, source: Avian Observations from US Fish and Wildlife (Southeast Region),  Marine Mammal Observations reported by  the National Marine Sanctuary, NOAA, and the Office of Protected Resources, NOAA.}
+\end{table}
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=4.5in]{animal_deaths.png} 
