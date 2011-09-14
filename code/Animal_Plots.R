@@ -116,36 +116,24 @@ animal_max <- ddply(animal_sums, .(class), summarize,
 )
 
 
-
 #PERCENT DEAD OF EACH CLASS OF ANIMAL
-vlines <- geom_vline(xintercept=as.numeric(as.Date(c("2010-09-19", "2010-07-15"))), colour = "grey70", size = 1)
+vlines <- geom_vline(xintercept=as.numeric(as.Date(c("2010-09-19", "2010-07-15"))), colour = "grey70")
+annotations <- function(y=20) {
+geom_text(aes(x = as.numeric(as.Date(c("2010-09-19", "2010-07-15"))),   label = c("Sep 19, 201\nRelief Well Completed", "July 15, 2010\nLeak Stopped")), y = y, colour="grey50", hjust = -0.1, angle = 0, size=3, inherit.aes=F)
+}
 
-ggplot() +geom_line(aes(x= Date, y =perc_dead, colour = class, group=class), size=3, data = animal_sums) + theme_grey() + color_scale_3 + vlines +
-geom_text(aes(x = as.numeric(as.Date(c("2010-09-19", "2010-07-15"))), y = 20, hjust = .7, angle = 27, size = .7, label = c("Relief Well Completed", "Leak Stopped"))) + scale_size(legend = FALSE)+
-opts(title="Animal Death Rates by Class", legend.position = "bottom", legend.direction = "horizontal") + labs(x="Date", y="Percent") 
+ggplot() + vlines + annotations() + geom_line(aes(x= Date, y =perc_dead, colour = class, group=class), size=3, data = animal_sums, aes.inherit=F) + scale_x_date() + theme_grey() + color_scale_3  + scale_size(legend = FALSE) + labs(x="Date", y="Percent") 
 
-ggsave("images/death-rates.png")
+ggsave("images/death-rates.pdf", width=10, height=5)
 
 #---------------------------------------------------------------------------------------------------------
 # EVERY DAY COUNTS OF DEAD ANIMALS, FACETTED BY CLASS
 dead.week <- ddply(animal, .(Date, class), summarize,
     total = length(Species) - sum(Live))
-date_text_b <- geom_text(aes(x = as.numeric(as.Date(c("2010-09-19", "2010-07-15"))), y = 125, hjust = .7, angle = 30, size = .7, label = c("Relief Well Completed", "Leak Stopped")))
-date_text_dw <- geom_text(aes(x = as.numeric(as.Date(c("2010-09-19", "2010-07-15"))), y = 4, hjust = .7, angle = 30, size = .7, label = c("Relief Well Completed", "Leak Stopped")))
-date_text_st <- geom_text(aes(x = as.numeric(as.Date(c("2010-09-19", "2010-07-15"))), y = 20, hjust = .7, angle = 30, size = .7, label = c("Relief Well Completed", "Leak Stopped")))
 
+ggplot(aes(x=Date, y=total, colour=class), data=dead.week) + vlines  + geom_point() +
+ scale_x_date() + facet_wrap(~class, scales="free", nrow=1) + theme_grey() + color_scale_3 + opts(legend.position = "none")+ labs(y = "Count") 
 
-
-birds.daily <- ggplot() + geom_point(aes(x=Date, y=total), colour="#FF9900", data = subset(dead.week, class == "Birds"))+ theme_grey() +
-geom_vline(xintercept=as.numeric(as.Date(c("2010-09-19", "2010-07-15"))), colour = "grey70", size = 1) + opts(title = "Birds") + labs(y = "Count") + date_text_b + opts(legend.position = "none")
-
-mammals.daily <- ggplot() + geom_point(aes(x=Date, y=total), colour="#FF3300", data = subset(dead.week, class == "Whales and Dolphins"))+ theme_grey() +
-geom_vline(xintercept=as.numeric(as.Date(c("2010-09-19", "2010-07-15"))), colour = "grey70", size = 1) + opts(title = "Dolphins and Whales")+ labs(y = "Count") + date_text_dw + opts(legend.position = "none")
-
-turtles.daily <- ggplot() + geom_point(aes(x=Date, y=total), colour="#CCFF00", data = subset(dead.week, class == "Sea Turtles"))+ theme_grey() +
-geom_vline(xintercept=as.numeric(as.Date(c("2010-09-19", "2010-07-15"))), colour = "grey70", size = 1) + opts(title = "Sea Turtles")+ labs(y = "Count") + date_text_st + opts(legend.position = "none")
-png("images/daily-death-counts.png", width=960, height=400) # in pixel
-grid.arrange(birds.daily, mammals.daily, turtles.daily, ncol = 3)
-dev.off()
+ggsave("images/daily-death-counts.pdf", width=15, height=5) # in pixel
 
 
