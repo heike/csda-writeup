@@ -34,12 +34,14 @@
 \section{Introduction}
 April 20th, 2010 marked the beginning of the largest and worst oil spill in the history of off-shore drilling.  Following an explosion in the Deep-Water Horizon drilling rig and failure of all emergency systems, crude oil began to gush into the ocean.  After an estimated 4.9 million barrels of oil spilled into the sea, the leak was finally stopped on July 15th of 2010 when the well head was capped.  The completion of the relief well took until September 19, 2010.  The immediate impact of the oil spill on people and wildlife alike was overwhelming and can still be felt.  The oil destroyed many habitats for birds, turtles, and other marine wildlife.  Waters had to be closed for fishing, affecting the livelihood of the people that depended on the fishing industry. Longterm effects are certain. It is of course impossible to do an analysis that can reflect the breadth and complexity of the effects of the oil spill.  However, based on the data provided by government sources we want to demonstrate the impact of the spill on wildlife, measured salinity - which has a major influence in determining oceanic flow, and environmental pollution through chemicals found in oil, in particular Polycyclic Aromatic Hydrocarbons (PAHs). 
 \subsection{Tools used}
-*** what else did we make use of?
+
 
 {\tt R} \citep{R2011}, {\tt ggplot2} \citep{ggplot2}, {\tt RgoogleMaps} \citep{RgoogleMaps}, link between {\tt ggplot2} and {\tt RgoogleMaps} provided by \citet{kahle2010} as part of his entry in the ggplot2 competition.
 
 \subsection{Structure of this paper}
-(structure)...
+Animal Sightings \newline
+Chemicals \newline
+Salinity
 
 \section{Graphical Exploration}
 \subsection{Animal Sightings}
@@ -100,13 +102,14 @@ Longitude & longitude in degrees. \\
 Result &  measured amount \\
 Unit &  unit of measurement: ug/L for water, ug/k for sediment. \\
 Danger Level* &  health effects: carcinogenic or other health effects. \\
-Alkylation Multiplier* & calculated values \\
-Acute Potency Divisor* & calculated values\\
-Chronic Potency Divisor* & calculated values  
+Alkylation Multiplier** & values for calculations \\
+Acute Potency Divisor** & values for calculations\\
+Chronic Potency Divisor** & values for calculations 
 \end{tabular}
 \label{table.animal}
 \caption{Water and sediment chemistry data of petrochemical products, sampled near the coastline in the months after the oil spill, source: US Environmental  Protection Agency.\newline
-*calculated according to \citet{pah-benchmark} and added to data set}
+*added to data set according to \citet{pah-danger} \newline
+**added to data set according to \citet{pah-benchmark} }
 \end{table}
 
 
@@ -114,19 +117,19 @@ Chronic Potency Divisor* & calculated values
 Various chemicals were sampled in the Gulf of Mexico during the months following the oil spill. This analysis focuses on Polycyclic Aromatic Hydrocarbons firstly because of their direct relationship with oil and secondly because of their toxicity to wildlife. Polycyclic Aromatic Hydrocarbons, or PAHs, are semi-volatile organic substances which come mainly from oil and the burning of oil. However, they can also come exhaust and from the burning of gas, coal, garbage and other organic substances \citep{pah}.   Many of these substances are considered carcinogenic, mutagenic, and teratogenic and all are considered harmful to the health of living organisms. New information on each PAH substance was found from the EPA website  \citep{pah} and put into the data set for this analysis. In order to do a proper analysis on the existence of these chemicals after the spill and how they may have effected life in the Gulf of Mexico it was necessary to put the measurements into an interpretable form. We followed the approach by \citet{pah-benchmark}: measurements of the PAHs at unique locations will be looked at in terms of their acute and chronic potency. An area is considered at a chronic level when the amount of harmful substances is thought to bring harmful effects over a long period of time. An area is considered at an acute level when the amount of harmful substances rapidly induces a negative effect in an organism. The following describes the process in which we could analyze these PAHs in terms of their acute and chronic levels. 
 
 
-Each PAH substance has a unique acute and chronic potency divisor which is used to find the acute and chronic potency ratio, respectively. The potency divisors, which are used in the calculations, can be thought of as the amount of the substance that can be considered dangerous by itself. So, each measured amount of a substance is divided by the chronic and acute potency divisors so that, at each location, we have a ratio of the danger. For surface water and sediment samples alike, these ratios are additive and each substances' contribution must be summed up for each unique location in order to determine the complete effect. The following formulas show how we attained the chronic and acute benchmark values for water and sediment. After all of this was done, several areas along the beaches of the Gulf of Mexico were found to be at a chronic or acute level. 
+Each PAH substance has a unique acute and chronic potency divisor which are used to find the acute and chronic potency ratio, respectively. The potency divisors, which are used in the calculations, can be thought of as the amount of the substance that can be considered dangerous by itself. So, each measured amount of a substance is divided by the chronic and acute potency divisors so that, at each location, we have a ratio of the danger. For surface water and sediment samples alike, these ratios are additive and each substances' contribution must be summed up for each unique location in order to determine the complete effect. The following formulas show how we attained the chronic and acute benchmark values for water. After all of this was done, several areas along the beaches of the Gulf of Mexico were found to be at a chronic or acute level. 
 \begin{center} \textbf{Water} \end{center}
 
 $Chronic Benchmark Value = \sum \frac{Alkylation Multiplier \times Measured Amount of Substance (ug/L)}{Chronic Potency Divisor}$
 
 $Acute Benchmark Value = \sum \frac{Alkylation Multiplier \times Measured Amount of Substance (ug/L)}{Acute Potency Divisor}$
-\begin{center} \textbf{Sediment} \end{center}
 
+
+For substances measured in sediment, the amount of organic carbon for that area must  be used to find the acute and chronic potency ratios. Taking the organic carbon into consideration is important for sediment samples because, when it is present in the sediment, the PAHs bind to it, thus making the PAHs less toxic. Organic carbon, like any other substance, was measured at each location. These concentrations of organic carbon at each unique location were put into a separate data set. Then, the organic carbon data set and the PAH sediment data set could be horizontally merged by unique combinations of Latitude and Longitude. This is done so that each measured concentration of a PAH substance has an accurate corresponding organic carbon measurement. The following formulas show how we attained the chronic and acute benchmark values for sediment.
+\begin{center} \textbf{Sediment} \end{center}
 $Chronic Bencmark Value = \sum \frac{(\frac{Measured Amount of Substance (ug/kg)}{Organic Carbon}) \times Alkylation Multiplier}{Chronic Potency Divisor}$
 
 $Acute Benchmark Value = \sum \frac{(\frac{Measured Amount of Substance (ug/kg)}{Organic Carbon}) \times Alkylation Multiplier}{Acute Potency Divisor}$
-
-For substances measured in sediment, the amount of organic carbon for that area must  be used to find the acute and chronic potency ratios. Taking the organic carbon into consideration is important for sediment samples because, when it is present in the sediment, the PAHs bind to it, thus making the PAHs less toxic. Organic carbon, like any other substance, was measured at each location. These concentrations of organic carbon at each unique location were put into a separate data set. Then, the organic carbon data set and the PAH sediment data set could be horizontally merged by unique combinations of Latitude and Longitude. This is done so that each measured concentration of a PAH substance has an accurate corresponding organic carbon measurement. 
 
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
@@ -194,11 +197,10 @@ Depth and salinity form a close relationship as you can see in Figure \ref {Dept
 
 
 \section{Conclusions}
-What we could not do because the data was not available to us: comparable baseline data. 
 
 Although there is no doubt the oil spill caused a tremendous amount of damage, the lack data makes it difficult to make conclusions. We have no information on the actual cause of death of the birds, sea turtles, dolphins, and whales.  We also do not have past data to compare these findings with and so we can only reasonably assume that this quantity of dead birds, sea turtles, dolphins, and whales is unusual. It is also hard to make definite inferences based on the PAH measurements.  While we know PAH substances were found at harmful levels along the coast, we do not have baseline data to compare these post-spill levels with. As with the animal deaths, we can only reasonably assume that the high levels of PAHs are unusual for the area. Past data was available for salinity, however, the area in which these pre-spill salinity values were measured is quite different from the area in which the post-spill salinity values were measured.  Salinity measurements taken along the coastline will be quite different and therefore not comparable to those taken in the middle of the Gulf of Mexico. Better baseline data would have facilitated making conclusions about the effects of the Deep-Water Horizon oil spill on chemicals in the gulf, these chemicals' effects on wildlife, and salinity levels.
 
- What we do know, however, is that the environmental conditions were highly-unfavorable during the months after the oil spill. Polycyclic Aromatic Hydrocarbons were found at chronic and acute levels along the shoreline of the Gulf of Mexico. These levels are high enough to cause cancer and disrupt reproduction, development, and the immune system of organisms. Effects of these PAHs are likely to be felt long after the spill. Animals which did survive the initial spill and its aftermath such as birds, sea turtles, dolphins, and whales are all at risk of having health problems for the rest of their lives. For this reason, the numbers in Figure 1, which only cover a 5 month period after the spill, do not entirely represent the number of animals that will have ultimately died as a result of the oil spill. The Deep-Water Horizon oil spill was a disaster which affected the environment, wildlife, and society upon impact, and will continue to do so indefinitely.
+ What we do know is that the environmental conditions were highly unfavorable during the months after the oil spill. Polycyclic Aromatic Hydrocarbons were found at chronic and acute levels along the shoreline of the Gulf of Mexico. These levels are high enough to cause cancer and disrupt reproduction, development, and the immune system of organisms. Effects of these PAHs are likely to be felt long after the spill. Animals which did survive the initial spill and its aftermath such as birds, sea turtles, dolphins, and whales are all at risk of having health problems for the rest of their lives. For this reason, the numbers in Figure 1, which only cover a 5 month period after the spill, do not entirely represent the number of animals that will have ultimately died as a result of the oil spill. The Deep-Water Horizon oil spill was a disaster which affected the environment, wildlife, and society upon impact, and will continue to do so indefinitely.
 
 
 \bibliography{references}

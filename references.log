@@ -1,0 +1,143 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdftex 2011.9.14)  14 SEP 2011 11:57
+entering extended mode
+**C:/Users/Owner/Documents/csda-writeup/references.bib
+(C:/Users/Owner/Documents/csda-writeup/references.bib
+Overfull \hbox (27.99486pt too wide) in paragraph at lines 23--30
+\tenrm Loecher, year = 2011, note = R pack-age ver-sion 1.1.9.15, url = http://
+CRAN.R-project.org/package=RgoogleMaps,|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm L
+.\tenrm o
+.\kern0.27779
+.\tenrm e
+.\tenrm c
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--30
+
+
+\hbox(0.0+0.0)x469.75499
+.\glue(\rightskip) 0.0
+
+! Undefined control sequence.
+l.35   howpublished={"\url
+                          {https:://github.com/hadley/ggplot2/wiki/Crime-in-...
+
+? 
+
+Overfull \hbox (6.80167pt too wide) in paragraph at lines 32--38
+\tenrm thor=David Kahle, howpublished="https:://github.com/hadley/ggplot2/wiki/
+Crime-in-Downtown-Houston,-|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm t
+.\tenrm h
+.\tenrm o
+.\tenrm r
+.\tenrm =
+.etc.
+
+! Undefined control sequence.
+l.42   howpublished={"\url
+                          {http://www.nmfs.noaa.gov/pr/species/turtles/#spec...
+
+? 
+! You can't use `macro parameter character #' in horizontal mode.
+l.42 ...p://www.nmfs.noaa.gov/pr/species/turtles/#
+                                                  species}},
+? 
+! Undefined control sequence.
+l.50   howpublished={"\url
+                          {http://www.epa.gov/bpspill/water/explanation-of-p...
+
+? 
+
+Overfull \hbox (155.55084pt too wide) in paragraph at lines 47--54
+\tenrm proach, au-thor=Dave Mount, ORD Du-luth, En-vi-ron-men-tal Pro-tec-tion 
+Agency, howpublished="http://www.epa.gov/bpspill/water/explanation-|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm p
+.\tenrm r
+.\tenrm o
+.\tenrm a
+.\tenrm c
+.etc.
+
+! Undefined control sequence.
+l.58   howpublished={"\url
+                          {http://www.epa.gov/bpspill/pahs.html}},
+? 
+
+Overfull \hbox (98.23128pt too wide) in paragraph at lines 55--62
+\tenrm Spill in the Gulf of Mex-ico, au-thor= US En-vi-ron-men-tal Pro-tec-tion
+ Agency, how-pub-lished="http://www.epa.gov/bpspill/pahs.html,|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm S
+.\tenrm p
+.\tenrm i
+.\tenrm l
+.\tenrm l
+.etc.
+
+! Too many }'s.
+l.69 }
+      
+? 
+
+Overfull \hbox (6.80045pt too wide) in paragraph at lines 63--70
+[]\tenrm @miscpah-danger, ti-tle=Polycyclic or-ganic mat-ter (POM), au-thor=US 
+En-vi-ron-men-tal Pro-tec-tion Agency,|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\hbox(0.0+0.0)x20.0
+.\tenrm @
+.\tenrm m
+.\tenrm i
+.\tenrm s
+.etc.
+
+
+Overfull \hbox (13.7183pt too wide) in paragraph at lines 63--70
+\tenrm how-pub-lished=http://www.epa.gov/ttnatw01/hlthef/polycycl.html, note=la
+st ac-cessed Sep 14 2011, year=2011|
+
+\hbox(7.5+2.5)x469.75499, glue set - 1.0
+.\tenrm h
+.\tenrm o
+.\kern-0.27779
+.\tenrm w
+.\discretionary
+..\tenrm -
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--70
+
+
+\hbox(0.0+0.0)x469.75499
+.\glue(\rightskip) 0.0
+
+)
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*\end
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]<C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+Output written on references.pdf (1 page, 26411 bytes).
+PDF statistics:
+ 10 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
