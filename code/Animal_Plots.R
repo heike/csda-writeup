@@ -30,7 +30,7 @@ states <- map_data("state")
 states.animal <- getbox(states, xlim=c(-97, max(animal$Longitude+2)), ylim=range(animal$Latitude))
 #colors
 color_scale_3 <- scale_colour_manual(values = c("#FF9900", "#CCFF00", "#FF3300"))
-color_scale_2 <-  scale_colour_manual(values = c("#FF3300", "#CCFF00"))
+color_scale_2 <-  scale_colour_manual(values = c("#FF3300", "#CCFF00")) 
 #---------------------------------------------------------------------------------------------------------
 # setting up plot layers
 
@@ -50,8 +50,11 @@ ggplot() +
   scale_x_continuous('Longitude') + 
   scale_y_continuous('Latitude') +  
    theme_nothing() + 
-  xlim(c(-96.25, -81.5)) + ylim(c(20,31)) + geom_point(aes(x = Longitude, y = Latitude, colour = class), data = dead) + coord_cartesian(xlim=c(-96.25, -81.5), ylim=c(20,31)) + 
-	opts(legend.direction = "horizontal", legend.position = "bottom")+ plot_rig + color_scale_3
+#  xlim(c(-96.25, -81.5)) + ylim(c(20,31)) + 
+  geom_point(aes(x = Longitude, y = Latitude, colour = class), data = dead) + 
+  coord_cartesian(xlim=range(sat_map$lon), ylim=range(sat_map$lat)) + 
+	opts(legend.direction = "horizontal", legend.position = "bottom", panel.background
+=theme_blank(), plot.margin = unit(c(0,0,0,0), "lines"), axis.ticks.margin=unit(0,"lines"), axis.ticks.length = unit(0,"lines"))+ plot_rig + color_scale_3
 
 
 ggsave("images/animal_deaths.png")
@@ -122,7 +125,7 @@ annotations <- function(y=20) {
 geom_text(aes(x = as.numeric(as.Date(c("2010-09-19", "2010-07-15"))),   label = c("Sep 19, 201\nRelief Well Completed", "July 15, 2010\nLeak Stopped")), y = y, colour="grey50", hjust = -0.1, angle = 0, size=3, inherit.aes=F)
 }
 
-ggplot() + vlines + annotations() + geom_line(aes(x= Date, y =perc_dead, colour = class, group=class), size=3, data = animal_sums, aes.inherit=F) + scale_x_date() + theme_grey() + color_scale_3  + scale_size(legend = FALSE) + labs(x="Date", y="Percent") 
+ggplot() + vlines + annotations() + geom_line(aes(x= Date, y =perc_dead, colour = class, group=class), size=3, data = animal_sums, aes.inherit=F) + scale_x_date() + theme_grey() + color_scale_3  + scale_size(legend = FALSE) + labs(x="Date", y="Percent") + opts(legend.position = "none")
 
 ggsave("images/death-rates.pdf", width=10, height=5)
 
@@ -131,7 +134,7 @@ ggsave("images/death-rates.pdf", width=10, height=5)
 dead.week <- ddply(animal, .(Date, class), summarize,
     total = length(Species) - sum(Live))
 
-ggplot(aes(x=Date, y=total, colour=class), data=dead.week) + vlines  + geom_point() +
+ggplot(aes(x=Date, y=total, colour=class), data=dead.week) + vlines  + geom_point(size=4) +
  scale_x_date() + facet_wrap(~class, scales="free", nrow=1) + theme_grey() + color_scale_3 + opts(legend.position = "none")+ labs(y = "Count") 
 
 ggsave("images/daily-death-counts.pdf", width=15, height=5) # in pixel
