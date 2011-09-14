@@ -37,9 +37,7 @@ April 20th, 2010 marked the beginning of the largest and worst oil spill in the 
 \subsection{Data and Sources}
 
 
-The EPA (US Environmental  Protection Agency) provided water and sediment chemistry data focused on petrochemical products, sampled near the coastline in the months since the oil spill. This file contained records of many chemicals and their geographic location, substance name, amount of substance, measuring unit, and date of measurement. 
 
-Salinity data info*******
 
 \subsection{Tools used}
 *** what else did we make use of?
@@ -48,39 +46,17 @@ Salinity data info*******
 
 \subsection{Structure of this paper}
 (structure)...
-\begin{center}
-\begin{tabular}{| l | p{11cm} | }
-\hline
-\multicolumn{2}{|c|}{{\bf Salinity Data Set}} \\ \hline
-Date & date of observation. \\ \hline
-Latitude & latitude in degrees \\ \hline
-Longitude & longitude in degrees. \\ \hline
-Depth & depth at which the measurement was taken in feet \\ \hline
-Salinity &  measured amount of salinity. (mg/l) \\ \hline
-Type &  type of measuring device used to take the measurement; Boat, Float or Glider \\ \hline
-\multicolumn{2}{|c|}{{\bf Polycyclic Aromatic Hydrocarbons Data Set}} \\ \hline
-Substance & PAH substance measured \\ \hline
-Date & date of observation.\\ \hline
-Latitude & latitude in degrees. \\ \hline
-Longitude & longitude in degrees. \\ \hline
-Result &  measured amount of the PAH substance. \\ \hline
-Unit &  unit in which the PAH substance was taken; ug/L for water, ug/k for sediment. \\ \hline
-Alkylation Multiplier* & given for each PAH substance to be used in calculations. \\ \hline
-Acute Potency Divisor* &  given for each PAH substance to be used in calculations. \\ \hline
-Chronic Potency Divisor* &  given for each PAH substance to be used in calculations. \\ \hline
-Danger Level* &  health effects caused by the PAH substance; Carcinogen or other health effects. \\ \hline
-\multicolumn{2}{|c|}{*these variables were taken from another source and put into the existing data set} \\ \hline
-\end{tabular}
-\end{center}
 
-\section{Animal Sightings}
+\section{Graphical Exploration}
+\subsection{Animal Sightings}
 ***  include the Google TM
 *** The map for the sea turtles could be extended a bit and we could add state names (in white on the background)
 
 \begin{table}
 \begin{tabular}{lp{11cm}}
-Variable & Description \hline
-Class & type of animal found: Birds, Sea Turtles, or Whales and Dolphins \\
+\bf Variable & \bf Description \\\hline
+Class & type of animal found: \\
+& {\small Birds (5,552),   Whales and Dolphins  (98),  Sea Turtles (546)}\\
 Species & species of animal \\
 Latitude & latitude in degrees  \\
 Longitude & longitude in degrees\\
@@ -88,7 +64,7 @@ Alive & condition of animal: Alive or Dead. \\
 Observation Date & date of observation 'mm-dd-yyyy'. \\
 \end{tabular}
 \label{table.animal}
-\caption{Animal Sightings between April XX, 2010 and October XX, 2010, source: Avian Observations from US Fish and Wildlife (Southeast Region),  Marine Mammal Observations reported by  the National Marine Sanctuary, NOAA, and the Office of Protected Resources, NOAA.}
+\caption{Animal Sightings between April 26, 2010 and October 18, 2010, source: Avian Observations from US Fish and Wildlife (Southeast Region),  Marine Mammal Observations reported by  the National Marine Sanctuary, NOAA, and the Office of Protected Resources, NOAA.}
 \end{table}
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
@@ -106,24 +82,6 @@ Figure \ref{deaths} shows a satellite map, overlaid by a dot plot indicating loc
    \label{death rates}
 \end{figure}
 
-\begin{table}[ht]
-\caption{Number of Dead Animals: April 26, 2010 to October 18, 2010}
-\centering
-\begin{tabular}{c c c c}
-\hline\hline
-Birds & Dolphins and Whales & Sea Turtles & Total \\ [0.5ex]
-% inserts table
-%heading
-\hline
-% inserts single horizontal line
-5,552 & 98 & 546 & 6196\\ [1ex]
-% [1ex] adds vertical space
-\hline
-%inserts single line
-\end{tabular}
-\label{table:table1}
-% is used to refer this table in the text
-\end{table}
 
 Birds, sea turtles, and dolphins and whales had unique death patterns during the data collection period as Figure \ref{death rates}  illustrates. In the left figure, the to-date death toll was divided by the total death toll for each class of animal. The birds had a relatively low death rate from May to July and then the rate began to increase. Sea turtles and dolphins and whales, on the other hand, had the highest death rates from May to July and from there it began to flatten out. These patterns can also be seen in the figure on the right, which shows daily death counts for each class of animal. For sea turtles, dolphins, and whales, the highest death counts per day occurred mainly in the earlier weeks and then decreased over time.  The majority of dead bird findings occurred later in time and their death counts per day began to climb rapidly around July. From July to September, the birds experienced a wide range of death counts per day and then began to decrease at the end of September. By October 18th, 6,196 birds, sea turtles, whales, and dolphins had been identified as dead. 
 
@@ -136,7 +94,27 @@ Birds, sea turtles, and dolphins and whales had unique death patterns during the
 
 Four species of sea turtles were found and identified during the data collection period, all of which are considered to be either threatened or endangered. These species are: Kemp's ridley, Hawksbill Sea Turtle, Green Sea Turtle, and Loggerhead Sea Turtle. Figure \ref{turtles} shows when and where these turtles were found and whether they were living or dead. Most dead turtles, of all species, were found along the shoreline. Most turtles that were found alive were found off the coast. There were two main areas on the coasts of Louisiana and Florida in which the bulk of live sea turtles were found.  This is most evident among the Green Sea Turtle and Kemp's ridley.Very few turtles were found after September. The species with the greatest number of casualties found was Kemp's ridley, an endangered species which lives primarily in the Gulf of Mexico.  It is more common for Kemp's ridley sea turtles to be present in the northern part of the Gulf of Mexico during June, July, and August. Female Kemp's ridleys, like other sea turtles, nest between May and July and lay their eggs on various beaches of the Gulf of Mexico  \citet{turtles}. From this information, we can understand that there were more turtles in the area during the months after the oil spill occured, and thus more sea turtles to be found.  After August, however, it would be natural for these turtles to begin to leave the area and head south.
 
-\section{Chemicals}
+\subsection{Chemicals}
+
+\begin{table}
+\begin{tabular}{lp{9.5cm}}
+\bf Variable & \bf Description \\\hline
+Substance & Polycyclic Aromatic Hydrocarbon (PAH) substance \\
+Date & date of observation.\\
+Latitude & latitude in degrees. \\
+Longitude & longitude in degrees. \\
+Result &  measured amount \\
+Unit &  unit of measurement: ug/L for water, ug/k for sediment. \\
+Danger Level* &  health effects: carcinogenic or other health effects. \\
+Alkylation Multiplier* & calculated values \\
+Acute Potency Divisor* & calculated values\\
+Chronic Potency Divisor* & calculated values  
+\end{tabular}
+\label{table.animal}
+\caption{Water and sediment chemistry data of petrochemical products, sampled near the coastline in the months after the oil spill, source: US Environmental  Protection Agency.\newline
+*calculated according to \citet{pah-benchmark} and added to data set}
+\end{table}
+
 
 
 Various chemicals were sampled in the Gulf of Mexico during the months following the oil spill. This analysis focuses on Polycyclic Aromatic Hydrocarbons firstly because of their direct relationship with oil and secondly because of their toxicity to wildlife. Polycyclic Aromatic Hydrocarbons, or PAHs, are semi-volatile organic substances which come mainly from oil and the burning of oil. However, they can also come exhaust and from the burning of gas, coal, garbage and other organic substances \citep{pah}.   Many of these substances are considered carcinogenic, mutagenic, and teratogenic and all are considered harmful to the health of living organisms. New information on each PAH substance was found from the EPA website  \citep{pah} and put into the data set for this analysis. In order to do a proper analysis on the existence of these chemicals after the spill and how they may have effected life in the Gulf of Mexico it was necessary to put the measurements into an interpretable form. We followed the approach by \citet{pah-benchmark}: measurements of the PAHs at unique locations will be looked at in terms of their acute and chronic potency. An area is considered at a chronic level when the amount of harmful substances is thought to bring harmful effects over a long period of time. An area is considered at an acute level when the amount of harmful substances rapidly induces a negative effect in an organism. The following describes the process in which we could analyze these PAHs in terms of their acute and chronic levels. 
@@ -177,7 +155,23 @@ Figure \ref{pah-map} shows areas which meet or exceed the chronic and acute benc
 
 Figure \ref {pah-timeline} shows the log of the acute potency ratios not equal to 0 for measurements taken from May 2010 to August 2010. The log was taken so that we could more easily see the variation, as many of the samples were near 0. Some measurements of PAH substances exceeded the acute potency ratio alone, meaning that, even if there were no other PAH substances in the area, that one substance was enough to be acutely dangerous. These three acutely dangerous measurements are labeled on the timeline as C1-Chrysenes, C2-Chrysenes, and Chrysene. The Chrysene family is considered a carcinogenic substance. There seems to be a period of time between June and July in which the measurements of these PAH substance had higher values than during the rest of the time.
 
-\section{Salinity}
+\subsection{Salinity}
+
+\begin{table}
+\begin{tabular}{lp{9.5cm}}
+\bf Variable & \bf Description \\\hline
+Date & date of observation. \\
+Latitude & latitude in degrees \\
+Longitude & longitude in degrees. \\
+Depth & depth of measurement in feet \\
+Salinity &  amount of salinity in mg/l \\
+Type &  type of measuring device: \\
+& {\small Boat, Float, Glider} \\
+\end{tabular}
+\label{table.animal}
+\caption{, source: XXX}
+\end{table}
+
 Boats, floats, and gliders recorded salinity, temperature, and depth measurements at various locations in the Gulf of Mexico. The floats tended to stay in the deeper water while the boats and the gliders were free to go all around the gulf.  You can see the patterns of these three measuring methods in Figure \ref {Boats, Floats and Gliders}. Each measuring device would take measurements at the surface and then take measurements at various depths at each location.  
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
