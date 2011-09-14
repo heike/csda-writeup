@@ -119,7 +119,7 @@ animal_max <- ddply(animal_sums, .(class), summarize,
 #PERCENT DEAD OF EACH CLASS OF ANIMAL
 vlines <- geom_vline(xintercept=as.numeric(as.Date(c("2010-09-19", "2010-07-15"))), colour = "grey70")
 annotations <- function(y=20) {
-geom_text(aes(x = as.numeric(as.Date(c("2010-09-19", "2010-07-15"))),   label = c("Sep 19, 201\nRelief Well Completed", "July 15, 2010\nLeak Stopped")), y = y, colour="grey50", hjust = -0.1, angle = 0, size=3, inherit.aes=F)
+geom_text(aes(x = as.numeric(as.Date(c("2010-09-19", "2010-07-15"))),   label = c("Sep 19, 2010\nRelief Well Completed", "July 15, 2010\nLeak Stopped")), y = y, colour="grey50", hjust = -0.1, angle = 0, size=3, inherit.aes=F)
 }
 
 ggplot() + vlines + annotations() + geom_line(aes(x= Date, y =perc_dead, colour = class, group=class), size=3, data = animal_sums, aes.inherit=F) + scale_x_date() + theme_grey() + color_scale_3  + scale_size(legend = FALSE) + labs(x="Date", y="Percent") 
@@ -131,7 +131,7 @@ ggsave("images/death-rates.pdf", width=10, height=5)
 dead.week <- ddply(animal, .(Date, class), summarize,
     total = length(Species) - sum(Live))
 
-ggplot(aes(x=Date, y=total, colour=class), data=dead.week) + vlines  + geom_point() +
+ggplot(aes(x=Date, y=total, colour=class), data=dead.week) + vlines  + geom_point(aes(size = 1.75)) +
  scale_x_date() + facet_wrap(~class, scales="free", nrow=1) + theme_grey() + color_scale_3 + opts(legend.position = "none")+ labs(y = "Count") 
 
 ggsave("images/daily-death-counts.pdf", width=15, height=5) # in pixel
