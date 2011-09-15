@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.8.25)  14 SEP 2011 12:35
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.8.25)  15 SEP 2011 13:17
 entering extended mode
 **C:/Users/Owner/Documents/csda-writeup/isu.tex
 (C:/Users/Owner/Documents/csda-writeup/isu.tex
@@ -253,14 +253,7 @@ Package caption Info: wrapfig package is loaded.
 \c@lotdepth=\count107
 \sf@top=\skip51
 \sf@bottom=\skip52
-) (C:\Users\Owner\Documents\csda-writeup\isu.aux
-
-LaTeX Warning: Label `table.animal' multiply defined.
-
-
-LaTeX Warning: Label `table.animal' multiply defined.
-
-)
+) (C:\Users\Owner\Documents\csda-writeup\isu.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
@@ -273,7 +266,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count108
 \scratchdimen=\dimen130
@@ -333,12 +327,12 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 30.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-<images/animal_deaths.png, id=1, 542.7477pt x 343.2825pt>
+<images/animal_deaths.png, id=1, 709.65125pt x 616.3025pt>
 File: images/animal_deaths.png Graphic file (type png)
 
 <use images/animal_deaths.png>
-Package pdftex.def Info: images/animal_deaths.png used on input line 67.
-(pdftex.def)             Requested size: 325.215pt x 205.70393pt.
+Package pdftex.def Info: images/animal_deaths.png used on input line 64.
+(pdftex.def)             Requested size: 289.07999pt x 251.05876pt.
  [1
 
 
@@ -348,75 +342,76 @@ nts/csda-writeup/images/animal_deaths.png (PNG copy)>] <images/death-rates.pdf,
 File: images/death-rates.pdf Graphic file (type pdf)
 
 <use images/death-rates.pdf>
-Package pdftex.def Info: images/death-rates.pdf used on input line 75.
+Package pdftex.def Info: images/death-rates.pdf used on input line 77.
 (pdftex.def)             Requested size: 252.93776pt x 126.47249pt.
 
 <images/daily-death-counts.pdf, id=17, 1084.05pt x 361.35pt>
 File: images/daily-death-counts.pdf Graphic file (type pdf)
 
 <use images/daily-death-counts.pdf>
-Package pdftex.def Info: images/daily-death-counts.pdf used on input line 76.
+Package pdftex.def Info: images/daily-death-counts.pdf used on input line 78.
 (pdftex.def)             Requested size: 379.40665pt x 126.47249pt.
 
 <images/turtles.png, id=18, 963.6pt x 722.7pt>
 File: images/turtles.png Graphic file (type png)
  <use images/turtles.png>
-Package pdftex.def Info: images/turtles.png used on input line 86.
+Package pdftex.def Info: images/turtles.png used on input line 89.
 (pdftex.def)             Requested size: 433.62pt x 325.21199pt.
 
-[3 <C:/Users/Owner/Documents/csda-writeup/images/death-rates.pdf> <C:/Users/Own
-er/Documents/csda-writeup/images/daily-death-counts.pdf>] [4 <C:/Users/Owner/Do
-cuments/csda-writeup/images/turtles.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 96--112
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 99--115
 [][]
  []
 
-[5] <images/chron-acute-map.png, id=37, 509.5035pt x 414.5889pt>
+[4 <C:/Users/Owner/Documents/csda-writeup/images/death-rates.pdf> <C:/Users/Own
+er/Documents/csda-writeup/images/daily-death-counts.pdf>] [5 <C:/Users/Owner/Do
+cuments/csda-writeup/images/turtles.png>] [6]
+<images/chron-acute-map.png, id=46, 598.235pt x 287.0725pt>
 File: images/chron-acute-map.png Graphic file (type png)
 
 <use images/chron-acute-map.png>
-Package pdftex.def Info: images/chron-acute-map.png used on input line 137.
-(pdftex.def)             Requested size: 361.34999pt x 294.0312pt.
- [6] [7 <C:/Users/Owner/Documents/csda-writeup/images/chron-acute-map.png (PNG 
-copy)>]
-<images/acute-timeline3.png, id=52, 824.1189pt x 337.9827pt>
+Package pdftex.def Info: images/chron-acute-map.png used on input line 140.
+(pdftex.def)             Requested size: 252.94499pt x 121.37999pt.
+
+<images/acute-timeline3.png, id=47, 824.1189pt x 337.9827pt>
 File: images/acute-timeline3.png Graphic file (type png)
 
 <use images/acute-timeline3.png>
-Package pdftex.def Info: images/acute-timeline3.png used on input line 147.
+Package pdftex.def Info: images/acute-timeline3.png used on input line 150.
 (pdftex.def)             Requested size: 361.34999pt x 148.19713pt.
- [8 <C:/Users/Owner/Documents/csda-writeup/images/acute-timeline3.png>]
-<images/boats-floats-gliders.png, id=57, 509.5035pt x 414.5889pt>
+ [7 <C:/Users/Owner/Documents/csda-writeup/images/chron-acute-map.png (PNG copy
+)>]
+<images/boats-floats-gliders.png, id=54, 709.65125pt x 615.29875pt>
 File: images/boats-floats-gliders.png Graphic file (type png)
 
 <use images/boats-floats-gliders.png>
-Package pdftex.def Info: images/boats-floats-gliders.png used on input line 176
+Package pdftex.def Info: images/boats-floats-gliders.png used on input line 179
 .
-(pdftex.def)             Requested size: 361.34999pt x 294.0312pt.
+(pdftex.def)             Requested size: 252.94499pt x 219.31042pt.
 
-<images/salinity-time.png, id=58, 428.3202pt x 324.2514pt>
+<images/salinity-time.png, id=55, 428.3202pt x 324.2514pt>
 File: images/salinity-time.png Graphic file (type png)
 
 <use images/salinity-time.png>
-Package pdftex.def Info: images/salinity-time.png used on input line 183.
+Package pdftex.def Info: images/salinity-time.png used on input line 186.
 (pdftex.def)             Requested size: 202.35622pt x 153.1898pt.
 
-<images/salinity-map.png, id=59, 428.3202pt x 324.2514pt>
+<images/salinity-map.png, id=56, 428.3202pt x 324.2514pt>
 File: images/salinity-map.png Graphic file (type png)
 
 <use images/salinity-map.png>
-Package pdftex.def Info: images/salinity-map.png used on input line 184.
+Package pdftex.def Info: images/salinity-map.png used on input line 187.
 (pdftex.def)             Requested size: 202.35622pt x 153.1898pt.
-
-<images/salinity-depth.jpeg, id=60, 888.31876pt x 587.19376pt>
+ [8 <C:/Users/Owner/Documents/csda-writeup/images/acute-timeline3.png>]
+<images/salinity-depth.jpeg, id=61, 888.31876pt x 587.19376pt>
 File: images/salinity-depth.jpeg Graphic file (type jpg)
 
 <use images/salinity-depth.jpeg>
-Package pdftex.def Info: images/salinity-depth.jpeg used on input line 191.
+Package pdftex.def Info: images/salinity-depth.jpeg used on input line 194.
 (pdftex.def)             Requested size: 289.07999pt x 191.08658pt.
  [9 <C:/Users/Owner/Documents/csda-writeup/images/boats-floats-gliders.png (PNG
- copy)>] [10 <C:/Users/Owner/Documents/csda-writeup/images/salinity-time.png> <
-C:/Users/Owner/Documents/csda-writeup/images/salinity-map.png> <C:/Users/Owner/
+ copy)> <C:/Users/Owner/Documents/csda-writeup/images/salinity-time.png> <C:/Us
+ers/Owner/Documents/csda-writeup/images/salinity-map.png>] [10 <C:/Users/Owner/
 Documents/csda-writeup/images/salinity-depth.jpeg>] (C:\Users\Owner\Documents\c
 sda-writeup\isu.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 11--16
@@ -440,36 +435,33 @@ $\OT1/cmtt/m/n/12 hadley / ggplot2 / wiki / Crime-[]in-[]Downtown-[]Houston ,[]
  -[]Texas-[] :$
  []
 
-[11]) [12] (C:\Users\Owner\Documents\csda-writeup\isu.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+) [11] (C:\Users\Owner\Documents\csda-writeup\isu.aux) ) 
 Here is how much of TeX's memory you used:
- 4308 strings out of 494045
- 63545 string characters out of 3145969
- 136537 words of memory out of 3000000
- 7518 multiletter control sequences out of 15000+200000
+ 4310 strings out of 494045
+ 63578 string characters out of 3145969
+ 137537 words of memory out of 3000000
+ 7520 multiletter control sequences out of 15000+200000
  10849 words of font info for 41 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  44i,9n,42p,1610b,301s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on isu.pdf (12 pages, 2325483 bytes).
+<C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmtt12.pfb>
+Output written on isu.pdf (11 pages, 2132983 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
+ 117 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
