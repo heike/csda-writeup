@@ -34,7 +34,7 @@ plot_rig_b2 <- geom_text(aes(x=Longitude, y=Latitude, label = "BP Oil Rig"), hju
 
 ######################## plots ############################
 color_scale_3 <- scale_colour_manual(values = c("#FF9900", "#CCFF00", "#FF3300"))
-color_scale_2 <- scale_color_manual(values = c("#CCFF00", "#FF9900"))
+color_scale_2 <- scale_color_manual(values = c("#000099", "#CC0000"))
 #SALINITY LEVELS OVER TIME RELATED TO LOW SALINITIES ON MAP
 # discretize time into intervals
 
@@ -48,11 +48,20 @@ ggsave("images/salinity-map.png")
 color_scale_3 <- scale_colour_manual(values = c("#FF9900", "#CCFF00", "#FF3300"))
 ggplot() +
  geom_tile(aes(lon, lat, fill=fill), data = sat_map) +
+ coord_cartesian(xlim=range(sat_map$lon), ylim=range(sat_map$lat)) +
    scale_fill_identity(legend = FALSE) +
   scale_x_continuous('Longitude') + 
   scale_y_continuous('Latitude') +  
-  coord_equal() + theme_nothing() + 
-   xlim(c(-96.25, -81.5)) + ylim(c(20,31)) + geom_point(aes(x = Longitude, y = Latitude, colour = Type), data = salinity)+ color_scale_3 + labs(x = "Longitude", y = "Latitude")+ plot_rig_w + opts(legend.position = "bottom", legend.direction = "horizontal")
+  theme_nothing() + 
+  # xlim(c(-96.25, -81.5)) + ylim(c(20,31)) + 
+  geom_point(aes(x = Longitude, y = Latitude, colour = Type), data = salinity)+ color_scale_3 + labs(x = "Longitude", y = "Latitude")+ plot_rig_w + opts(legend.position = "bottom", legend.direction = "horizontal",
+  	     panel.background =theme_blank(),
+	     plot.margin = unit(c(0,0,0,0), "lines"),
+	     axis.ticks.margin=unit(0,"lines"), 
+	     axis.ticks.length = unit(0,"lines"),
+	     panel.margin = unit(0, "lines"),
+	     axis.text.y=theme_blank(),
+	     axis.text.x=theme_blank())
 ggsave("images/boats-floats-gliders.png")
 
 #DEPTH X SALINITY GROUP = INTERACTION(LONG, LAT) FACTTED BY TYPE (takes realllllly long time to load!!!)
