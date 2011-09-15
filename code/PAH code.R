@@ -66,15 +66,24 @@ ggsave("images/chron-acute-ratios.png")
 total <- rbind(water.bench, sediment.bench) 
 ggplot() +
  geom_tile(aes(lon, lat, fill=fill), data = sat_map) +
+ coord_cartesian(xlim=range(sat_map$lon), ylim=range(sat_map$lat)) +
   scale_fill_identity(legend=F) +
   scale_x_continuous('Longitude') + 
   scale_y_continuous('Latitude') +  
-  coord_equal() + theme_nothing() + 
-  plot_rig +xlim(c(-96.25, -81.5)) + ylim(c(22,31)) +
+  theme_nothing() + 
+  plot_rig + #xlim(c(-96.25, -81.5)) + ylim(c(22,31)) +
 geom_point(aes(x = LONGITUDE, y = LATITUDE), colour = "light blue", data = total) + 
 geom_point(aes(x = LONGITUDE, y = LATITUDE), size = 3, colour = "yellow", data = subset(total, Chronic.Benchmark.Value >= 1)) +
 geom_point(aes(x = LONGITUDE, y = LATITUDE), colour = "red", data = subset(total, Acute.Benchmark.Value >= 1)) + 
-opts(title = "Polycyclic Aromatic Hydrocarbons: Chronic and Acute Levels") + labs(x = "Longitude", y = "Latitude") 
+opts(legend.direction = "horizontal", 
+	     legend.position = "bottom", 
+	     panel.background =theme_blank(),
+	     plot.margin = unit(c(0,0,0,0), "lines"),
+	     axis.ticks.margin=unit(0,"lines"), 
+	     axis.ticks.length = unit(0,"lines"),
+	     panel.margin = unit(0, "lines"),
+	     axis.text.y=theme_blank(),
+	     axis.text.x=theme_blank()) + labs(x = "Longitude", y = "Latitude") 
 ggsave("images/chron-acute-map.png")
 
 
