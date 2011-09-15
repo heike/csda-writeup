@@ -29,18 +29,26 @@ waterbench <- ddply(waterbench_substance, .(LONGITUDE, LATITUDE), summarize,
 
 
 #format data
-#### what is going on here? ####
+#### what does OC stand for? ####
+#### what do these percentage values mean? usually we can't average over percentages ####
+#### there are either one or two measurements ####
+#### some of the measurements are in the same place, but at two different time points ####
+
 OC <- ddply(OC, .(LONGITUDE, LATITUDE), transform,
 	 avgOC = mean(OCRESULT))
 	 
 OC <- ddply(OC, .(LONGITUDE, LATITUDE), transform,
 	  n= length(OCRESULT))
 
-OC.sediment <- merge(OC, sediment, by=c("LONGITUDE","LATITUDE")) 
-OC.sediment <- subset(OC.sediment, avgOC != 0)
+OCsediment <- merge(OC, sediment, by=c("LONGITUDE","LATITUDE")) 
 
-sediment.bench1 <- transform(OC.sediment, OC.Normalized = ((RESULT/avgOC)))
-sediment.bench2 <- transform(sediment.bench1, Alkl.Adj.Conc = OC.Normalized*Alkylation.Multiplier)
+OCsediment$OCNormalized <- with(OCsediment, RESULT/avgOC)
+OCsediment$AlklAdjConc <- with(OCsediment, OCNormalized*Alkylation.Multiplier)
+
+OCsediment$Acute.Potency.Ratio <- with(OCsediment, AlklAdjConc/Acute.Potency.Divisor)
+OCsediment$Chronic.Potency.Ratio <- with(OCsediment, AlklAdjConc/Chronic.Potency.Divisor)
+
+
 sediment.bench3 <- transform(sediment.bench2, 
 				Acute.Potency.Ratio = Alkl.Adj.Conc/Acute.Potency.Divisor,
 				Chronic.Potency.Ratio = Alkl.Adj.Conc/Chronic.Potency.Divisor)
@@ -57,6 +65,8 @@ sediment.bench4 <-  na.omit(unique(sediment.bench3[,c("SUBSTANCE", "ratios")]))
 nsub <- length(unique(surfwater$SUBSTANCE))+1
 amax <- max(surfwater$Acute.Potency.Ratio)
 cmax <- 1/mean(sediment.bench3$ratios, na.rm=T)
+
+
 acute <- geom_polygon(aes(x=c(0.5,0.5,nsub,nsub), y=c(1,amax+.1,amax+.1,1)), fill="red", alpha=0.1)
 acute_text <- geom_text(aes(x=(nsub+1)/2, y=mean(c(1,amax)), label="acute"), colour="red", size=15, alpha=0.5)
 chronic <- geom_polygon(aes(x=c(0.5,0.5,nsub,nsub), y=c(1,cmax,cmax,1)), fill="yellow", alpha=0.1)
