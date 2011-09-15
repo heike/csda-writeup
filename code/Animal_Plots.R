@@ -27,15 +27,24 @@ sat_map <-ggooglemap(center = map_center, zoom = 6, maptype='hybrid', n_pix=640)
 # get state outlines for the affected area
 library(maps)
 states <- map_data("state")
-states.animal <- getbox(states, xlim=c(-97, max(animal$Longitude+2)), ylim=range(animal$Latitude))
+states.animal <- getbox(states, xlim=c(-97, max(animal$Longitude+2)), ylim=range(animal$Latitude)+c(0,1.25))
+
 #colors
 color_scale_3 <- scale_colour_manual(values = c("#FF9900", "#CCFF00", "#FF3300"))
-color_scale_2 <-  scale_colour_manual(values = c("#FF3300", "#CCFF00")) 
+color_scale_2 <-  scale_colour_manual(values = c( "#CC0000", "#000099")) 
 #---------------------------------------------------------------------------------------------------------
 # setting up plot layers
 
 # state map of the area
 animal.map <- geom_polygon(aes(x = long, y = lat, group = group), colour = "white", fill = "grey70", data = states.animal)
+
+states.text <- ddply(states.animal, .(region), summarize,
+x=mean(long, na.rm=T),
+y=mean(lat, na.rm=T))
+states.text <- states.text[-6,]
+map.text <- geom_text(aes(x=x+c(0,2,-0.5,-0.6,.5,.75),
+						  y=c(31.5, 27.3, 31.5, 30.7, 31.25, 30.7),
+						  label=region), size=3, colour="white", data=states.text, aes.inherit=F)
 
 # add location and tag for oil rig
 rig <- data.frame(Longitude = -88.365997, Latitude = 28.736628)
@@ -44,6 +53,10 @@ plot_rig <- geom_text(aes(x=Longitude, y=Latitude, label = "x BP Oil Rig"), colo
 #---------------------------------------------------------------------------------------------------------
 # PLOT OF ALL DEAD ANIMALS ON MAP; BIRDS, SEA TURTLES, WHALES AND DOLPHINS
 dead <- subset(animal, Alive=="N")
+
+par(mar=c(0,0,0,0))
+plot(rnorm(10), rnorm(10))
+
 ggplot() +
  geom_tile(aes(lon, lat, fill=fill), data = sat_map) +
    scale_fill_identity(legend = F) +
@@ -53,9 +66,15 @@ ggplot() +
 #  xlim(c(-96.25, -81.5)) + ylim(c(20,31)) + 
   geom_point(aes(x = Longitude, y = Latitude, colour = class), data = dead) + 
   coord_cartesian(xlim=range(sat_map$lon), ylim=range(sat_map$lat)) + 
-	opts(legend.direction = "horizontal", legend.position = "bottom", panel.background
-=theme_blank(), plot.margin = unit(c(0,0,0,0), "lines"), axis.ticks.margin=unit(0,"lines"), axis.ticks.length = unit(0,"lines"))+ plot_rig + color_scale_3
-
+	opts(legend.direction = "horizontal", 
+	     legend.position = "bottom", 
+	     panel.background =theme_blank(),
+	     plot.margin = unit(c(0,0,0,0), "lines"),
+	     axis.ticks.margin=unit(0,"lines"), 
+	     axis.ticks.length = unit(0,"lines"),
+	     panel.margin = unit(0, "lines"),
+	     axis.text.y=theme_blank(),
+	     axis.text.x=theme_blank()) + plot_rig + color_scale_3 
 
 ggsave("images/animal_deaths.png")
 
@@ -89,10 +108,10 @@ turtles$Quarter[turtles$week.number > 38] <- "09-20-2010 to 10-18-210"
 
 turtle_opts <- opts(axis.title.x=theme_blank(), legend.position = "none", panel.margin=0.1, axis.text.x=theme_blank(), axis.text.y=theme_blank(), axis.ticks=theme_blank(), plot.margin=unit(c(0,0,0,0),"lines"))
 
-caretta <- ggplot(subset(turtles, Species == "Caretta caretta"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + theme_grey() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4) + labs(y = "Loggerhead Sea Turtle") + color_scale_2 
-chelonia <- ggplot(subset(turtles, Species == "Chelonia mydas"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + theme_grey() + turtle_opts + geom_point() + facet_wrap(~Quarter, ncol = 4)  +labs(y = "Green Sea Turtle") + color_scale_2
-eretmochelys <- ggplot(subset(turtles, Species == "Eretmochelys imbricata"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + theme_grey() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4, drop = FALSE)  + labs(y = "Hawksbill Sea Turtle") + color_scale_2
-lepid <- ggplot(subset(turtles, Species == "Lepidochelys kempii"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + theme_grey() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4)  + labs(y = "Kemp's Ridley") + color_scale_2
+caretta <- ggplot(subset(turtles, Species == "Caretta caretta"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text+ theme_bw() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4) + labs(y = "Loggerhead Sea Turtle") + color_scale_2 
+chelonia <- ggplot(subset(turtles, Species == "Chelonia mydas"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_bw() + turtle_opts + geom_point() + facet_wrap(~Quarter, ncol = 4)  +labs(y = "Green Sea Turtle") + color_scale_2
+eretmochelys <- ggplot(subset(turtles, Species == "Eretmochelys imbricata"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_bw() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4, drop = FALSE)  + labs(y = "Hawksbill Sea Turtle") + color_scale_2
+lepid <- ggplot(subset(turtles, Species == "Lepidochelys kempii"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_bw() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4)  + labs(y = "Kemp's Ridley") + color_scale_2
 
 
 png("images/turtles.png", width=960, height=720) # in pixel
