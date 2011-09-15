@@ -53,11 +53,11 @@ Species & species of animal \\
 Latitude & latitude in degrees  \\
 Longitude & longitude in degrees\\
 Alive & condition of animal: \\
-& {\small Alive (XXX), Dead (XXX)} \\
+& {\small Alive (2,197), Dead (6,196)} \\
 Observation Date & date of observation `mm-dd-yyyy'. \\
 \end{tabular}
-\label{table.animal}
 \caption{Animal Sightings between April 26, 2010 and October 18, 2010, source: Avian Observations from US Fish and Wildlife (Southeast Region),  Marine Mammal Observations reported by  the National Marine Sanctuary, NOAA, and the Office of Protected Resources, NOAA.}
+\label{table-animal}
 \end{table}
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
@@ -65,12 +65,12 @@ Observation Date & date of observation `mm-dd-yyyy'. \\
    \caption{Affected area: the graphic shows a satellite map of some of the area directly affected by the oil spill. The dots on top show locations of dead animal sightings. }
    \label{deaths}
 \end{figure}
-One of the visually most impressive and very emotional effects of any oil spill might be the pictures of oiled beaches littered with the washed-up bodies of oil-blackened animals. Counts for animal sightings, both alive and dead, are collected by the local Departments of Natural Resources and National Agencies. For the Data Expo 2011 Challenge we had access to data from the National Marine Sanctuary, the Office of Protected Resources as well as the Bureau US Fish and Wildlife. Table\ref{table.animal} gives an overview of the variables that we used for our graphical exploration. 
+One of the visually most impressive and very emotional effects of any oil spill might be the pictures of oiled beaches littered with the washed-up bodies of oil-blackened animals. Counts for animal sightings, both alive and dead, are collected by the local Departments of Natural Resources and National Agencies. For the Data Expo 2011 Challenge we had access to data from the National Marine Sanctuary, the Office of Protected Resources as well as the Bureau US Fish and Wildlife. Table\ref{table-animal} gives an overview of the variables that we used for our graphical exploration. 
 
 Figure \ref{deaths} shows a satellite map, overlaid by a scatterplot indicating locations of animal sightings. Most of the sightings follow the coastline - which is not surprising, since that is where we have the easiest access to make these kind of observations. This already points us to several problems with an interpretation of the data:
 firstly, the data is purely observational - records are only available since the oil spill, but not before, reducing our conclusions to a qualitative nature. An additional  complication is the selection bias that we are facing, since some of the areas presumably impacted by the oil spill are less accessible to observation than others. Furthermore, locations of dead animals sightings are affected by  currents. It would be very wrong to interpret beaches as particularly dangerous because of the many sightings of dead animals. Instead, we can draw comparisons on a larger scale by comparing coastal regions and use  the number  of dead animals as an indicator of the effect on a particular region.  We have to be aware that we are also dealing with a large percentage of unknowns: an unknown number of animals will have decayed or sunk to the seabed before being washed up on the beach, thereby going unnoticed and unreported.
 
-With those caveats in mind, we can still tell from the satellite map in figure \ref{deaths} that the highest concentration of dead animals were found along the shores of Louisiana and Mississippi, closest to the oil rig. Each of the orange dots corresponds to one dead bird, yellow dots indicate dead sea turtle sightings, and red dots indicate large mammals, such as whales and dolphins. Overall a total of 6,196 animals were reported dead during a six month period.
+With those caveats in mind, we can still tell from the satellite map in Figure \ref{deaths} that the highest concentration of dead animals were found along the shores of Louisiana and Mississippi, closest to the oil rig. Each of the orange dots corresponds to one dead bird, yellow dots indicate dead sea turtle sightings, and red dots indicate large mammals, such as whales and dolphins. Overall a total of 6,196 animals were reported dead during a six month period.
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
@@ -91,7 +91,7 @@ These patterns are re-enforced in  the figure at the bottom, which shows daily d
    \label{turtles}
 \end{figure}
 
-Four species of sea turtles were found and identified during the data collection period, all of which are considered to be either threatened or endangered. These species are: Kemp's ridley, Hawksbill Sea Turtle, Green Sea Turtle, and Loggerhead Sea Turtle. Figure \ref{turtles} shows when and where these turtles were found and whether they were living or dead. Most dead turtles, of all species, were found along the shoreline. Most turtles that were found alive were found off the coast. There were two main areas on the coasts of Louisiana and Florida in which the bulk of live sea turtles were found.  This is most evident among the Green Sea Turtle and Kemp's ridley.Very few turtles were found after September. The species with the greatest number of casualties found was Kemp's ridley, an endangered species which lives primarily in the Gulf of Mexico.  It is more common for Kemp's ridley sea turtles to be present in the northern part of the Gulf of Mexico during June, July, and August. Female Kemp's ridleys, like other sea turtles, nest between May and July and lay their eggs on various beaches of the Gulf of Mexico  \citet{turtles}. From this information, we can understand that there were more turtles in the area during the months after the oil spill occured, and thus more sea turtles to be found.  After August, however, it would be natural for these turtles to begin to leave the area and head south.
+Four species of sea turtles were found and identified during the data collection period, all of which are considered to be either threatened or endangered. These species are: Kemp's Ridley, Hawksbill Sea Turtle, Green Sea Turtle, and Loggerhead Sea Turtle. Figure \ref{turtles} shows when and where these turtles were found and whether they were living or dead. Most dead turtles, of all species, were found along the shoreline. Most turtles that were found alive were found off the coast. There were two main areas on the coasts of Louisiana and Florida in which the bulk of live sea turtles were found.  This is most evident among the Green Sea Turtle and Kemp's Ridley.Very few turtles were found after September. The species with the greatest number of casualties found was Kemp's Ridley, an endangered species which lives primarily in the Gulf of Mexico.  It is more common for Kemp's Ridley sea turtles to be present in the northern part of the Gulf of Mexico during June, July, and August. Female Kemp's Ridleys, like other sea turtles, nest between May and July and lay their eggs on various beaches of the Gulf of Mexico  \citet{turtles}. From this information, we can understand that there were more turtles in the area during the months after the oil spill occurred, and thus more sea turtles to be found.  After August, however, it would be natural for these turtles to begin to leave the area and head south.
 
 \subsection{Chemicals}
 
@@ -104,7 +104,7 @@ Latitude & latitude in degrees. \\
 Longitude & longitude in degrees. \\
 Result &  measured amount \\
 Unit &  unit of measurement: ug/L for water, ug/k for sediment. \\
-Danger Level* &  health effects: carcinogenic or other health effects. \\
+Danger Level* &  health effects: carcinogenic (23,201), other health effects(3640). \\
 Alkylation Multiplier** & values for calculations \\
 Acute Potency Divisor** & values for calculations\\
 Chronic Potency Divisor** & values for calculations 
@@ -166,7 +166,7 @@ Longitude & longitude in degrees. \\
 Depth & depth of measurement in feet \\
 Salinity &  amount of salinity in mg/l \\
 Type &  type of measuring device: \\
-& {\small Boat, Float, Glider} \\
+& {\small Boat (24,381), Float (10,332), Glider (368,563)} \\
 \end{tabular}
 \label{table.salinity}
 \caption{, source: XXX}
