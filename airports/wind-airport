@@ -1,0 +1,24 @@
+
+airport <- 'phx'
+load(sprintf('%s-all.rds', airport)) # loads object flights_all
+load(sprintf('%s-winds.rds', airport)) # loads object winds
+
+flights_all$Wind_Direction<- factor(flights_all$Wind_Direction)
+flights_all$Wind_Direction <- with(flights_all, reorder(Wind_Direction, WindDirDegrees, median, na.rm=T))
+# check data quality
+idx <- which(is.na(flights_all$Wind_SpeedMPH))
+flights_all$WindDirDegrees[idx] <- NA
+flights_all$Hour <- hour(flights_all$wstamp)
+
+flights_sub <- subset(flights_all, (Hour >= 7) & (Wind_SpeedMPH>=quantile(winds$Wind_SpeedMPH, 0.5, na.rm=TRUE)))
+n <- nrow(flights_sub)
+fwind <- table(flights_sub$WindDirDegrees, useNA="ifany")/n
+flights_sub$nf <- flights_sub$nextflight
+flights_sub$nf[flights_sub$nf>=8] <- 8
+
+fwindflight <- table(flights_sub$Wind_Direction, flights_sub$nf, useNA="ifany")/n
+dev.new()
+plot(fwindflight, off=c(0,0), col=0:8)
+
+library(ggplot2)
+qplot(Hour, nextflight, data=flights_all)+geom_smooth()
