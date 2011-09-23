@@ -1,0 +1,107 @@
+
+getFlights <- function(airport) {
+	require(RMySQL)
+	m <- dbDriver("MySQL")
+	con <- dbConnect(m, user="2009Expo", password="R R0cks", port=3306, dbname="data_expo_2009", host="headnode.stat.iastate.edu")
+
+	# write into file 'airport-flights.rds' in working directory
+	flights.dest <- dbGetQuery(con, sprintf("select * from ontime11 where (Dest='%s') and Year >= 2009", airport))
+	flights.dep <- dbGetQuery(con, sprintf("select * from ontime11 where (Origin='%s') and Year >= 2009", airport))
+	
+	flights.dest$wstamp <- flights.dest$WONDate
+	flights.dep$wstamp <- flights.dep$WOFFDate
+	
+	
+	# merge arrivals and departures
+	flights <- rbind(flights.dep, flights.dest)
+	flights <- flights[,-(55:89)]
+	
+	flights$wstamp <- gsub("24:00","0:00", flights$wstamp, fixed=TRUE)
+	
+	
+	flights <- flights[order(strptime(flights$wstamp, format="%Y-%m-%d %H:%M", tz="UTC")),]
+	flights$nextflight <- c(as.numeric(diff(strptime(flights$wstamp, format="%Y-%m-%d %H:%M", tz="UTC"))),NA)/60
+	
+	save(flights, file=sprintf("%s-flights.rds", airport))
+	dbDisconnect(con)
+}
+
+getWeather <- function(airport) {
+	require(RMySQL)
+	m <- dbDriver("MySQL")
+	con <- dbConnect(m, user="2009Expo", password="R R0cks", port=3306, dbname="data_expo_2009", host="headnode.stat.iastate.edu")
+
+	# get Weather data, save in file 'airport-winds.rds'
+	winds <- dbGetQuery(con, sprintf("select * from weather11 where Year>=2009 and (iata='%s')",  airport))
+
+	winds$tstamp <- as.POSIXct(winds$DateUTC, tz="UTC")
+	# convert to local time
+	tdiff <- hour(as.POSIXct(winds$Time, format=c(dates=NULL, times="%I:%M %p")))-hour(winds$tstamp)
+	hour(winds$tstamp) <- hour(winds$tstamp) + tdiff
+	winds <- winds[order(winds$tstamp),]
+
+	save(winds, file=sprintf("%s-winds.rds", airport))
+	dbDisconnect(con)
+}
+
+
+alignTime <- function(airport, flights, winds, x="wstamp", y="tstamp") {
+	# aligns flights and winds data along time line using a merge sort based matching
+	# assumes both winds and tord are sorted along time stamps
+
+	flights$indx <- 1:nrow(flights)
+	mergeflights <- data.frame(flights[, c(x,"indx")], source="flights")
+	mergeflights[,x] <- as.character(mergeflights[,x])
+	
+	winds$indx <- 1:nrow(winds)
+	mergewinds <- data.frame(winds[, c(y,"indx")], source="winds")
+	mergewinds[,y] <- as.character(mergewinds[,y])
+
+	names(mergewinds) <- names(mergeflights)
+	merger <- rbind(mergeflights, mergewinds)
+
+# sort both winds and flights along time	
+	merger <- merger[order(strptime(merger[,x], format="%Y-%m-%d %H:%M", tz="UTC")),]
+
+# find indices of wind variable
+	idx <- which(merger$source=="winds")
+	pidx <- rep(merger$indx[idx], times=c(idx[1],diff(idx)))
+	
+	merger$windx <- NA
+	merger$windx[1:length(pidx)] <- pidx
+	
+	merger <- subset(merger, source=="flights")
+	merger <- merger[order(merger$indx),]
+
+	# check whether pidx or pidx+1 is the closer weather measurement
+	merger$diff1 <- as.numeric(strptime(merger[,x], format="%Y-%m-%d %H:%M", tz="UTC") - (strptime(winds[merger$windx,y], format="%Y-%m-%d %H:%M", tz="UTC")))
+	merger$windx2 <- merger$windx-1
+	merger$windx2[merger$windx2==0] <- 1
+	merger$diff2 <- as.numeric(strptime(merger[,x], format="%Y-%m-%d %H:%M", tz="UTC") - (strptime(winds[merger$windx2,y], format="%Y-%m-%d %H:%M", tz="UTC")))
+	idx <- which(merger$diff1>merger$diff2)
+	merger$windx[idx] <- merger$windx2[idx]
+	
+	flights_all <- data.frame(flights, winds[merger$windx,])
+	save(flights_all, file=sprintf("%s-all.rds", airport))		
+}
+
+# Example for use
+
+airport <- "PHX"
+airport <- "LAX"
+airport <- "SEA"
+# other promising candidates:
+# PHX, LAX
+
+getFlights(airport) # saves 'flights' object
+getWeather(airport) # saves 'winds' object
+
+load(sprintf('%s-flights.rds', airport)) # retrieves flights object
+load(sprintf('%s-winds.rds', airport)) # retrieves winds object
+alignTime(airport, flights, winds) # saves 'flights_all' object
+
+ggplot() + stat_spoke(aes(angle=295, radius=2, x =longitude, y = latitude ), colour = "green", data = sea) + 
+stat_spoke(aes(angle=135, radius=2, x =longitude, y = latitude ), colour = "red", data = sea)
+
+
+
