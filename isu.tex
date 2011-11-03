@@ -59,10 +59,12 @@ Observation Date & date of observation `mm-dd-yyyy'. \\\hline
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=4in]{animal_deaths.png} 
-   \caption{Satellite map of a part of the Gulf of Mexico. The location of the Deep Water Horizon rig is marked by a white cross. Each dot on top of the map represents the sighting of one dead animal: XXX birds (orange), XXX sea turtles (yellow), and XXX dolphins and whales (red). }
+   \caption{Satellite map of a part of the Gulf of Mexico. The location of the Deep Water Horizon rig is marked by a white cross. Each dot on top of the map represents the sighting of one dead animal: 5,552  birds (orange), 546 sea turtles (yellow), and 98 dolphins and whales (red). }
    \label{deaths}
 \end{figure}
-One of the visually most impressive and very emotional effects of any oil spill might be the pictures of oiled beaches littered with the washed-up bodies of oil-blackened animals. Counts for animal sightings, both alive and dead, are collected by the local Departments of Natural Resources and National Agencies. For the Data Expo 2011 Challenge we had access to data from the National Marine Sanctuary, the Office of Protected Resources as well as the US Bureau of Fish and Wildlife Service. Table \ref{table-animal} gives a more detailed overview of the variables that we used for our graphical exploration. 
+One of the visually most impressive and very emotional effects of any oil spill might be the pictures of oiled beaches littered with the washed-up bodies of oil-blackened animals. Incidentally, this was the motive of this year's winning entry in the Veolia Environment Wildlife Photographer of the Year by \citet{photo}
+
+Counts for animal sightings, both alive and dead, are collected by the local Departments of Natural Resources and National Agencies. For the Data Expo 2011 Challenge we had access to data from the National Marine Sanctuary, the Office of Protected Resources as well as the US Bureau of Fish and Wildlife Service. Table \ref{table-animal} gives a more detailed overview of the variables that we used for our graphical exploration. 
 
 Figure \ref{deaths} shows a satellite map, overlaid by a scatterplot indicating locations of animal sightings. Most of the sightings follow the coastline - which is not surprising, since that is where we have the easiest access to make these kind of observations. 
 
@@ -129,7 +131,7 @@ Chronic Potency Divisor** & used for calculations \\\hline
 
 
 
-Various chemicals were sampled in the Gulf of Mexico during the months following the oil spill. This analysis focuses on Polycyclic Aromatic Hydrocarbons firstly because of their direct relationship with oil and secondly because of their toxicity to wildlife. Polycyclic Aromatic Hydrocarbons, or PAHs, are semi-volatile organic substances which come mainly from oil and the burning of oil. However, they can also come XXX exhaust and from the burning of gas, coal, garbage and other organic substances \citep{pah}.   Many of these substances are considered carcinogenic, mutagenic, and teratogenic and all are considered harmful to the health of living organisms. Based on EPA guidelines \citep{pah},  this information  was added to the given data. \\
+Various chemicals were sampled in the Gulf of Mexico during the months following the oil spill. This analysis focuses on Polycyclic Aromatic Hydrocarbons firstly because of their direct relationship with oil and secondly because of their toxicity to wildlife. Polycyclic Aromatic Hydrocarbons, or PAHs, are semi-volatile organic substances which come mainly from oil and the burning of oil. However, they can also come from exhaust and from the burning of gas, coal, garbage and other organic substances \citep{pah}.   Many of these substances are considered carcinogenic, mutagenic, and teratogenic and all are considered harmful to the health of living organisms. Based on EPA guidelines \citep{pah},  this information  was added to the given data. \\
 Additionally, it was necessary to put the measurements into a more interpretable form in order to judge the effect of these chemicals on life in the Gulf of Mexico.
  We followed the approach by \citet{pah-benchmark}: measurements of the PAHs are aggregated for each location and considered in terms of their acute and chronic potency: a location is considered to be  at a chronic level when the amount of harmful substances is thought to bring harmful effects over a long period of time. For an acute level the overall amount of substances is at a level that rapidly induces a negative and possible irreversible effect in an organism. 
  
@@ -172,12 +174,11 @@ Type &  type of measuring device: \\
 & {\small Boat (24,381), Float (10,332), Glider (368,563)} \\\hline
 \end{tabular}
 \label{table.salinity}
-\caption{, source: XXX}
+\caption{, source: NOAA}
 \end{table}
 
 Where does the oil go? - In the days after the explosion this was the second most interesting question after 'how big is the spill?'.  The oil flow is mostly driven by the current, which can be determined based on measurements of salinity, depth and temperature. 
-In order to keep track of the oil movement, NOAA pulled most of its resources into the Gulf area to measure these characteristics:  XXX boats, XXX floats
-, and XXX gliders, which recorded salinity, temperature, and depth measurements at various locations in the Gulf of Mexico. 
+In order to keep track of the oil movement, NOAA pulled most of its resources into the Gulf area to measure these characteristics:  2 boats, 11 floats, and 10 gliders, which recorded salinity, temperature, and depth measurements at various locations in the Gulf of Mexico. 
 The floats tended to stay in the deeper water while the boats and the gliders recorded measurements in locations further away from the oil rig.  Figure \ref {Boats, Floats and Gliders} show the patterns of these three measuring methods. 
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
@@ -186,7 +187,7 @@ The floats tended to stay in the deeper water while the boats and the gliders re
    \caption{Paths of Boats, Floats, and Gliders. }
    \label{Boats, Floats and Gliders}
 \end{figure}
-Figure \ref {salinity-timeline} pictures  salinity measurements over the whole data collection period. Points are color coordinated by time to link left and right display. XXX \% of the salinity measurements stayed within a close range of values between 34 and 38 mg/l.
+Figure \ref {salinity-timeline} pictures  salinity measurements over the whole data collection period. Points are color coordinated by time to link left and right display. Approximately 99 \% of the salinity measurements stayed within a close range of values between 34 and 38 mg/l.
 We deemed values of 34 mg/l as unusually low and highlighted their location in the right side of figure \ref{salinity-timeline}. The highest concentration of these points is found near the rig during June and July.
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
@@ -238,7 +239,7 @@ The following formulas show how we attained the chronic and acute benchmark valu
 
 \begin{eqnarray*}
 \lefteqn{\text{Acute/Chronic Benchmark Value} =} \\
-&& \frac{1}{\text{Organic Carbon}} \sum \frac{\text{Alkylation Multiplier} \times \text{Measured Amount of Substance} (\mu g/kg)}{\text{Acute/Chronic Potency Divisor}}
+&& \sum \frac{\text{Alkylation Multiplier} \times \frac{\text{Measured Amount of Substance} (\mu g/kg)}{\text{Organic Carbon}}}{\text{Acute/Chronic Potency Divisor}}
 \end{eqnarray*}
 
 \end{appendix}
