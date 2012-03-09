@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.8.25)  15 SEP 2011 13:17
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.8.25)  9 MAR 2012 13:06
 entering extended mode
 **C:/Users/Owner/Documents/csda-writeup/isu.tex
 (C:/Users/Owner/Documents/csda-writeup/isu.tex
@@ -145,6 +145,14 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks19
+\ex@=\dimen118
+))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 
@@ -191,24 +199,49 @@ G,.JBIG2,.JB2,.eps]
 \UL@box=\box30
 \UL@hyphenbox=\box31
 \UL@skip=\skip47
-\UL@hook=\toks19
-\UL@height=\dimen118
+\UL@hook=\toks20
+\UL@height=\dimen119
 \UL@pe=\count98
-\UL@pixel=\dimen119
+\UL@pixel=\dimen120
 \ULC@box=\box32
 Package: ulem 2011/03/18
-\ULdepth=\dimen120
+\ULdepth=\dimen121
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.sty"
-\wrapoverhang=\dimen121
-\WF@size=\dimen122
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\siunits\SIunits.sty"
+Package: SIunits 2007/12/02 v1.36 Support for the International System of units
+ (MH)
+
+
+\@qskwidth=\skip48
+\symgreek=\mathgroup6
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\siunits\SIunits.cfg")
+LaTeX Info: Redefining \usk on input line 576.
+
+Option `mediumspace' provided!
+LaTeX Info: Redefining \@qsk on input line 576.
+Option `mediumqspace' provided!
+Option `squaren' provided!
+
+Package SIunits Warning: What is `Grey'?.
+
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.sty"
+\wrapoverhang=\dimen122
+\WF@size=\dimen123
 \c@WF@wrappedlines=\count99
 \WF@box=\box33
-\WF@everypar=\toks20
+\WF@everypar=\toks21
 Package: wrapfig 2003/01/31  v 3.6
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
@@ -219,12 +252,12 @@ Package: caption 2011/08/18 v3.2b Customizing captions (AR)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
 Package: caption3 2011/08/18 v1.3b caption3 kernel (AR)
-\captionmargin=\dimen123
-\captionmargin@=\dimen124
-\captionwidth=\dimen125
-\caption@indent=\dimen126
-\caption@parindent=\dimen127
-\caption@hangindent=\dimen128
+\captionmargin=\dimen124
+\captionmargin@=\dimen125
+\captionwidth=\dimen126
+\caption@indent=\dimen127
+\caption@parindent=\dimen128
+\caption@hangindent=\dimen129
 Package caption Info: Unknown document class (or package),
 (caption)             standard defaults will be used.
 )
@@ -241,45 +274,52 @@ fi \vskip \belowcaptionskip .
 Package caption Info: wrapfig package is loaded.
 )
 \c@KVtest=\count101
-\sf@farskip=\skip48
-\sf@captopadj=\dimen129
-\sf@capskip=\skip49
-\sf@nearskip=\skip50
+\sf@farskip=\skip49
+\sf@captopadj=\dimen130
+\sf@capskip=\skip50
+\sf@nearskip=\skip51
 \c@subfigure=\count102
 \c@subfigure@save=\count103
 \c@lofdepth=\count104
 \c@subtable=\count105
 \c@subtable@save=\count106
 \c@lotdepth=\count107
-\sf@top=\skip51
-\sf@bottom=\skip52
+\sf@top=\skip52
+\sf@bottom=\skip53
 ) (C:\Users\Owner\Documents\csda-writeup\isu.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 32.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 32.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count108
-\scratchdimen=\dimen130
+\scratchdimen=\dimen131
 \scratchbox=\box34
 \nofMPsegments=\count109
 \nofMParguments=\count110
-\everyMPshowfont=\toks21
+\everyMPshowfont=\toks22
 \MPscratchCnt=\count111
-\MPscratchDim=\dimen131
+\MPscratchDim=\dimen132
 \MPnumerator=\count112
 \makeMPintoPDFobject=\count113
-\everyMPtoPDFconversion=\toks22
+\everyMPtoPDFconversion=\toks23
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -315,105 +355,131 @@ LaTeX Font Info:    ... okay on input line 29.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Option `squaren' provided! 
+ Command \squaren defined by SIunits package!
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package 1.2 or 1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 30.
+LaTeX Font Info:    Try loading font information for U+msa on input line 38.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 30.
+LaTeX Font Info:    Try loading font information for U+msb on input line 38.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-<images/animal_deaths.png, id=1, 709.65125pt x 616.3025pt>
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+
+ []
+
+[1
+
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<images/animal_deaths.png, id=9, 633.0852pt x 451.6875pt>
 File: images/animal_deaths.png Graphic file (type png)
 
 <use images/animal_deaths.png>
-Package pdftex.def Info: images/animal_deaths.png used on input line 64.
-(pdftex.def)             Requested size: 289.07999pt x 251.05876pt.
- [1
+Package pdftex.def Info: images/animal_deaths.png used on input line 70.
+(pdftex.def)             Requested size: 289.07999pt x 206.25558pt.
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2 <C:/Users/Owner/Docume
-nts/csda-writeup/images/animal_deaths.png (PNG copy)>] <images/death-rates.pdf,
- id=16, 722.7pt x 361.35pt>
+Package natbib Warning: Citation `photo' on page 2 undefined on input line 74.
+
+
+Package natbib Warning: Citation `exhibition' on page 2 undefined on input line
+ 74.
+
+[2 <C:/Users/Owner/Documents/csda-writeup/images/animal_deaths.png>]
+<images/death-rates.pdf, id=16, 722.7pt x 361.35pt>
 File: images/death-rates.pdf Graphic file (type pdf)
 
 <use images/death-rates.pdf>
-Package pdftex.def Info: images/death-rates.pdf used on input line 77.
+Package pdftex.def Info: images/death-rates.pdf used on input line 99.
 (pdftex.def)             Requested size: 252.93776pt x 126.47249pt.
 
 <images/daily-death-counts.pdf, id=17, 1084.05pt x 361.35pt>
 File: images/daily-death-counts.pdf Graphic file (type pdf)
 
 <use images/daily-death-counts.pdf>
-Package pdftex.def Info: images/daily-death-counts.pdf used on input line 78.
+Package pdftex.def Info: images/daily-death-counts.pdf used on input line 100.
 (pdftex.def)             Requested size: 379.40665pt x 126.47249pt.
 
-<images/turtles.png, id=18, 963.6pt x 722.7pt>
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+[3 <C:/Users/Owner/Documents/csda-writeup/images/death-rates.pdf> <C:/Users/Own
+er/Documents/csda-writeup/images/daily-death-counts.pdf>]
+<images/turtles.png, id=32, 963.6pt x 722.7pt>
 File: images/turtles.png Graphic file (type png)
  <use images/turtles.png>
-Package pdftex.def Info: images/turtles.png used on input line 89.
+Package pdftex.def Info: images/turtles.png used on input line 112.
 (pdftex.def)             Requested size: 433.62pt x 325.21199pt.
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 99--115
+[4 <C:/Users/Owner/Documents/csda-writeup/images/turtles.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 123--141
 [][]
  []
 
-[4 <C:/Users/Owner/Documents/csda-writeup/images/death-rates.pdf> <C:/Users/Own
-er/Documents/csda-writeup/images/daily-death-counts.pdf>] [5 <C:/Users/Owner/Do
-cuments/csda-writeup/images/turtles.png>] [6]
-<images/chron-acute-map.png, id=46, 598.235pt x 287.0725pt>
+[5] <images/acute-timeline.png, id=41, 682.7106pt x 300.8841pt>
+File: images/acute-timeline.png Graphic file (type png)
+
+<use images/acute-timeline.png>
+Package pdftex.def Info: images/acute-timeline.png used on input line 159.
+(pdftex.def)             Requested size: 361.34999pt x 159.2566pt.
+ [6 <C:/Users/Owner/Documents/csda-writeup/images/acute-timeline.png>]
+<images/chron-acute-map.png, id=46, 525.4029pt x 315.3381pt>
 File: images/chron-acute-map.png Graphic file (type png)
 
 <use images/chron-acute-map.png>
-Package pdftex.def Info: images/chron-acute-map.png used on input line 140.
-(pdftex.def)             Requested size: 252.94499pt x 121.37999pt.
+Package pdftex.def Info: images/chron-acute-map.png used on input line 169.
+(pdftex.def)             Requested size: 289.07999pt x 173.50865pt.
 
-<images/acute-timeline3.png, id=47, 824.1189pt x 337.9827pt>
-File: images/acute-timeline3.png Graphic file (type png)
 
-<use images/acute-timeline3.png>
-Package pdftex.def Info: images/acute-timeline3.png used on input line 150.
-(pdftex.def)             Requested size: 361.34999pt x 148.19713pt.
- [7 <C:/Users/Owner/Documents/csda-writeup/images/chron-acute-map.png (PNG copy
-)>]
-<images/boats-floats-gliders.png, id=54, 709.65125pt x 615.29875pt>
+Package natbib Warning: Citation `salinity' on page 7 undefined on input line 1
+91.
+
+
+Package natbib Warning: Citation `salinity' on page 7 undefined on input line 1
+91.
+
+[7 <C:/Users/Owner/Documents/csda-writeup/images/chron-acute-map.png>]
+<images/boats-floats-gliders.png, id=52, 441.8106pt x 441.0879pt>
 File: images/boats-floats-gliders.png Graphic file (type png)
 
 <use images/boats-floats-gliders.png>
-Package pdftex.def Info: images/boats-floats-gliders.png used on input line 179
+Package pdftex.def Info: images/boats-floats-gliders.png used on input line 200
 .
-(pdftex.def)             Requested size: 252.94499pt x 219.31042pt.
+(pdftex.def)             Requested size: 216.81pt x 216.45802pt.
 
-<images/salinity-time.png, id=55, 428.3202pt x 324.2514pt>
+<images/salinity-time.png, id=53, 504.2037pt x 357.4956pt>
 File: images/salinity-time.png Graphic file (type png)
 
 <use images/salinity-time.png>
-Package pdftex.def Info: images/salinity-time.png used on input line 186.
-(pdftex.def)             Requested size: 202.35622pt x 153.1898pt.
+Package pdftex.def Info: images/salinity-time.png used on input line 209.
+(pdftex.def)             Requested size: 202.35622pt x 143.47574pt.
 
-<images/salinity-map.png, id=56, 428.3202pt x 324.2514pt>
+<images/salinity-map.png, id=54, 504.2037pt x 357.4956pt>
 File: images/salinity-map.png Graphic file (type png)
 
 <use images/salinity-map.png>
-Package pdftex.def Info: images/salinity-map.png used on input line 187.
-(pdftex.def)             Requested size: 202.35622pt x 153.1898pt.
- [8 <C:/Users/Owner/Documents/csda-writeup/images/acute-timeline3.png>]
-<images/salinity-depth.jpeg, id=61, 888.31876pt x 587.19376pt>
-File: images/salinity-depth.jpeg Graphic file (type jpg)
+Package pdftex.def Info: images/salinity-map.png used on input line 210.
+(pdftex.def)             Requested size: 202.35622pt x 143.47574pt.
 
-<use images/salinity-depth.jpeg>
-Package pdftex.def Info: images/salinity-depth.jpeg used on input line 194.
-(pdftex.def)             Requested size: 289.07999pt x 191.08658pt.
- [9 <C:/Users/Owner/Documents/csda-writeup/images/boats-floats-gliders.png (PNG
- copy)> <C:/Users/Owner/Documents/csda-writeup/images/salinity-time.png> <C:/Us
-ers/Owner/Documents/csda-writeup/images/salinity-map.png>] [10 <C:/Users/Owner/
-Documents/csda-writeup/images/salinity-depth.jpeg>] (C:\Users\Owner\Documents\c
-sda-writeup\isu.bbl
+<images/deapth-salinity.png, id=55, 633.0852pt x 451.6875pt>
+File: images/deapth-salinity.png Graphic file (type png)
+
+<use images/deapth-salinity.png>
+Package pdftex.def Info: images/deapth-salinity.png used on input line 217.
+(pdftex.def)             Requested size: 289.07999pt x 206.25558pt.
+ [8 <C:/Users/Owner/Documents/csda-writeup/images/boats-floats-gliders.png>] [9
+ <C:/Users/Owner/Documents/csda-writeup/images/salinity-time.png> <C:/Users/Own
+er/Documents/csda-writeup/images/salinity-map.png> <C:/Users/Owner/Documents/cs
+da-writeup/images/deapth-salinity.png>]
+[10] (C:\Users\Owner\Documents\csda-writeup\isu.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 11--16
 []\OT1/cmr/m/n/12 Agency, U.E.P., .  Poly-cyclic or-ganic mat-ter (pom).
  []
@@ -435,33 +501,36 @@ $\OT1/cmtt/m/n/12 hadley / ggplot2 / wiki / Crime-[]in-[]Downtown-[]Houston ,[]
  -[]Texas-[] :$
  []
 
-) [11] (C:\Users\Owner\Documents\csda-writeup\isu.aux) ) 
+[11])
+
+Package natbib Warning: There were undefined citations.
+
+[12] (C:\Users\Owner\Documents\csda-writeup\isu.aux) ) 
 Here is how much of TeX's memory you used:
- 4310 strings out of 494045
- 63578 string characters out of 3145969
- 137537 words of memory out of 3000000
- 7520 multiletter control sequences out of 15000+200000
- 10849 words of font info for 41 fonts, out of 3000000 for 9000
+ 4880 strings out of 494045
+ 71377 string characters out of 3145969
+ 143650 words of memory out of 3000000
+ 8067 multiletter control sequences out of 15000+200000
+ 13229 words of font info for 50 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 44i,9n,42p,1610b,301s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmtt12.pfb>
-Output written on isu.pdf (11 pages, 2132983 bytes).
+ 44i,13n,42p,1542b,347s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmtt12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
+msfonts/euler/eurm10.pfb>
+Output written on isu.pdf (12 pages, 553395 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
+ 122 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

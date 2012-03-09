@@ -30,8 +30,8 @@ states <- map_data("state")
 states.animal <- getbox(states, xlim=c(-97, max(animal$Longitude+2)), ylim=range(animal$Latitude)+c(0,1.25))
 
 #colors
-color_scale_3 <- scale_colour_manual(values = c("#FF9900", "#CCFF00", "#FF3300"))
-color_scale_2 <-  scale_colour_manual(values = c( "#CC0000", "#000099")) 
+color_scale_3 <- scale_colour_manual(values = c("#990000", "#FF6600", "#FFCC00"))
+color_scale_2 <-  scale_colour_manual(values = c( "#990000", "#FF6600")) 
 #---------------------------------------------------------------------------------------------------------
 # setting up plot layers
 
@@ -48,7 +48,7 @@ map.text <- geom_text(aes(x=x+c(0,2,-0.5,-0.6,.5,.75),
 
 # add location and tag for oil rig
 rig <- data.frame(Longitude = -88.365997, Latitude = 28.736628)
-plot_rig <- geom_text(aes(x=Longitude, y=Latitude, label = "x BP Oil Rig"), colour = "white", size = 3, data=rig)
+plot_rig <- geom_text(aes(x=Longitude, y=Latitude, label = "x  BP Oil Rig"), colour = "black", size = 3, data=rig)
 
 #---------------------------------------------------------------------------------------------------------
 # PLOT OF ALL DEAD ANIMALS ON MAP; BIRDS, SEA TURTLES, WHALES AND DOLPHINS
@@ -57,24 +57,9 @@ dead <- subset(animal, Alive=="N")
 par(mar=c(0,0,0,0))
 plot(rnorm(10), rnorm(10))
 
-ggplot() +
- geom_tile(aes(lon, lat, fill=fill), data = sat_map) +
-   scale_fill_identity(legend = F) +
-  scale_x_continuous('Longitude') + 
-  scale_y_continuous('Latitude') +  
-   theme_nothing() + 
-#  xlim(c(-96.25, -81.5)) + ylim(c(20,31)) + 
-  geom_point(aes(x = Longitude, y = Latitude, colour = class), data = dead) + 
-  coord_cartesian(xlim=range(sat_map$lon), ylim=range(sat_map$lat)) + 
-	opts(legend.direction = "horizontal", 
-	     legend.position = "bottom", 
-	     panel.background =theme_blank(),
-	     plot.margin = unit(c(0,0,0,0), "lines"),
-	     axis.ticks.margin=unit(0,"lines"), 
-	     axis.ticks.length = unit(0,"lines"),
-	     panel.margin = unit(0, "lines"),
-	     axis.text.y=theme_blank(),
-	     axis.text.x=theme_blank()) + plot_rig + color_scale_3 
+ggplot() + animal.map+  geom_point(aes(x = Longitude, y = Latitude, colour = class), data = dead)  +
+plot_rig + color_scale_3 + theme_grey() + labs(x = "Longitude", y = "Latitude") +
+opts(legend.position = "bottom", legend.direction = "horizontal")
 
 ggsave("images/animal_deaths.png")
 

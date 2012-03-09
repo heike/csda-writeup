@@ -1,4 +1,4 @@
-
+library(lubridate)
 getFlights <- function(airport) {
 	require(RMySQL)
 	m <- dbDriver("MySQL")
@@ -20,7 +20,8 @@ getFlights <- function(airport) {
 	
 	
 	flights <- flights[order(strptime(flights$wstamp, format="%Y-%m-%d %H:%M", tz="UTC")),]
-	flights$nextflight <- c(as.numeric(diff(strptime(flights$wstamp, format="%Y-%m-%d %H:%M", tz="UTC"))),NA)/60
+	flights$nextflight <- c(as.numeric(
+(strptime(flights$wstamp, format="%Y-%m-%d %H:%M", tz="UTC"))),NA)/60
 	
 	save(flights, file=sprintf("%s-flights.rds", airport))
 	dbDisconnect(con)
@@ -90,6 +91,8 @@ alignTime <- function(airport, flights, winds, x="wstamp", y="tstamp") {
 airport <- "PHX"
 airport <- "LAX"
 airport <- "SEA"
+airport <- "ITH"
+airport <- "SJC"
 # other promising candidates:
 # PHX, LAX
 
@@ -99,9 +102,5 @@ getWeather(airport) # saves 'winds' object
 load(sprintf('%s-flights.rds', airport)) # retrieves flights object
 load(sprintf('%s-winds.rds', airport)) # retrieves winds object
 alignTime(airport, flights, winds) # saves 'flights_all' object
-
-ggplot() + stat_spoke(aes(angle=295, radius=2, x =longitude, y = latitude ), colour = "green", data = sea) + 
-stat_spoke(aes(angle=135, radius=2, x =longitude, y = latitude ), colour = "red", data = sea)
-
 
 

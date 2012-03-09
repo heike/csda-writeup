@@ -1,4 +1,5 @@
-
+airport <- 'sea'
+airport <- 'sjc'
 airport <- 'phx'
 load(sprintf('%s-all.rds', airport)) # loads object flights_all
 load(sprintf('%s-winds.rds', airport)) # loads object winds
@@ -10,7 +11,7 @@ idx <- which(is.na(flights_all$Wind_SpeedMPH))
 flights_all$WindDirDegrees[idx] <- NA
 flights_all$Hour <- hour(flights_all$wstamp)
 
-flights_sub <- subset(flights_all, (Hour >= 7) & (Wind_SpeedMPH>=quantile(winds$Wind_SpeedMPH, 0.5, na.rm=TRUE)))
+flights_sub <- subset(flights_all, (Hour >= 7) & (Wind_SpeedMPH<=quantile(flights_all$Wind_SpeedMPH, 0.95, na.rm=TRUE) & (Wind_SpeedMPH != -9999)))
 n <- nrow(flights_sub)
 fwind <- table(flights_sub$WindDirDegrees, useNA="ifany")/n
 flights_sub$nf <- flights_sub$nextflight
@@ -19,36 +20,238 @@ flights_sub$nf[flights_sub$nf>=8] <- 8
 fwindflight <- table(flights_sub$Wind_Direction, flights_sub$nf, useNA="ifany")/n
 dev.new()
 plot(fwindflight, off=c(0,0), col=0:8)
-qplot(WindDirDegrees, nextflight, data = subset(flights_all, Hour >=7))
+
 
 library(ggplot2)
-qplot(Hour, nextflight, data=flights_all)+geom_smooth()
-dev.new()
-qplot(x = nextflight, geom="boxplot", data = flights_all)
 
-#SEA
 drv <- dbDriver("MySQL")
 co <- dbConnect(drv, user="2009Expo", password="R R0cks", port=3306, dbname="data_expo_2009", host="headnode.stat.iastate.edu")
+#airport data
 ar <- dbGetQuery(co, "select * from airportsR")
+#airport runway data
+rn <- dbGetQuery(co, "select * from Runways")
+#subset for sea and ord airports
 sea <- subset(ar, iata == "SEA")
+ord <- subset(ar, iata == "ORD")
+lax <- subset(ar, iata == "LAX")
+sjc <- subset(ar, iata == "SJC")
+phx <- subset(ar, iata == "PHX")
+ord_rn <- subset(rn, IATA == "ORD")
+sea_rn <- subset(rn, IATA == "SEA")
+lax_rn <- subset(rn, IATA == "LAX")
+sjc_rn <- subset(rn, IATA == "SJC")
+phx_rn <- subset(rn, IATA == "PHX")
 setwd("C:\\Users\\Owner\\Documents\\csda-writeup")
 library(ggplot2)
 library(RgoogleMaps)
 library(rgdal)
 source("code/ggooglemaps.R")
 
-map_center <- c(lon=sea$longitude, lat=sea$latitude)
-sat_map <-ggooglemap(center = map_center, zoom = 14, maptype='hybrid', n_pix=640)
-save(sat_map, file="SEA.rds") 
-good_sea <- geom_segment(aes(x = sea$longitude, y = sea$latitude, xend = sea$longitude + cos(295-180), yend = sea$latitude+ 2*sin(295-180)), colour = "green",data = sea)
-bad_sea <-  geom_segment(aes(x = sea$longitude, y = sea$latitude, xend = sea$longitude + cos(135-180), yend = sea$latitude+ 2*sin(135-180)), colour = "red",data = sea)
-sea_origin <- geom_point(aes(x = longitude, y = latitude), data = sea)
+#for seattle satellite
+map_center_lax <- c(lon=lax$longitude, lat=lax$latitude)
+sat_map_lax <-ggooglemap(center = map_center_lax, zoom = 14, maptype='hybrid', n_pix=640)
+#for ord satellite
+map_center_ord <- c(lon=ord$longitude, lat=ord$latitude)
+sat_map_ord <-ggooglemap(center = map_center_ord, zoom = 13, maptype='hybrid', n_pix=640) 
+#LAX
+map_center_lax <- c(lon=lax$longitude, lat=lax$latitude)
+sat_map_ord <-ggooglemap(center = map_center_lax, zoom = 14, maptype='hybrid', n_pix=640) 
+#SJC
+map_center_sjc <- c(lon=sjc$longitude, lat=sjc$latitude)
+sat_map_sjc <-ggooglemap(center = map_center_sjc, zoom = 14, maptype='hybrid', n_pix=640) 
+#PHX
+map_center_phx <- c(lon=phx$longitude, lat=phx$latitude)
+sat_map_phx <-ggooglemap(center = map_center_phx, zoom = 14, maptype='hybrid', n_pix=640) 
 
-ggplot() +
- geom_tile(aes(lon, lat, fill=fill), data = sat_map) +
+#Degrees to radians 
+flights_sub$radians <- flights_sub$WindDirDegrees*pi/180 
+
+###SATELLITE MAP
+#SEA SEATTLE
+sea_rn$latitude.end <- as.numeric(sea_rn$BaseEdPhysicalLatitudeS)/3600
+sea_rn$longitude.end <- -as.numeric(sea_rn$BaseEndPhysicalLongitudeS)/3600
+sea_rn$latitude.start <- as.numeric(sea_rn$ReciprocalEdPhysicalLatitudeS)/3600
+sea_rn$longitude.start <- -as.numeric(sea_rn$ReciprocalEndPhysicalLongitudeS)/3600
+sea_rn$radians <- as.numeric(sea_rn$Angle)*pi/180 - pi/2
+#ORD CHICAGO
+ord_rn$latitude.end <- as.numeric(ord_rn$BaseEdPhysicalLatitudeS)/3600
+ord_rn$longitude.end <- -as.numeric(ord_rn$BaseEndPhysicalLongitudeS)/3600
+ord_rn$latitude.start <- as.numeric(ord_rn$ReciprocalEdPhysicalLatitudeS)/3600
+ord_rn$longitude.start <- -as.numeric(ord_rn$ReciprocalEndPhysicalLongitudeS)/3600
+ord_rn$radians <- -as.numeric(ord_rn$Angle)*pi/180 - pi/2
+#LAX
+lax_rn$latitude.end <- as.numeric(lax_rn$BaseEdPhysicalLatitudeS)/3600
+lax_rn$longitude.end <- -as.numeric(lax_rn$BaseEndPhysicalLongitudeS)/3600
+lax_rn$latitude.start <- as.numeric(lax_rn$ReciprocalEdPhysicalLatitudeS)/3600
+lax_rn$longitude.start <- -as.numeric(lax_rn$ReciprocalEndPhysicalLongitudeS)/3600
+lax_rn$radians <- as.numeric(lax_rn$Angle)*pi/180 - pi/2
+#SJC
+sjc_rn$latitude.end <- as.numeric(sjc_rn$BaseEdPhysicalLatitudeS)/3600
+sjc_rn$longitude.end <- -as.numeric(sjc_rn$BaseEndPhysicalLongitudeS)/3600
+sjc_rn$latitude.start <- as.numeric(sjc_rn$ReciprocalEdPhysicalLatitudeS)/3600
+sjc_rn$longitude.start <- -as.numeric(sjc_rn$ReciprocalEndPhysicalLongitudeS)/3600
+sjc_rn$radians <- as.numeric(sjc_rn$Angle)*pi/180 - pi/2
+#PHX
+phx_rn$latitude.end <- as.numeric(phx_rn$BaseEdPhysicalLatitudeS)/3600
+phx_rn$longitude.end <- -as.numeric(phx_rn$BaseEndPhysicalLongitudeS)/3600
+phx_rn$latitude.start <- as.numeric(phx_rn$ReciprocalEdPhysicalLatitudeS)/3600
+phx_rn$longitude.start <- -as.numeric(phx_rn$ReciprocalEndPhysicalLongitudeS)/3600
+phx_rn$radians <- as.numeric(phx_rn$Angle)*pi/180 - pi/2
+
+rndata <- ddply(phx_rn, .(Angle), summarise,
+	long.end = longitude.end,
+	lat.end = latitude.end,
+	long.start = longitude.start,
+	lat.start = latitude.start)
+write.csv(rndata, file = "runways.csv", row.names = F)
+
+#Satellite image with the runways highlighted
+sea_sat <- ggplot() +
+ geom_tile(aes(lon, lat, fill=fill), data = sat_map_lax) +
    scale_fill_identity(legend = F) +
   scale_x_continuous('Longitude') + 
   scale_y_continuous('Latitude') +  
- coord_equal() + theme_nothing() + stat_spoke(aes(x = sea$longitude, y = sea$latitude, angle=(95-180)), colour = "green", radius = 0.01)+ 
- stat_spoke(aes(x = sea$longitude, y = sea$latitude, angle=(135-180)), colour = "red", radius = 0.01) 
+ coord_equal() + theme_nothing()  + 
+geom_segment(aes(x = longitude.start, y = latitude.start, xend = longitude.end, yend = latitude.end), size = 3, alpha = .8, colour = "orange", data = sea_rn)+
+opts(plot.margin = unit(c(0,0,0,0), "lines"),
+	     axis.ticks.margin=unit(0,"lines"), 
+	     axis.ticks.length = unit(0,"lines"),
+	     panel.margin = unit(0, "lines"),
+	     axis.text.y=theme_blank(),
+	     axis.text.x=theme_blank())
+#Satellite of ORD
+ord_sat <- ggplot() +
+ geom_tile(aes(lon, lat, fill=fill), data = sat_map_ord) +
+   scale_fill_identity(legend = F) +
+  scale_x_continuous('Longitude') + 
+  scale_y_continuous('Latitude') +  
+ coord_equal() + theme_nothing()  + 
+geom_segment(aes(x = longitude.start, y = latitude.start, xend = longitude.end, yend = latitude.end), size = 3, alpha = .8, colour = "blue", data = ord_rn)+
+opts(plot.margin = unit(c(0,0,0,0), "lines"),
+	     axis.ticks.margin=unit(0,"lines"), 
+	     axis.ticks.length = unit(0,"lines"),
+	     panel.margin = unit(0, "lines"),
+	     axis.text.y=theme_blank(),
+	     axis.text.x=theme_blank())
 
+#SEA for the density plot; putting nextflight into catigories 
+flights_sub$nf_block[(flights_sub$nextflight >=0) & (flights_sub$nextflight <= 1)] <- "0-1"
+flights_sub$nf_block[(flights_sub$nextflight >=2) & (flights_sub$nextflight <= 3)] <- "2-3"
+flights_sub$nf_block[(flights_sub$nextflight >=4) & (flights_sub$nextflight <= 5)] <- "4-5"
+flights_sub$nf_block[flights_sub$nextflight >= 6] <- ">6"
+#density plot colored by nextflight value
+sea_wind <- ggplot(subset(flights_sub, nextflight != "NA"), aes(x = radians, fill = factor(nf_block, levels = c(">6", "4-5","2-3","0-1")))) + 
+geom_bar(position = "fill", size = 1.5, binwidth = pi/18)  + scale_fill_manual(values = c("#CC0000", "#FF3300", "#FF6600", "#FFCC00"), name = "Minutes")  +
+labs(x = " ", y = "Density") +
+scale_x_continuous(breaks=c(0,pi/2,pi,3*pi/2), labels = c("North", "East", "South", "West"), limits = c(0, 2*pi)) + geom_vline(aes(xintercept=radians+2*pi), alpha = .5, size = 2, data = sea_rn) +
+ geom_vline(aes(xintercept=radians+2*pi - pi), alpha = .5, size = 2, data = sea_rn) 
+
+# plot of relative frequencies of wind direction
+sea_dens <- ggplot(flights_sub, aes(x = radians, y = ..density..)) + geom_bar(binwidth = pi/18, fill = "#CD0000")  + opts(title = "Relative Frequencies") +
+scale_x_continuous(limits = c(0, 2*pi), breaks = c(0,pi/2, pi, 3*pi/2), labels = c("North", "East", "South", "West")) +  labs(x = " ", y = "Density")
+
+#other weather conditions associated with east
+levels(flights_sub$RAIN)[levels(flights_sub$RAIN)=="1"] <- "Yes"
+levels(flights_sub$RAIN)[levels(flights_sub$RAIN)=="0"] <- "No"
+
+rain_graph <- ggplot(flights_sub, aes(x = radians, fill = factor(RAIN))) + 
+geom_bar(position = "fill", binwidth = pi/18)  + scale_fill_manual("Rain", values = c( "#FF6600","#CC0000"))  +
+labs(x = " ", y = "Density") + opts(legend.position = "none", title = "Rain")  +
+scale_x_continuous(breaks=c(0,pi/2,pi,3*pi/2), labels = c("North", "East", "South", "West"), limits = c(0, 2*pi)) 
+# coord_polar() + opts(legend.position = "bottom", legend.direction = "horizontal", title = "Rain")
+speed <- ddply(flights_sub, .(radians, Wind_Direction), summarize,
+	avg.speed = mean(Wind_SpeedMPH, na.rm = T),
+	std.speed = sd(Wind_SpeedMPH, na.rm = T),
+	up.interval = mean(Wind_SpeedMPH, na.rm = T) + 2*sd(Wind_SpeedMPH, na.rm = T),
+	low.interval = mean(Wind_SpeedMPH, na.rm = T) - 2*sd(Wind_SpeedMPH, na.rm = T))
+
+speed_graph <- ggplot(speed, aes(x = radians, y = avg.speed)) + geom_point(colour = "#CC0000") + geom_line(colour = "#CC0000", size = 2) +
+scale_x_continuous(breaks = c(0,pi/2,pi,3*pi/2), labels = c("North", "East", "South", "West"), limits = c(0,2*pi)) + opts(legend.position = "none", title = "Average Wind Speeds") 
+
+library(gridExtra)
+grid.arrange(sea_dens, rain_graph, speed_graph, ncol = 1)
+
+#FOR ORD chicago
+ord_wind <- ggplot(subset(flights_sub, nf >1), aes(x = radians, fill = factor(nf, levels = c(8:2)))) + 
+geom_bar(position = "fill", size = 1.5, binwidth = pi/18)  + scale_fill_manual(values = c("#000033", "#000066", "#000099", "#0000CC", "#3333FF", "#6666FF", "#66CCFF", "#99FFFF", "#CCFFFF"), name = "Minutes")  +
+labs(x = " ", y = "Density") +
+scale_x_continuous(breaks=c(0,pi/2,pi,3*pi/2), labels = c("North", "East", "South", "West"))  +
+geom_vline(aes(xintercept=radians+2*pi), alpha = .8, size = 1, data = ord_rn) +
+ geom_vline(aes(xintercept=radians+2*pi - pi), alpha = .8, size = 1, data = ord_rn) 
+
+flights_sub$month.year <- paste(flights_sub$Month, flights_sub$Year)
+flights_sub$mydate <- strptime(flights_sub$month.year, "%m %Y")
+
+trend <- ddply(flights_sub, .(month.year, WindDirDegrees), summarize,
+	mean.nf = mean(nf))
+ggplot(trend, aes(x = month.year, y = mean.nf)) + geom_line(aes(colour = WindDirDegrees))
+
+ggplot(subset(flights_sub, (WindDirDegrees >= 90) & (WindDirDegrees <=120)), aes(x = Month, fill = factor(nf, levels = c(8:0)))) + 
+geom_bar(position = "fill", binwidth = 1) + scale_x_continuous(breaks = c(1:12)) +
+scale_fill_manual(values = c("#000033", "#000066", "#000099", "#0000CC", "#3333FF", "#6666FF", "#66CCFF", "#99FFFF", "#CCFFFF"), name = "Minutes")
+
+
+#polar coordinate plot of wind directions relative frequencies
+ord_dens <- ggplot(flights_sub, aes(x = radians, y = ..density..)) + geom_bar(binwidth = pi/18, fill = "#000066")  + coord_polar(theta="x", start = 0) +
+scale_x_continuous(limits = c(0, 2*pi), breaks = c(0,pi/2, pi, 3*pi/2), labels = c("N", "E", "S", "W")) + labs(x = " ", y = "")
+#time series of avg nextflight per day colored by wind direction
+flights_sub.new <- ddply(flights_sub, .(Month, DayofMonth, Year, direction), transform,
+	mean.nf = mean(nextflight))
+ggplot(flights_sub.new, aes(x = tstamp, y = mean.nf, colour = direction)) + geom_line() + 
+geom_hline(aes(yintercept =  2.169495)) + geom_hline(aes(yintercept =  1.997427)) + 
+labs(x = "Time", y = "Mean Time Between Flights (Minutes)")
+
+#estimating for seattle
+flights_sub$direction[flights_sub$radians < pi] <- "East"
+flights_sub$direction[(flights_sub$radians >= pi) & (flights_sub$radians <= 2*pi)] <- "West"
+flights_sub2 <- ddply(flights_sub, .(direction), summarize, 
+	avg.nextflight = mean(nextflight, na.rm = T),
+	std.nextflight = sd(nextflight, na.rm = T),
+	n = length(nextflight))
+
+#  direction avg.nextflight std.nextflight      n
+#1      East       2.169495       1.964677  71,778
+#2      West       1.997427       1.759328 149,621
+
+flights_sub2$avg.nextflight[flights_sub2$direction == "East"] - flights_sub2$avg.nextflight[flights_sub2$direction == "West"]
+#0.172068 and 17/60 = 28 seconds?
+flights_sub3 <- ddply(subset(flights_sub, direction == "East"), .(Month, DayofMonth, Year), summarize,
+	num.flights = length(Month)) #number of flights with east wind per day
+mean(flights_sub3$num.flights) # Average number of flights/day with east wind
+#114.1145
+mean(flights_sub3$num.flights)*0.172068 # Average number of east wind flights/day * time
+#19.63545 minutes per day
+#365*19.63545 = 7,166.939 minutes between flights per year seem to be casued by east winds
+
+#how many flights per day on avg?
+flights_all_avg2 <- ddply(flights_sub, .(Wind_Direction, Year, Month, DayofMonth), summarize,
+	avg.flights = length(Year))
+flights_avg <- ddply(flights_all_avg2, .(Wind_Direction), summarize,
+	avg.num = mean(avg.flights))
+
+flights_all_avg3 <- ddply(flights_sub, .(DayofMonth, Year, Month), summarize,
+	n = length(Year))
+
+
+#ORD
+
+
+
+####making tables for each airport
+setwd("C:\\Users\\Owner\\Dropbox\\airports\\processing_sketch\\data\\PHX")
+windrose <- ddply(flights_sub, .(radians, WindDirDegrees, Wind_Direction), summarise,
+	count = length(radians))
+write.csv(windrose, file = "wind.csv", row.names = F)
+
+windcounts <- ddply(flights_sub, .(WindDirDegrees), summarise,
+	totalcount = length(WindDirDegrees))
+nextflightdata <- ddply(flights_sub, .(WindDirDegrees, nf), summarise,
+	nfcount = length(nf))
+nfdata <- merge(windcounts, nextflightdata, by="WindDirDegrees")
+nfdata$prob <- nfdata$nfcount/nfdata$totalcount
+nfdata <- ddply(nfdata, .(WindDirDegrees, nf), summarize,
+	prob = prob)
+
+write.csv(nfdata, file = "nf.csv", row.names = F)
+
+airport <- "SJC"

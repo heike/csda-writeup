@@ -27,6 +27,10 @@ waterbench <- ddply(waterbench_substance, .(LONGITUDE, LATITUDE), summarize,
 	Acute.Benchmark.Value = sum(avg.Acute.Potency.Ratio),
 	Chronic.Benchmark.Value = sum(avg.Chronic.Potency.Ratio))
 
+##map##
+states <- map_data("state")
+states.chem <- getbox(states, xlim=c(-96, -82), ylim=c(28,35))
+chem.map <- geom_polygon(aes(x = long, y = lat, group = group), colour = "white", fill = "grey70", data = states.chem)
 
 #format data
 #### what does OC stand for? ####
@@ -49,9 +53,9 @@ OCsediment$Acute.Potency.Ratio <- with(OCsediment, AlklAdjConc/Acute.Potency.Div
 OCsediment$Chronic.Potency.Ratio <- with(OCsediment, AlklAdjConc/Chronic.Potency.Divisor)
 
 
-sediment.bench3 <- transform(sediment.bench2, 
-				Acute.Potency.Ratio = Alkl.Adj.Conc/Acute.Potency.Divisor,
-				Chronic.Potency.Ratio = Alkl.Adj.Conc/Chronic.Potency.Divisor)
+sediment.bench3 <- transform(OCsediment, 
+				Acute.Potency.Ratio = AlklAdjConc/Acute.Potency.Divisor,
+				Chronic.Potency.Ratio = AlklAdjConc/Chronic.Potency.Divisor)
 sediment.bench3a <- ddply(sediment.bench3, .(LONGITUDE, LATITUDE, SUBSTANCE), summarize,
 				avg.Acute.Potency.Ratio = mean(Acute.Potency.Ratio),
 				avg.Chronic.Potency.Ratio = mean(Chronic.Potency.Ratio))
@@ -87,26 +91,20 @@ ggsave("images/chron-acute-ratios.png")
 #------------------------------------------------------------------------------------------------------
 
 total <- rbind(waterbench, sediment.bench) 
-ggplot() +
- geom_tile(aes(lon, lat, fill=fill), data = sat_map) +
- coord_cartesian(xlim=range(sat_map$lon), ylim=range(sat_map$lat)) +
-  scale_fill_identity(legend=F) +
-  scale_x_continuous('Longitude') + 
-  scale_y_continuous('Latitude') +  
-  theme_nothing() + 
-  plot_rig + #xlim(c(-96.25, -81.5)) + ylim(c(22,31)) +
-geom_point(aes(x = LONGITUDE, y = LATITUDE), colour = "light blue", data = total) + 
-geom_point(aes(x = LONGITUDE, y = LATITUDE), size = 3, colour = "yellow", data = subset(total, Chronic.Benchmark.Value >= 1)) +
-geom_point(aes(x = LONGITUDE, y = LATITUDE), colour = "red", data = subset(total, Acute.Benchmark.Value >= 1)) + 
-opts(legend.direction = "horizontal", 
-	     legend.position = "bottom", 
-	     panel.background =theme_blank(),
-	     plot.margin = unit(c(0,0,0,0), "lines"),
-	     axis.ticks.margin=unit(0,"lines"), 
-	     axis.ticks.length = unit(0,"lines"),
-	     panel.margin = unit(0, "lines"),
-	     axis.text.y=theme_blank(),
-	     axis.text.x=theme_blank()) + labs(x = "Longitude", y = "Latitude") 
+d1 <- total
+d1$id <- "d1"
+d2 <- subset(total, Chronic.Benchmark.Value >= 1)
+d2$id <- "d2"
+d3 <- subset(total, Acute.Benchmark.Value >= 1)
+d3$id <- "d3"
+data <- rbind(d1,d2,d3)
+
+ggplot()+
+  plot_rig + xlim(c(-96.25, -81.5)) + ylim(c(26,32)) + chem.map +
+geom_point(aes(x = LONGITUDE, y = LATITUDE, colour = id),size = 2, data= data) +
+theme_grey() +labs(x = "Longitude", y = "Latitude") + 
+scale_colour_manual("Level", values = c("d1" = "#FFCC00", "d2" = "#FF6600", "d3" = "#990000"),breaks = c("d1", "d2", "d3"), labels = c("Samples", "Chronic", "Acute")) +
+opts(legend.direction = "vertical", legend.position = "right") 
 ggsave("images/chron-acute-map.png")
 
 
@@ -121,7 +119,12 @@ scale_colour_discrete() +labs(y="Log of Acute Potency Ratio", x="Date") + ylim(0
 water.time <- ggplot() + geom_vline(yintercept=log(2), colour="grey50") + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(surfwater, RESULT!=0)) + 
 scale_colour_discrete() +labs(y="Log of Acute Potency Ratio", x="Date") + ylim(0,0.6) + opts(title="Surface Water Acute Potency Ratios") 
 
-grid.arrange(sediment.time, water.time, ncol = 1)
+ggplot() + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(sediment.bench3, RESULT!=0)) +
+geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(surfwater, RESULT!=0)) +
+theme_grey() + color_scale_2 + labs(y = "Log of Acute Potency Ratio", x = "Date") + geom_hline(yintercept = log(2), colour = "grey50") +
+geom_text(aes(x = DATE, y = Log_Acute.Potency.Ratio, label = SUBSTANCE, colour = Danger.Level), hjust = -.1, data = subset(surfwater, Log_Acute.Potency.Ratio >= log(2)))
+
+#grid.arrange(sediment.time, water.time, ncol = 1)
 ggsave("images/acute-timeline.png")
 
 # need to still fix height and width
