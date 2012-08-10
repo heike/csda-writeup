@@ -24,7 +24,7 @@
 
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
-\title{ A Graphical Exploration of the Deep-Water Horizon Oil Spill}
+\title{ A Graphical Exploration of the Deepwater Horizon Oil Spill}
 \author{Lendie Follett, Ulrike Genschel, Heike Hofmann\\Department of Statistics\\Iowa State University}
 \date{\today}                                           % Activate to display a given date or no date
 
@@ -32,7 +32,7 @@
 \begin{document}
 \begin{abstract}
 
-This paper investigates the  immediate impact of the Deep-Water Horizon Oil Spill of 2010 on the environment using graphics means. The exploration focuses on the effects of the oil spill on wildlife, the chemical pollution in the area following the spill, and salinity levels in the aftermath of the spill.
+This paper investigates some of the  immediate impact of the Deepwater Horizon Oil Spill of 2010 on the environment using graphics means. The exploration focuses on the effects of the oil spill on wildlife, the chemical pollution in the area following the spill, and salinity levels in the aftermath of the spill.
 Thousands of animals including birds, turtles, dolphins, and whales were found dead along the beaches and in the Gulf of Mexico in the months after the oil spill. Levels of Polycyclic Aromatic Hydrocarbons were found to be at dangerous levels along the coast line, making conditions for wildlife highly unfavorable. Salinity measurements, which can be used to determine currents and oil movement, are examined over time as well as geographically. 
 \end{abstract}
 
@@ -40,7 +40,7 @@ Thousands of animals including birds, turtles, dolphins, and whales were found d
 
 %\tableofcontents
 \section{Introduction}
-April 20th, 2010 marked the beginning of the largest oil spill in the history of off-shore drilling.  Following an explosion in the Deep-Water Horizon drilling rig and failure of all emergency systems, crude oil began to gush into the ocean.  After an estimated 4.9 million barrels of oil spilled into the sea, the leak was finally stopped on July 15th of 2010 when the well head was capped.  The completion of the relief well took until September 19, 2010.  The immediate impact of the oil spill on people and wildlife alike was overwhelming and can still be felt today.  The oil destroyed many habitats for birds, turtles, and other marine wildlife.  Waters had to be closed for fishing, affecting the livelihood of the people that depend on the fishing industry. Longterm effects are certain. \\
+April 20th, 2010 marked the beginning of the largest oil spill in the history of off-shore drilling.  Following an explosion in the Deepwater Horizon drilling rig and failure of all emergency systems, crude oil began to gush into the ocean.  After an estimated 4.1 million barrels of oil discharged with 0.8 million barrels being recovered before entering the ocean, the leak was finally stopped on July 15th of 2010 when the well head was capped.  The completion of the relief well took until September 19, 2010.  In the months following the explosion, vast amounts of data were collected in the area. This data represents an unprecedented body of information concerning the oil pollution. The immediate impact of the oil spill on people and wildlife alike was overwhelming and can still be felt today.  The oil destroyed many habitats for birds, turtles, and other marine wildlife.  Waters had to be closed for fishing, affecting the livelihood of the people that depend on the fishing industry. Longterm effects are certain. \\
 
 It is of course impossible to do an analysis that adequately reflects the full extent and complexity of the effects of the BP oil spill. The focus  of this paper is therefore on immediate environmental impacts of the oil spill on the Gulf of Mexico and present graphical analyses of data such as: temperature and salinity provided by the Environmental Protection Agency (EPA), chemical measurements obtained by the National Oceanic and Atmospheric Administration (NOAA) and data on wildlife from the US Fish and Wildlife Service (FSW). These measurements are of interest as they serve as indicators for environmental stability and conditions; salinity, for example, has a major influence on determining oceanic flow;  Polycyclic Aromatic Hydrocarbons (PAHs),  a class of mostly carcinogenic chemicals present in oil, are a quantifiable measure of environmental pollution.
 
@@ -63,16 +63,17 @@ Alive & condition of animal: \\
 & {\small Alive (2,197), Dead (6,196)} \\
 Observation Date & date of observation `mm-dd-yyyy'. \\\hline
 \end{tabular}
-\caption{Animal Sightings between April 26, 2010 and October 18, 2010, source: Avian Observations from US Fish and Wildlife (Southeast Region),  Marine Mammal Observations reported by  the National Marine Sanctuary, NOAA, and the Office of Protected Resources, NOAA.}
+\caption{Overview of variables used as well as brief results. Animal Sightings between April 26, 2010 and October 18, 2010, source: Avian Observations from US Fish and Wildlife (Southeast Region),  Marine Mammal Observations reported by  the National Marine Sanctuary, NOAA, and the Office of Protected Resources, NOAA.}
 \label{table-animal}
 \end{table}
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=4in]{animal_deaths.png} 
-   \caption{Map of a part of the Gulf of Mexico. The location of the Deep Water Horizon rig is marked by a black cross. Each dot on top of the map represents the sighting of one dead animal: 5,552  birds (red), 546 sea turtles (orange), and 98 dolphins and whales (yellow). }
+   \caption{Map of a part of the Gulf of Mexico. The location of the 
+water Horizon rig is marked by a black cross. Each dot on top of the map represents the sighting of one dead animal: 5,552  birds (red), 546 sea turtles (orange), and 98 dolphins and whales (yellow). }
    \label{deaths}
 \end{figure}
-{Pictures of oiled beaches littered with washed-up bodies of oil-blackened animals are often} the most {intense} and {affecting visuals the public eye gets to see} {in the immediate aftermath of any oil spill}. {The value of such pictures for the purpose of educating the public about the impacts of oil spills becomes clear when noting that a photo depicting oiled pelicans from the BP oil spill was voted} this year's winning entry in the Veolia Environment Wildlife Photographer of the Year by \citet{photo} {exhibited in the \citet{exhibition}}. {Seeing such photographs in the media countless of times led us to investigate which animals were effected the most by the BP oil spill and how these effects extended geographically.}
+{Pictures of oiled beaches littered with washed-up bodies of oil-blackened animals are often} the most {intense} and {affecting visuals the public gets to see} {in the immediate aftermath of any oil spill}. {The value of such pictures for the purpose of educating the public about the impacts of oil spills becomes clear when noting that a photo depicting oiled pelicans from the BP oil spill was voted} this year's winning entry in the Veolia Environment Wildlife Photographer of the Year by \citet{photo} {exhibited in the \citet{exhibition}}. {Seeing such photographs in the media countless of times led us to investigate which animals were effected the most by the BP oil spill and how these effects extended geographically.}
 
 
 
@@ -93,7 +94,7 @@ Figure \ref{deaths} shows a map overlaid by a scatterplot indicating locations o
 %
 %With those caveats in mind, we can still tell from the  map in Figure \ref{deaths} that 
 
-{From Figure \ref{deaths} we can see that} the shores of Louisiana and Mississippi, closest to the oil rig show the highest concentration of dead animals. Each  {dot} corresponds to one dead  {animal, where} the red dots represent birds, orange dots  {represent} sea turtles, and yellow dots indicate large mammals, such as whales and dolphins. Overall a total of 6,196 animals were reported dead during  {the} six month period  {from April to October 2010}.
+{From Figure \ref{deaths} we can see that} the shores of Louisiana and Mississippi, closest to the oil rig show the highest concentration of dead animals. Each  {dot} corresponds to one dead  {animal, where} the red dots represent birds, orange dots  {represent} sea turtles, and yellow dots indicate large mammals, such as whales and dolphins. Overall a total of 6,196 animals were reported dead during  {the} six month period  {from April to October 2010}. We plan to continue to look at collected data to see the effects over time. 
 
 	\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
@@ -103,20 +104,23 @@ Figure \ref{deaths} shows a map overlaid by a scatterplot indicating locations o
    \label{death rates}
 \end{figure}
 
-
+%XXXXXXXXXXXXXXXXXX How to word ??? XXXXXXXXXXXXX 
+%Revision: Better to talk about daily deaths or deaths per day explicitely instead of "rate" 
 Birds, sea turtles, and dolphins and whales  {each show a} unique death pattern during the data collection period as Figure \ref{death rates} illustrates. The  {top} figure  {displays the} cumulative death rate for each species over time; the {birds' response} to the disaster  happens at a {later} time than that of sea turtles, whales and dolphins.  {Their death rate is relatively low} from May to July, after which the rate beg{ins} to increase. Sea turtles, dolphins and whales, on the other hand, {peak in their} death rates from May  {through} July and  {then} begin to flatten out. \\
 
-These patterns are shown in more detail in  the  {bottom three} charts of figure \ref{death rates}, which represent daily death counts between May and October for each class of animals. For sea turtles, dolphins, and whales, the highest daily death counts occur in the earlier weeks and then decrease over time.  The majority of dead bird findings occurs later in time and their death counts per day begin to climb rapidly around July. After the leak  {in the oil rig} was stopped on July 15th, the number of daily deaths  {begins to exhibit much more} variability until {the sightings} begin to decrease by mid-September. Stopping the leak seems to have {had} the most profound impact on reducing the daily death counts for sea turtles. 
+These patterns are shown in more detail in  the  {bottom three} charts of figure \ref{death rates}, which represent daily death counts between May and October for each class of animals. For sea turtles, dolphins, and whales, the highest daily death counts occur in the earlier weeks and then decrease over time.  The majority of dead bird findings occurs later in time and their death counts per day begin to climb rapidly around July. After the leak  {in the oil rig} was stopped on July 15th, the number of daily deaths  {begins to exhibit much more} variability until {the sightings} begin to decrease by mid-September. 
+%Stopping the leak seems to have {had} the most profound impact on reducing the daily death counts for sea turtles. 
+However, it is important to keep in mind the effect reporting rates may have had on these patterns. 
 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=6in]{turtles.png} 
-   \caption{Four species of endangered or critically endangered sea turtles observed in the Gulf of Mexico from April 26th to October 18th 2010.  Orange dots indicate turtles found alive; red dots indicate those found dead.}
+   \caption{Sightings of four species of endangered or critically endangered sea turtles observed in the Gulf of Mexico from April 26th to October 18th 2010.  Orange dots indicate turtles found alive; red dots indicate those found dead.}
    % series of maps of 
    \label{turtles}
 \end{figure}
 
-Four species of sea turtles were found and identified during the data collection period, all of which are considered to be either threatened or endangered. These species are: Kemp's Ridley, Hawksbill Sea Turtle, Green Sea Turtle, and Loggerhead Sea Turtle. Figure \ref{turtles} shows the  {time and location} these turtles were found and whether they were {alive} or dead. Most dead turtles,  {across} all species, were found along the shoreline. Alive sea turtles were mostly spotted off the coast.  {From the graphs we can identify} two main areas along the coasts of Louisiana and Florida in which the  {majority} of  {a}live sea turtles were found.  This is most evident among the Green Sea Turtle and Kemp's Ridley. The species with the greatest number of found casualties  {is} Kemp's Ridley, an endangered species which lives primarily in the Gulf of Mexico.  It is more common for Kemp's Ridley sea turtles to be present in the northern part of the Gulf of Mexico during June, July, and August. Female Kemp's Ridleys, like other sea turtles, nest between May and July and lay their eggs on various beaches of the Gulf of Mexico  \citep{turtles}. From this information, we can understand that there were more turtles in the area during the months after the oil spill occurred, and thus more sea turtles to be found.  After August, however, it would be natural for these turtles to begin to leave the area and  {to} head south. Very few turtles were found after September, 2010.
+Four species of sea turtles were found and identified during the data collection period, all of which are considered to be either threatened or endangered. These species are: Kemp's Ridley (Endangered), Hawksbill Sea Turtle (Endangered), Green Sea Turtle (Threatened or endangered, depending on the distinct population segment), and Loggerhead Sea Turtle (Threatened or endangered, depending on the distinct population segment). Figure \ref{turtles} shows the  {time and location} these turtles were found and whether they were {alive} or dead. Most dead turtles,  {across} all species, were found along the shoreline. Alive sea turtles were mostly spotted off the coast.  {From the graphs we can identify} two main areas along the coasts of Louisiana and Florida in which the  {majority} of  {a}live sea turtles were found.  This is most evident among the Green Sea Turtle and Kemp's Ridley. The species with the greatest number of found casualties  {is} Kemp's Ridley, an endangered species which lives primarily in the Gulf of Mexico.  It is more common for Kemp's Ridley sea turtles to be present in the northern part of the Gulf of Mexico during June, July, and August. Female Kemp's Ridleys, like other sea turtles, nest between May and July and lay their eggs on various beaches of the Gulf of Mexico  \citep{turtles}. From this information, we can understand that there were more turtles in the area during the months after the oil spill occurred, and thus more sea turtles to be found.  After August, however, it would be natural for these turtles to begin to leave the area and  {to} head south. Very few turtles were found after September, 2010.
 
 \subsection{Chemicals}
 
@@ -148,7 +152,7 @@ Chronic Potency Divisor** & used for calculations \\\hline
 Various chemicals were sampled in the Gulf of Mexico during the months following the oil spill. This analysis focuses on Polycyclic Aromatic Hydrocarbons firstly because of their direct relationship with oil and secondly because of their toxicity to wildlife. Polycyclic Aromatic Hydrocarbons, or PAHs, are semi-volatile organic substances which come mainly from oil and the burning of oil. However, they can also come from exhaust and from the burning of gas, coal, garbage and other organic substances \citep{pah}.   Many of these substances are considered carcinogenic, mutagenic, and teratogenic and all are considered harmful to the health of living organisms. Based on EPA guidelines \citep{pah},  {we added} this information to the  {existing} data. \\
 {A hurdle to overcome for these data presented the units of measurements that were recorded in the original spreadsheets. Units of measurements varied depending on the nature of the chemical and were also not reported consistently. To judge the combined effect of the sum of these chemicals on life in the Gulf of Mexico we put all chemicals on a common scale.}
 %Additionally, it was necessary to put the measurements into a more interpretable form in order to judge the effect of these chemicals on life in the Gulf of Mexico.
- {To do so,} we followed the approach by \citet{pah-benchmark}: measurements of the PAHs are aggregated for each location and considered in terms of their acute and chronic potency: a location is considered to be  at a chronic level when the amount of harmful substances is thought to bring harmful effects over a long period of time. For an acute level the overall amount of substances is at a level that rapidly induces a negative and possible irreversible effect  {on} an organism. 
+ {To do so,} we followed the approach by \citet{pah-benchmark}: measurements of the PAHs are aggregated across substances for each location and considered in terms of their acute and chronic potency: a location is considered to be  at a chronic level when the total amount of harmful substances is thought to bring harmful effects over a long period of time. For an acute level the overall amount of substances is at a level that rapidly induces a negative and possible irreversible effect  {on} an organism. 
  
 Each PAH substance has a unique threshold at which it has an acute  {and} chronic effect on humans. These thresholds are called potency divisors  {and can be used} to find  {the} corresponding potency ratios by dividing the observed amount {of the chemical} by its  {potency} divisor. (For a more detailed discussion  {we refer the reader to}  \ref{benchmarks}.) {If the amount of substance measured at any location exceeds the level of the acute potency divisor, (i.e. resulting in an acute ratio of greater than one) this substance has an acute detrimental effect on a human being's health.} % - I don't understand this sentence....Can we give an example?
 % I tried to clarify it HH
@@ -159,7 +163,7 @@ For surface water and sediment samples alike, these ratios are additive in effec
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=5in]{acute-timeline.png} 
-   \caption{Timeline of logarithm of acute potency ratios.  Points are colored according to a substance's effect on health. There is a period of time between June and July in which the acute value is heightened.  Points which exceed the acute benchmark are labeled.}
+   \caption{Timeline of logarithm of acute potency ratios. Each dot is a single measurement taken of a substance. Points are colored according to a substance's effect on health. There is a period of time between June and July in which the acute value is heightened.  Points which exceed the acute benchmark are labeled.}
    \label{pah-timeline}
 \end{figure}
 
@@ -175,6 +179,7 @@ Figure \ref{pah-timeline} shows the (log) acute potency ratios for measurements 
 
 
 Figure \ref{pah-map} shows a map of the gulf coast overlaid by yellow points at locations where PAH measurements were taken. Locations with elevated PAH values are emphasized by colored dots: orange (at or above chronic) and red (at or above acute thresholds).  Particularly along the outer coast of Louisiana, many of the observed PAH values exceeded the benchmarks.  This might be an indication that this area had the most direct contact with the oil.  
+%XXXXXXX how to make a footnote??: A more detailed explanation of the method used to find ratios can be found in the appendix.
 
 \subsection{``Where does the oil go?'' -- Salinity Analysis}
 
@@ -200,7 +205,7 @@ The floats tended to stay in the deeper water while the boats and the gliders re
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=3in]{boats-floats-gliders.png} 
-   \caption{All observation points of boats (red), floats (orange), and gliders (yellow). The paths the devices followed to take measurements are visible. We can see that the boats follow a grid pattern - particularly in the Western region of the gulf. Floats and gliders seem to be more affected by currents - or can be manouvered easily, and show a `criss-cross' pattern across the area where the bulk of the oil went after the spill.}
+   \caption{All observation points of boats (red), floats (orange), and gliders (yellow). The paths the devices followed to take measurements are visible. We can see that the boats follow a grid pattern, particularly in the Western region of the gulf. Floats and gliders seem to either be more affected by currents or are more easily maneuvered as they show a `criss-cross' pattern across the area where the bulk of the oil went after the spill.}
    \label{Boats, Floats and Gliders}
 \end{figure}
 Figure \ref{salinity-timeline} pictures salinity measurements over the whole data collection period. Points are color coordinated by time to link the left and right display. Approximately 99\% of the salinity measurements stayed within a range of values close {to} 34 and 38 mg/l.
@@ -221,7 +226,7 @@ Figure \ref{salinity-timeline} pictures salinity measurements over the whole dat
    \caption{Relationship between depth and salinity grouped by each unique latitude and longitude combination. Depth and salinity almost always maintain a fixed relationship, as seen in most of the observations. However, some areas, mainly those at the surface of the water, experienced unusually low values of salinity. Two areas, which were measured by a boat, had a depth-salinity relationship very unlike the rest.}
    \label{Depth-Salinity}
 \end{figure}
-Depth and salinity form a close relationship as can be seen in Figure \ref{Depth-Salinity}. For depths below 100 feet salinity levels are nearly constant. This is not the case for many measurements taken near the surface. Figure \ref{Depth-Salinity}  also shows  two lines of measurements taken by a boat which do not follow the{typical} relationship. The surface water measurement{s for these cases were} far below normal {values} and {then rapidly} dropped  with depth. This, however, was{observed} in locations far from the rig and {could be an} unrelated incident.
+Depth and salinity form a close relationship as can be seen in Figure \ref{Depth-Salinity}. For depths below 100 feet salinity levels are nearly constant. This is not the case for many measurements taken near the surface. Figure \ref{Depth-Salinity}  also shows  two lines of measurements taken by a boat which do not follow the {typical} relationship. The surface water measurement{s for these cases were} far below normal {values} and {then rapidly} dropped  with depth. This, however, was {observed} in locations far from the rig and {could be an} unrelated incident.
 
 \subsection{Tools used}
 The tools that we used for formatting the data and making the charts are:
@@ -231,13 +236,13 @@ The tools that we used for formatting the data and making the charts are:
 
 \section{Conclusions}
 
-Although there is no doubt that the oil spill caused a tremendous amount of damage, the lack of data  {and necessary substance knowledge} make it difficult to draw  {reliable} conclusions. We have no information on the actual cause of death of the birds, sea turtles, dolphins,  {or} whales.  We also do not have past data to compare these findings with and so can only reasonably assume that th{e observed} number of dead animals is  {higher than} unusual, {for example the data on birds indicated whether they found bird was oiled or not.} %this is correct, HH
+Although there is no doubt that the oil spill caused a tremendous amount of damage, the lack of data  {and necessary substance knowledge} make it difficult to draw  {reliable} conclusions. We have no information on the actual cause of death of the birds, sea turtles, dolphins,  {or} whales.  We also do not have past data to compare these findings with and so can only reasonably assume that th{e observed} number of dead animals is  {higher than} unusual, {for example the data on birds indicated whether the found bird was oiled or not.} %this is correct, HH
 
 It is also hard to  {draw} definite inferences based on the PAH measurements.  While we know PAH substances were found at harmful levels along the coast, we{, again,} do not have baseline data to compare post-spill levels to. As with the animal deaths, we can only reasonably assume that the high levels of PAHs are unusual for the area. 
 
-Past data was available for salinity, however, the area in which these pre-spill salinity values were measured is quite different from the area in which the post-spill salinity values were measured.  Salinity measurements taken along the coastline  {are} quite different and therefore not directly comparable to those taken in the middle of the Gulf of Mexico. Better baseline data would have facilitated making conclusions about the effects of the Deep-Water Horizon oil spill on chemicals in the gulf, these chemicals' effects on wildlife, and salinity levels.
+Past data was available for salinity. However, the area in which these pre-spill salinity values were measured is quite different from the area in which the post-spill salinity values were measured.  Salinity measurements taken along the coastline  {are} quite different and therefore not directly comparable to those taken in the middle of the Gulf of Mexico. Better baseline data would have facilitated making conclusions about the effects of the Deepwater Horizon oil spill on chemicals in the gulf, these chemicals' effects on wildlife, and salinity levels.
 
-What we do know is that the environmental conditions were highly unfavorable during the months after the oil spill. Polycyclic Aromatic Hydrocarbons were found at chronic and acute levels along the shoreline of the Gulf of Mexico. These levels are high enough to cause cancer and disrupt reproduction, development, and the immune system of  {many} organisms. Effects of these PAHs are likely to be felt long after the spill. Animals which did survive the initial spill and its aftermath such as birds, sea turtles, dolphins, and whales are all at risk  {for developing} health problems in the future  {related to this event.} For this reason, the numbers in Figure \ref{deaths}, which only cover a five month period after the spill, do not entirely represent the number of animals that will have ultimately died as a result of the oil spill. The Deep-Water Horizon oil spill was a disaster which affected the environment, wildlife, and society upon impact, and will continue to do so for an indefinite number of years.
+What we do know is that the environmental conditions were highly unfavorable during the months after the oil spill. Polycyclic Aromatic Hydrocarbons were found at chronic and acute levels along the shoreline of the Gulf of Mexico. These levels are high enough to cause cancer and disrupt reproduction, development, and the immune system of  {many} organisms. Effects of these PAHs are likely to be felt long after the spill. Animals which did survive the initial spill and its aftermath such as birds, sea turtles, dolphins, and whales are all at risk  {for developing} health problems in the future  {related to this event.} For this reason, the numbers in Figure \ref{deaths}, which only cover a five month period after the spill, do not entirely represent the number of animals that will have ultimately died as a result of the oil spill. The Deepwater Horizon oil spill was a disaster which affected the environment, wildlife, and society upon impact, and will continue to do so for an indefinite number of years.
 
 
 \begin{appendix}

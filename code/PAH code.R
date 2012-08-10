@@ -29,7 +29,7 @@ waterbench <- ddply(waterbench_substance, .(LONGITUDE, LATITUDE), summarize,
 
 ##map##
 states <- map_data("state")
-states.chem <- getbox(states, xlim=c(-96, -82), ylim=c(28,35))
+states.chem <- getbox(states, xlim=c(-96, -82), ylim=c(26,32))
 chem.map <- geom_polygon(aes(x = long, y = lat, group = group), colour = "white", fill = "grey70", data = states.chem)
 
 #format data
@@ -101,8 +101,9 @@ data <- rbind(d1,d2,d3)
 
 ggplot()+
   plot_rig + xlim(c(-96.25, -81.5)) + ylim(c(26,32)) + chem.map +
-geom_point(aes(x = LONGITUDE, y = LATITUDE, colour = id),size = 2, data= data) +
-theme_grey() +labs(x = "Longitude", y = "Latitude") + 
+geom_point(aes(x = LONGITUDE, y = LATITUDE, colour = id, size = id), data= data) +
+theme_grey() +labs(x = "Longitude", y = "Latitude") +
+scale_size_manual("Level", values = c("d1" = 1.5, "d2" = 3, "d3" = 2),breaks = c("d1", "d2", "d3"), legend = F) + 
 scale_colour_manual("Level", values = c("d1" = "#FFCC00", "d2" = "#FF6600", "d3" = "#990000"),breaks = c("d1", "d2", "d3"), labels = c("Samples", "Chronic", "Acute")) +
 opts(legend.direction = "vertical", legend.position = "right") 
 ggsave("images/chron-acute-map.png")
@@ -119,8 +120,8 @@ scale_colour_discrete() +labs(y="Log of Acute Potency Ratio", x="Date") + ylim(0
 water.time <- ggplot() + geom_vline(yintercept=log(2), colour="grey50") + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(surfwater, RESULT!=0)) + 
 scale_colour_discrete() +labs(y="Log of Acute Potency Ratio", x="Date") + ylim(0,0.6) + opts(title="Surface Water Acute Potency Ratios") 
 
-ggplot() + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(sediment.bench3, RESULT!=0)) +
-geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =5, data = subset(surfwater, RESULT!=0)) +
+ggplot() + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =3, data = subset(sediment.bench3, RESULT!=0)) +
+geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =3, data = subset(surfwater, RESULT!=0)) +
 theme_grey() + color_scale_2 + labs(y = "Log of Acute Potency Ratio", x = "Date") + geom_hline(yintercept = log(2), colour = "grey50") +
 geom_text(aes(x = DATE, y = Log_Acute.Potency.Ratio, label = SUBSTANCE, colour = Danger.Level), hjust = -.1, data = subset(surfwater, Log_Acute.Potency.Ratio >= log(2)))
 

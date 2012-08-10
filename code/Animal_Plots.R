@@ -93,10 +93,10 @@ turtles$Quarter[turtles$week.number > 38] <- "09-20-2010 to 10-18-210"
 
 turtle_opts <- opts(axis.title.x=theme_blank(), legend.position = "none", panel.margin=0.1, axis.text.x=theme_blank(), axis.text.y=theme_blank(), axis.ticks=theme_blank(), plot.margin=unit(c(0,0,0,0),"lines"))
 
-caretta <- ggplot(subset(turtles, Species == "Caretta caretta"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text+ theme_bw() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4) + labs(y = "Loggerhead Sea Turtle") + color_scale_2 
-chelonia <- ggplot(subset(turtles, Species == "Chelonia mydas"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_bw() + turtle_opts + geom_point() + facet_wrap(~Quarter, ncol = 4)  +labs(y = "Green Sea Turtle") + color_scale_2
-eretmochelys <- ggplot(subset(turtles, Species == "Eretmochelys imbricata"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_bw() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4, drop = FALSE)  + labs(y = "Hawksbill Sea Turtle") + color_scale_2
-lepid <- ggplot(subset(turtles, Species == "Lepidochelys kempii"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_bw() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4)  + labs(y = "Kemp's Ridley") + color_scale_2
+caretta <- ggplot(subset(turtles, Species == "Caretta caretta"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text+ theme_grey() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4) + labs(y = "Loggerhead Sea Turtle") + color_scale_2 
+chelonia <- ggplot(subset(turtles, Species == "Chelonia mydas"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_grey() + turtle_opts + geom_point() + facet_wrap(~Quarter, ncol = 4)  +labs(y = "Green Sea Turtle") + color_scale_2
+eretmochelys <- ggplot(subset(turtles, Species == "Eretmochelys imbricata"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_grey() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4, drop = FALSE)  + labs(y = "Hawksbill Sea Turtle") + color_scale_2
+lepid <- ggplot(subset(turtles, Species == "Lepidochelys kempii"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_grey() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4)  + labs(y = "Kemp's Ridley") + color_scale_2
 
 
 png("images/turtles.png", width=960, height=720) # in pixel

@@ -57,7 +57,8 @@ plot_rig_b + opts(legend.position = "bottom", legend.direction = "horizontal")
 ggsave("images/boats-floats-gliders.png")
 
 #DEPTH X SALINITY GROUP = INTERACTION(LONG, LAT) FACTTED BY TYPE (takes realllllly long time to load!!!)
-ggplot() + geom_line(aes(x = Depth, y = Salinity, group = interaction(Longitude, Latitude), colour = Type), data = subset(salinity, Salinity != -99)) + color_scale_3 + opts(title = "Boats, Floats, and Gliders")
+ggplot() + geom_line(aes(x = Depth, y = Salinity, group = interaction(Longitude, Latitude), colour = Type), data = subset(salinity, Salinity != -99)) + 
+color_scale_3 + opts(title = "Boats, Floats, and Gliders") + theme_grey()
 ggsave("images/deapth-salinity.png")
 
 
