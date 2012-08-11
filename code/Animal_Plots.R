@@ -58,7 +58,7 @@ par(mar=c(0,0,0,0))
 plot(rnorm(10), rnorm(10))
 
 ggplot() + animal.map+  geom_point(aes(x = Longitude, y = Latitude, colour = class), data = dead)  +
-plot_rig + color_scale_3 + theme_grey() + labs(x = "Longitude", y = "Latitude") +
+plot_rig + animal_classes3 + theme_grey() + labs(x = "Longitude", y = "Latitude") +
 opts(legend.position = "bottom", legend.direction = "horizontal")
 
 ggsave("images/animal_deaths.png")
@@ -93,10 +93,10 @@ turtles$Quarter[turtles$week.number > 38] <- "09-20-2010 to 10-18-210"
 
 turtle_opts <- opts(axis.title.x=theme_blank(), legend.position = "none", panel.margin=0.1, axis.text.x=theme_blank(), axis.text.y=theme_blank(), axis.ticks=theme_blank(), plot.margin=unit(c(0,0,0,0),"lines"))
 
-caretta <- ggplot(subset(turtles, Species == "Caretta caretta"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text+ theme_grey() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4) + labs(y = "Loggerhead Sea Turtle") + color_scale_2 
-chelonia <- ggplot(subset(turtles, Species == "Chelonia mydas"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_grey() + turtle_opts + geom_point() + facet_wrap(~Quarter, ncol = 4)  +labs(y = "Green Sea Turtle") + color_scale_2
-eretmochelys <- ggplot(subset(turtles, Species == "Eretmochelys imbricata"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_grey() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4, drop = FALSE)  + labs(y = "Hawksbill Sea Turtle") + color_scale_2
-lepid <- ggplot(subset(turtles, Species == "Lepidochelys kempii"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_grey() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4)  + labs(y = "Kemp's Ridley") + color_scale_2
+caretta <- ggplot(subset(turtles, Species == "Caretta caretta"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text+ theme_grey() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4) + labs(y = "Loggerhead Sea Turtle") + alive_dead2
+chelonia <- ggplot(subset(turtles, Species == "Chelonia mydas"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_grey() + turtle_opts + geom_point() + facet_wrap(~Quarter, ncol = 4)  +labs(y = "Green Sea Turtle") + alive_dead2
+eretmochelys <- ggplot(subset(turtles, Species == "Eretmochelys imbricata"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_grey() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4, drop = FALSE)  + labs(y = "Hawksbill Sea Turtle") + alive_dead2
+lepid <- ggplot(subset(turtles, Species == "Lepidochelys kempii"), aes(x = Longitude, y = Latitude, colour = Alive)) + animal.map + map.text + theme_grey() + turtle_opts+ geom_point() + facet_wrap(~Quarter, ncol = 4)  + labs(y = "Kemp's Ridley") + alive_dead2
 
 
 png("images/turtles.png", width=960, height=720) # in pixel
@@ -129,7 +129,7 @@ annotations <- function(y=20) {
 geom_text(aes(x = as.numeric(as.Date(c("2010-09-19", "2010-07-15"))),   label = c("Sep 19, 2010\nRelief Well Completed", "July 15, 2010\nLeak Stopped")), y = y, colour="grey50", hjust = -0.1, angle = 0, size=3, inherit.aes=F)
 }
 
-ggplot() + vlines + annotations() + geom_line(aes(x= Date, y =perc_dead, colour = class, group=class), size=3, data = animal_sums, aes.inherit=F) + scale_x_date() + theme_grey() + color_scale_3  + scale_size(legend = FALSE) + labs(x="Date", y="Percent") + opts(legend.position = "none")
+ggplot() + vlines + annotations() + geom_line(aes(x= Date, y =perc_dead, colour = class, group=class), size=3, data = animal_sums, aes.inherit=F) + scale_x_date() + theme_grey() + animal_classes3  + scale_size(legend = FALSE) + labs(x="Date", y="Percent") + opts(legend.position = "none")
 
 ggsave("images/death-rates.pdf", width=10, height=5)
 
@@ -138,7 +138,7 @@ ggsave("images/death-rates.pdf", width=10, height=5)
 dead.week <- ddply(animal, .(Date, class), summarize,
     total = length(Species) - sum(Live))
 ggplot(aes(x=Date, y=total, colour=class), data=dead.week) + vlines  + geom_point(aes(size = 1.75)) +
- scale_x_date() + facet_wrap(~class, scales="free", nrow=1) + theme_grey() + color_scale_3 + opts(legend.position = "none")+ labs(y = "Count") 
+ scale_x_date() + facet_wrap(~class, scales="free", nrow=1) + theme_grey() + animal_classes3 + opts(legend.position = "none")+ labs(y = "Count") 
 
 ggsave("images/daily-death-counts.pdf", width=15, height=5) # in pixel
 

@@ -1,3 +1,4 @@
+
 #PAH code
 #choose lrf_WATER_benchmarks in data folder
 setwd("C:\\Users\\Owner\\Documents\\csda-writeup")
@@ -104,7 +105,7 @@ ggplot()+
 geom_point(aes(x = LONGITUDE, y = LATITUDE, colour = id, size = id), data= data) +
 theme_grey() +labs(x = "Longitude", y = "Latitude") +
 scale_size_manual("Level", values = c("d1" = 1.5, "d2" = 3, "d3" = 2),breaks = c("d1", "d2", "d3"), legend = F) + 
-scale_colour_manual("Level", values = c("d1" = "#FFCC00", "d2" = "#FF6600", "d3" = "#990000"),breaks = c("d1", "d2", "d3"), labels = c("Samples", "Chronic", "Acute")) +
+scale_colour_manual("Level", values = c("d1" = "#990000", "d2" = "#FF6600", "d3" = "#FFCC00"),breaks = c("d1", "d2", "d3"), labels = c("Samples", "Chronic", "Acute")) +
 opts(legend.direction = "vertical", legend.position = "right") 
 ggsave("images/chron-acute-map.png")
 
@@ -122,7 +123,7 @@ scale_colour_discrete() +labs(y="Log of Acute Potency Ratio", x="Date") + ylim(0
 
 ggplot() + geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =3, data = subset(sediment.bench3, RESULT!=0)) +
 geom_point(aes(x = DATE, y = Log_Acute.Potency.Ratio, colour=Danger.Level), size =3, data = subset(surfwater, RESULT!=0)) +
-theme_grey() + color_scale_2 + labs(y = "Log of Acute Potency Ratio", x = "Date") + geom_hline(yintercept = log(2), colour = "grey50") +
+theme_grey() + anger_level2 + labs(y = "Log of Acute Potency Ratio", x = "Date") + geom_hline(yintercept = log(2), colour = "grey50") +
 geom_text(aes(x = DATE, y = Log_Acute.Potency.Ratio, label = SUBSTANCE, colour = Danger.Level), hjust = -.1, data = subset(surfwater, Log_Acute.Potency.Ratio >= log(2)))
 
 #grid.arrange(sediment.time, water.time, ncol = 1)

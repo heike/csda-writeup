@@ -2,10 +2,10 @@
 %Å‚Å„ÅœÅ”\r
 1 0 obj
 <<
-/CreationDate (D:20120305201423)
-/ModDate (D:20120305201423)
+/CreationDate (D:20120810211520)
+/ModDate (D:20120810211520)
 /Title (R Graphics Output)
-/Producer (R 2.13.1)
+/Producer (R 2.13.2)
 /Creator (R)
 >>
 endobj
@@ -307,7 +307,7 @@ S
 0 J
 303.00 40.88 m 303.00 331.22 l S
 186.58 40.88 m 186.58 331.22 l S
-/sRGB cs 0.600 0.000 0.000 scn
+/sRGB cs 0.000 0.200 1.000 scn
 BT
 /F1 1 Tf 0 Tr 10.31 0 0 10.31 57.25 52.16 Tm (l) Tj 0 Tr
 ET
@@ -1049,7 +1049,7 @@ S
 0 J
 651.69 40.88 m 651.69 331.22 l S
 541.92 40.88 m 541.92 331.22 l S
-/sRGB cs 1.000 0.400 0.000 scn
+/sRGB cs 0.200 0.600 0.200 scn
 BT
 /F1 1 Tf 0 Tr 10.31 0 0 10.31 404.78 61.50 Tm (l) Tj 0 Tr
 ET
@@ -1738,7 +1738,7 @@ S
 0 J
 1023.85 40.88 m 1023.85 331.22 l S
 894.05 40.88 m 894.05 331.22 l S
-/sRGB cs 1.000 0.800 0.000 scn
+/sRGB cs 1.000 0.400 0.000 scn
 BT
 /F1 1 Tf 0 Tr 10.31 0 0 10.31 752.31 50.50 Tm (l) Tj 0 Tr
 ET
