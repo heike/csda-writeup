@@ -79,7 +79,7 @@ water Horizon rig is marked by a black cross. Each dot on top of the map represe
 
 Counts for animal sightings, both alive and dead, {were} collected by the local Departments of Natural Resources and National Agencies. For the Data Expo 2011 Challenge we had access to data from the National Marine Sanctuary, the Office of Protected Resources as well as the US Bureau of Fish and Wildlife Service. Table~\ref{table-animal} gives a more detailed overview of the variables that we used for our graphical exploration. 
 
-Figure \ref{deaths} shows a map overlaid by a scatterplot indicating locations of animal sightings. Most of the sightings follow the coastline  {-- this} is not surprising since  {many animals were washed up onto beaches or found in shallow coastal waters which generally provide} the easiest access to make these kind of observations. 
+Figure \ref{deaths} shows a map overlaid by a scatterplot indicating locations of animal sightings. Most of the sightings follow the coastline  {-- this} is not surprising since  {many animals were washed up onto beaches or found in shallow coastal waters which generally provide} the easiest access to make these kind of observations. Note that there is some overprinting and that rarer animals are plotted on top. 
 
 %This already points us to several problems with an interpretation of the data:
 %% could we re-frame this in terms of missing data:
@@ -100,7 +100,7 @@ Figure \ref{deaths} shows a map overlaid by a scatterplot indicating locations o
    \centering
    \includegraphics[height=1.75in]{death-rates.pdf} 
     \includegraphics[height=1.75in]{daily-death-counts.pdf}
-   \caption{Cumulative animal death rates by class  (top) and absolute number of dead animal sightings (bottom) between April and October 2010.\newline}
+   \caption{Cumulative animal deaths scaled relative to the total number of deaths in each group (top) and absolute number of dead animal sightings (bottom) between April and October 2010.\newline}
    \label{death rates}
 \end{figure}
 
@@ -173,12 +173,12 @@ Figure \ref{pah-timeline} shows the (log) acute potency ratios for measurements 
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=4in]{chron-acute-map.png} 
-   \caption{Map of the Gulf Coast area overlaid by locations at which PAH measurements were taken (yellow). Orange dots represent locations that are at a chronic level, red dots mark locations with an acute level.  The most dangerous area is along the outermost shore of Louisiana: many locations here have PAH levels at or above chronic or acute benchmarks.}
+   \caption{Map of the Gulf Coast area overlaid by locations at which PAH measurements were taken (yellow). Orange dots represent locations that are at a chronic level, red dots mark locations with an acute level. This figure represents data pooled over both time and position. More dangerous points are plotted on top of less dangerous points. The most dangerous area is along the outermost shore of Louisiana: many locations here have PAH levels at or above chronic or acute benchmarks.}
    \label{pah-map}
 \end{figure}
 
 
-Figure \ref{pah-map} shows a map of the gulf coast overlaid by yellow points at locations where PAH measurements were taken. Locations with elevated PAH values are emphasized by colored dots: orange (at or above chronic) and red (at or above acute thresholds).  Particularly along the outer coast of Louisiana, many of the observed PAH values exceeded the benchmarks.  This might be an indication that this area had the most direct contact with the oil.  
+Figure \ref{pah-map} shows a map of the gulf coast overlaid by yellow points at locations where PAH measurements were taken. All values are aggregated which minimizes the impact of individual extreme values. Locations with elevated PAH values are emphasized by colored dots: orange (at or above chronic) and red (at or above acute thresholds). Particularly along the outer coast of Louisiana, many of the observed PAH values exceeded the benchmarks.  This might be an indication that this area had the most direct contact with the oil. 
 %XXXXXXX how to make a footnote??: A more detailed explanation of the method used to find ratios can be found in the appendix.
 
 \subsection{``Where does the oil go?'' -- Salinity Analysis}
@@ -205,7 +205,7 @@ The floats tended to stay in the deeper water while the boats and the gliders re
 \begin{figure}[htbp] %  figure placement: here, top, bottom, or page
    \centering
    \includegraphics[width=3in]{boats-floats-gliders.png} 
-   \caption{All observation points of boats (red), floats (orange), and gliders (yellow). The paths the devices followed to take measurements are visible. We can see that the boats follow a grid pattern, particularly in the Western region of the gulf. Floats and gliders seem to either be more affected by currents or are more easily maneuvered as they show a `criss-cross' pattern across the area where the bulk of the oil went after the spill.}
+   \caption{All observation points of boats (red), floats (orange), and gliders (yellow). The paths the devices followed to take measurements in the months of data collection are visible. We can see that the boats follow a grid pattern, particularly in the Western region of the gulf. Floats and gliders seem to either be more affected by currents or are more easily maneuvered as they show a `criss-cross' pattern across the area where the bulk of the oil went after the spill.}
    \label{Boats, Floats and Gliders}
 \end{figure}
 Figure \ref{salinity-timeline} pictures salinity measurements over the whole data collection period. Points are color coordinated by time to link the left and right display. Approximately 99\% of the salinity measurements stayed within a range of values close {to} 34 and 38 mg/l.
