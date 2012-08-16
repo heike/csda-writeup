@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.8.25)  10 AUG 2012 22:39
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.8.25)  16 AUG 2012 06:58
 entering extended mode
 **C:/Users/Owner/Documents/csda-writeup/isu.tex
 (C:/Users/Owner/Documents/csda-writeup/isu.tex
@@ -378,12 +378,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<images/animal_deaths.png, id=9, 475.7775pt x 285.9483pt>
+<images/animal_deaths.png, id=9, 497.4585pt x 351.4731pt>
 File: images/animal_deaths.png Graphic file (type png)
 
 <use images/animal_deaths.png>
 Package pdftex.def Info: images/animal_deaths.png used on input line 71.
-(pdftex.def)             Requested size: 289.07999pt x 173.74753pt.
+(pdftex.def)             Requested size: 289.07999pt x 204.2514pt.
  [2 <C:/Users/Owner/Documents/csda-writeup/images/animal_deaths.png>] <images/d
 eath-rates.pdf, id=16, 722.7pt x 361.35pt>
 File: images/death-rates.pdf Graphic file (type pdf)
@@ -417,42 +417,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--146
 [4 <C:/Users/Owner/Documents/csda-writeup/images/death-rates.pdf> <C:/Users/Own
 er/Documents/csda-writeup/images/daily-death-counts.pdf>] [5 <C:/Users/Owner/Do
 cuments/csda-writeup/images/turtles.png>] [6]
-<images/acute-timeline.png, id=44, 514.8033pt x 256.5585pt>
+<images/acute-timeline.png, id=44, 629.9535pt x 316.0608pt>
 File: images/acute-timeline.png Graphic file (type png)
 
 <use images/acute-timeline.png>
 Package pdftex.def Info: images/acute-timeline.png used on input line 165.
-(pdftex.def)             Requested size: 361.34999pt x 180.0869pt.
+(pdftex.def)             Requested size: 361.34999pt x 181.2995pt.
 
-<images/chron-acute-map.png, id=45, 514.8033pt x 256.5585pt>
+<images/chron-acute-map.png, id=45, 576.4737pt x 345.4506pt>
 File: images/chron-acute-map.png Graphic file (type png)
 
 <use images/chron-acute-map.png>
 Package pdftex.def Info: images/chron-acute-map.png used on input line 175.
-(pdftex.def)             Requested size: 289.07999pt x 144.07108pt.
+(pdftex.def)             Requested size: 289.07999pt x 173.2309pt.
  [7 <C:/Users/Owner/Documents/csda-writeup/images/acute-timeline.png>] [8 <C:/U
 sers/Owner/Documents/csda-writeup/images/chron-acute-map.png>]
-<images/boats-floats-gliders.png, id=55, 441.8106pt x 441.0879pt>
+<images/boats-floats-gliders.png, id=55, 416.9979pt x 345.4506pt>
 File: images/boats-floats-gliders.png Graphic file (type png)
 
 <use images/boats-floats-gliders.png>
 Package pdftex.def Info: images/boats-floats-gliders.png used on input line 207
 .
-(pdftex.def)             Requested size: 216.81pt x 216.45802pt.
+(pdftex.def)             Requested size: 216.81pt x 179.61426pt.
 
-<images/salinity-time.png, id=56, 441.8106pt x 441.0879pt>
+<images/salinity-time.png, id=56, 416.9979pt x 345.4506pt>
 File: images/salinity-time.png Graphic file (type png)
 
 <use images/salinity-time.png>
 Package pdftex.def Info: images/salinity-time.png used on input line 217.
-(pdftex.def)             Requested size: 202.35622pt x 202.02794pt.
+(pdftex.def)             Requested size: 202.35622pt x 167.63821pt.
 
-<images/salinity-map.png, id=57, 441.8106pt x 441.0879pt>
+<images/salinity-map.png, id=57, 416.9979pt x 345.4506pt>
 File: images/salinity-map.png Graphic file (type png)
 
 <use images/salinity-map.png>
 Package pdftex.def Info: images/salinity-map.png used on input line 218.
-(pdftex.def)             Requested size: 202.35622pt x 202.02794pt.
+(pdftex.def)             Requested size: 202.35622pt x 167.63821pt.
 
 <images/deapth-salinity.png, id=58, 869.2475pt x 458.71375pt>
 File: images/deapth-salinity.png Graphic file (type png)
@@ -522,7 +522,7 @@ pe1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmtt12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/euler/eurm10.pfb>
-Output written on isu.pdf (13 pages, 494350 bytes).
+Output written on isu.pdf (13 pages, 497169 bytes).
 PDF statistics:
  126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
